@@ -1,14 +1,14 @@
 package Model;
-
+import java.util.Date;
 public class User {
 
-	private string Username;
-	private string Password;
-	private string FirstName;
-	private string LastName;
-	private string email;
-	private string phoneNumber;
-	private string uni_department;
-	private date DateStart;
+	private String Username;
+	private String Password;
+	private String FirstName;
+	private String LastName;
+	private String email;
+	private String phoneNumber;
+	private String uni_department;
+	private Date DateStart;
 
 }
