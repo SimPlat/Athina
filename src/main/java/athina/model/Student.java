@@ -3,7 +3,7 @@ package model;
 public class Student extends User {
 
 	Secratary Creates;
-	private int SudentID;
+	private int studentdD;
 	private Secratary secretary;
 	private Enrollment[] enrollments;
 

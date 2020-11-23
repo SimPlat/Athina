@@ -3,7 +3,7 @@ The MenuController is an object that is used for interactions between users and 
  */
 package controller;
 
-import Model.User;
+import model.User;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 /**
