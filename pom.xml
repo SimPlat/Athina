@@ -29,6 +29,14 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+
+    <!-- Apache commons lib -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-text</artifactId>
+      <version>1.9</version>
+    </dependency>
+
   </dependencies>
 
 </project>
