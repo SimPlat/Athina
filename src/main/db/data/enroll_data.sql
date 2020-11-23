@@ -1,0 +1,1 @@
+INSERT INTO enroll VALUES (DEFAULT,5,5,2015,'winter'),(DEFAULT,5,5,2016,'winter'),(DEFAULT,5,4,2015,'spring'),(DEFAULT,23,8,2019,'spring');

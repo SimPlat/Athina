@@ -1,7 +1,8 @@
 /*
 The MenuController is an object that is used for interactions between users and MainMenu JFrame
  */
-package Controller;
+package controller;
+
 import Model.User;
 import java.util.ArrayList;
 import javax.swing.JFrame;

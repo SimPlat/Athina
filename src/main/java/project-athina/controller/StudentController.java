@@ -1,7 +1,7 @@
 /*
 The Student controller contains all interactions of Student type Users that connect with the database
  */
-package Controller;
+package controller;
 import Model.Student;
 /**
  *

@@ -1,7 +1,7 @@
 /*
 The SecrataryController contains all interactions of Secretary type Users that connect with the database
  */
-package Controller;
+package controller;
 import Model.Secratary;
 /**
  *
