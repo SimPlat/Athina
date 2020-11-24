@@ -13,7 +13,8 @@ public class LoginController {
     final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
     final String db_url = "jdbc:mysql://localhost/Athina_db";
     Connection conn = null;
-
+    //this is a comment
+    
     public LoginController(String username, String password){
         this.username = username;
         this.password = password;
