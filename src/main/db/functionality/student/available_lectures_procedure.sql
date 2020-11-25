@@ -1,7 +1,7 @@
 DELIMITER $$
 DROP PROCEDURE IF EXISTS `available_lectures_procedure` $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `available_lectures_procedure`(IN `student_id` INT)
-    SQL SECURITY INVOKER 
+    SQL SECURITY DEFINER 
     MODIFIES SQL DATA 
 BEGIN
 

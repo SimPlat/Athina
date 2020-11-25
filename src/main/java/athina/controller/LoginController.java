@@ -78,20 +78,22 @@ public class LoginController {
     }
 
     // Invokes DB routine login_function(String username, String password, Enum type(studen,secretary,professor,admin))
-    public boolean logIn(){
+    public String logIn(){
         boolean validation = false;
         dbConnect();
         try(PreparedStatement prepStmnt = conn.prepareStatement("SELECT login_function(?,?,?) as login_function",
                                                                 ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE)){
-            prepStmnt.setString(1, "unm5");
-            prepStmnt.setString(2, "psw5");
+            prepStmnt.setString(1, username);
+            prepStmnt.setString(2, password);
             prepStmnt.setString(3, userType);
             ResultSet rs = prepStmnt.executeQuery();
 
             validation = (1 == (rs.next() ? rs.getInt("login_function") : null));
         }
         catch(SQLException se){se.printStackTrace();}  
-        return validation;
+        if (validation)
+            return userType;
+        return null;
     }
 
 }

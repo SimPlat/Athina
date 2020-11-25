@@ -1,13 +1,3 @@
--- Lectures
-INSERT INTO lecture VALUES (1,'Programming 1','1',DEFAULT,'1'),(2,'Mathematics 1','1',DEFAULT,'0'),(3,'DC Circuits','1',DEFAULT,'0'),(4,'MySQL Databases','1',DEFAULT,'0'),(5,'Programming 2','2',DEFAULT,'1'),(6,'Mathematics 2','2',DEFAULT,'0'),(7,'AC Circuits','2',DEFAULT,'0'),(8,'ObjOr Databases','2',DEFAULT,'1'),(9,'Programming 3','3',DEFAULT,'0'),(10,'Mathematics 3','3',DEFAULT,'0'),(11,'Embedded Sy','3',DEFAULT,'1'),(12,'NoSQL Databases','3',DEFAULT,'1');
-
--- Exams
-INSERT INTO exam VALUES (5,1,'2020-02-02',2,1),(5,2,'2020-02-03',8,7),(6,2,'2018-02-01',2,5),(17,5,'2020-07-07',2,1);
-
--- Enrollments
-INSERT INTO enroll VALUES (DEFAULT,5,5,2015,'winter'),(DEFAULT,5,5,2016,'winter'),(DEFAULT,5,4,2015,'spring'),(DEFAULT,23,8,2019,'spring');
-
--- Users
 INSERT INTO user VALUES (NULL,'admin',NULL,NULL,'Onoma1','Eponimo1',NULL,'2310000001','Address1');
 INSERT INTO user VALUES (NULL,'secretary',NULL,NULL,'Onoma2','Eponimo2',NULL,'2310000002','Address2');
 INSERT INTO user VALUES (NULL,'admin',NULL,NULL,'Onoma3','Eponimo3',NULL,'2310000003','Address3');

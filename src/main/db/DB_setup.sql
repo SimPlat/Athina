@@ -1,41 +1,46 @@
--- Last modification date: 2020-11-19 17:59:55.451
+-- Last modification date: 2020-11-25 19:41:26.923
 
+-- DATABASE
+DROP DATABASE IF EXISTS Athina_db;
+CREATE DATABASE Athina_db;
+USE Athina_db;
+-- ----------------------------------------------------------------------------------------------------------------------------------
 -- TABLES
 
 -- Table: admin
 CREATE TABLE admin (
-    id int NOT NULL,
+    id int(8) NOT NULL,
     CONSTRAINT admin_pk PRIMARY KEY (id)
 );
 -- Table: application
 CREATE TABLE application (
-    id int NOT NULL,
+    id int NOT NULL AUTO_INCREMENT,
     application_type varchar(20) NOT NULL,
-    verified varchar(20) NOT NULL,
+    verified bool NOT NULL DEFAULT 0,
     CONSTRAINT application_pk PRIMARY KEY (id)
 );
 -- Table: enroll
 CREATE TABLE enroll (
-    student_id int NOT NULL,
+    id int NOT NULL AUTO_INCREMENT,
+    student_id int(8) NOT NULL,
     lecture_id int NOT NULL,
     term_year int NOT NULL,
     term enum('winter','spring') NOT NULL,
-    id int NOT NULL AUTO_INCREMENT,
     UNIQUE INDEX id (id),
     CONSTRAINT enroll_pk PRIMARY KEY (student_id,lecture_id,term_year,term)
 );
 -- Table: exam
 CREATE TABLE exam (
-    student_id int NOT NULL,
+    student_id int(8) NOT NULL,
     lecture_id int NOT NULL,
     date date NOT NULL,
-    graded_by int NOT NULL,
+    graded_by int(8) NOT NULL,
     grade int NOT NULL,
     CONSTRAINT exam_pk PRIMARY KEY (student_id,lecture_id,date)
 );
 -- Table: lecture
 CREATE TABLE lecture (
-    id int NOT NULL,
+    id int NOT NULL AUTO_INCREMENT,
     name varchar(35) NOT NULL,
     semester int NOT NULL,
     ects int NOT NULL DEFAULT 6,
@@ -44,7 +49,7 @@ CREATE TABLE lecture (
 );
 -- Table: professor
 CREATE TABLE professor (
-    id int NOT NULL,
+    id int(8) NOT NULL,
     CONSTRAINT professor_pk PRIMARY KEY (id)
 );
 -- Table: register_application
@@ -56,59 +61,56 @@ CREATE TABLE register_application (
 );
 -- Table: register_lecture
 CREATE TABLE register_lecture (
-    admin_id int NOT NULL,
+    admin_id int(8) NOT NULL,
     lecture_id int NOT NULL,
     CONSTRAINT register_lecture_pk PRIMARY KEY (admin_id,lecture_id)
 );
 -- Table: register_user
 CREATE TABLE register_user (
-    registerer_id int NOT NULL,
-    registeree_id int NOT NULL,
+    registerer_id int(8) NOT NULL,
+    registeree_id int(8) NOT NULL,
     date date NOT NULL,
     CONSTRAINT register_user_pk PRIMARY KEY (registeree_id)
 );
 -- Table: secretary
 CREATE TABLE secretary (
-    id int NOT NULL,
+    id int(8) NOT NULL,
     CONSTRAINT secretary_pk PRIMARY KEY (id)
 );
 -- Table: student
 CREATE TABLE student (
-    id int NOT NULL,
+    id int(8) NOT NULL,
     ects int NOT NULL DEFAULT 0,
     CONSTRAINT student_pk PRIMARY KEY (id)
 );
 -- Table: teach
 CREATE TABLE teach (
-    professor_id int NOT NULL,
+    professor_id int(8) NOT NULL,
     lecture_id int NOT NULL,
     CONSTRAINT teach_pk PRIMARY KEY (professor_id,lecture_id)
 );
 -- Table: user
 CREATE TABLE user (
-    id int NOT NULL,
+    id int(8) NOT NULL AUTO_INCREMENT,
     type enum('student','secretary','professor','admin') NOT NULL,
-    username varchar(15) NOT NULL,
-    password varchar(35) NOT NULL,
+    username varchar(15) NULL,
+    password varchar(35) NULL,
     name varchar(15) NOT NULL,
     surname varchar(20) NOT NULL,
     email varchar(30) NOT NULL,
-    phone int NOT NULL,
-    adress varchar(25) NULL,
-    UNIQUE INDEX email (email),
-    UNIQUE INDEX username (username),
-    UNIQUE INDEX phone (phone),
+    phone varchar(10) NOT NULL,
+    adress varchar(40) NULL,
     CONSTRAINT user_pk PRIMARY KEY (id)
 );
 -- Table: verify
 CREATE TABLE verify (
-    secretary_id int NOT NULL,
+    secretary_id int(8) NOT NULL,
     application_id int NOT NULL,
     date date NOT NULL,
     CONSTRAINT verify_pk PRIMARY KEY (secretary_id,application_id)
 );
 -- ----------------------------------------------------------------------------------------------------------------------------------
--- FOREIGN KEY
+-- FOREIGN KEYS
 
 -- Reference: Verify_secretary (table: verify)
 ALTER TABLE verify ADD CONSTRAINT Verify_secretary FOREIGN KEY Verify_secretary (secretary_id)
@@ -214,44 +216,6 @@ ALTER TABLE verify ADD CONSTRAINT verify_application FOREIGN KEY verify_applicat
 -- PROCEDURES
 DELIMITER $$
 
--- Procedure: assign_type_procedure(user_id)
-DROP PROCEDURE IF EXISTS `assign_type_procedure`$$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `assign_type_procedure`(new_user_id INT) 
-    SQL SECURITY INVOKER
-    MODIFIES SQL DATA
-    DETERMINISTIC
-BEGIN
-    -- Local variables
-    DECLARE user_type ENUM('student','secretary','professor','admin') DEFAULT NULL;
-    -- Loop required variables
-    DECLARE done INT DEFAULT FALSE;
-    DECLARE user_cur CURSOR FOR SELECT user.type FROM user WHERE (user.id<=>new_user_id);       
-    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
-
-    OPEN user_cur;
-    
-    user_loop: LOOP                         -- Loop through user table
-        FETCH user_cur INTO user_type;      -- Get user type for given user_id 
-
-        IF done THEN
-            LEAVE user_loop;                -- Exit loop upon scanning user table
-        END IF;
-
-    END LOOP;
-
-    -- Add new user to it's corresponding type table 
-    IF (user_type LIKE 'student') THEN
-        INSERT INTO student VALUES (new_user_id,DEFAULT);   
-    ELSEIF (user_type LIKE 'secretary') THEN
-        INSERT INTO secretary VALUES (new_user_id);
-    ELSEIF (user_type LIKE 'professor') THEN
-        INSERT INTO professor VALUES (new_user_id);
-    ELSEIF (user_type LIKE 'admin') THEN 
-        INSERT INTO admin VALUES (new_user_id);
-    END IF;
-
-END$$
-
 -- Procedure: user_info_procedure(user_id,user_type)
 DROP PROCEDURE IF EXISTS `user_info_procedure`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `user_info_procedure`(IN `user_id` INT,IN `user_type` ENUM('student','secretary','professor','admin'))
@@ -299,7 +263,6 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `show_enrollments_procedure`(IN stud
 BEGIN
     -- Fetch IDs and names of the enrolled lectures for the given student
     SELECT E.lecture_id,L.name FROM enroll E JOIN lecture L ON (L.id = E.lecture_id) WHERE (E.student_id <=> student_id);
-
 END$$
 
 -- Procedure: current_enrollments_procedure(student_id)
@@ -317,7 +280,7 @@ BEGIN
 
 END$$
 
--- Procedure new_enrollment_procedure(student_id,lecture_id)
+-- Procedure: new_enrollment_procedure(student_id,lecture_id)
 DROP PROCEDURE IF EXISTS `new_enrollment_procedure` $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `new_enrollment_procedure`(IN `student_id` INT,IN `lecture_id` INT)
     SQL SECURITY INVOKER
@@ -325,10 +288,9 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `new_enrollment_procedure`(IN `stude
 BEGIN
     -- NO CHECKS ON THE AVAILABILITY OF THE LECTURES!!!!!!!!!!
     INSERT INTO enroll values (student_id,lecture_id,CURRENT_DATE);
-
 END $$
 
--- Procedure remove_enrollment_procedure(student_id,lecture_id)
+-- Procedure: remove_enrollment_procedure(student_id,lecture_id)
 DROP PROCEDURE IF EXISTS `remove_enrollment_procedure` $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `remove_enrollment_procedure`(IN `student_id` INT,IN `lecture_id` INT)
     SQL SECURITY INVOKER
@@ -349,20 +311,17 @@ END $$
 
 -- Function: login(uname,upass,utype)
 DROP FUNCTION IF EXISTS `login_function`$$
-CREATE DEFINER=`root`@`localhost` FUNCTION `login_function`(`login_username` VARCHAR(15),`login_password` VARCHAR (35),`login_type` ENUM('student','secretary','professor','admin'))
+CREATE DEFINER=`root`@`localhost` FUNCTION `login_function`(`login_username` VARCHAR(15),`login_password` VARCHAR(35),`login_type` ENUM('student','secretary','professor','admin'))
     RETURNS BOOLEAN 
-    SQL SECURITY INVOKER
+    SQL SECURITY DEFINER
     READS SQL DATA
-    DETERMINISTIC 
 BEGIN
     -- Local variables
     DECLARE uname VARCHAR(15);
     DECLARE upass VARCHAR(35);
     DECLARE utype ENUM('student','secretary','professor','admin');
-
     -- Fetch username, password and type of the given username
     SELECT user.username,user.password,user.type INTO uname,upass,utype from user where (user.username <=> login_username);
-
     -- Check if username, password and type are correct
     IF (uname LIKE login_username) AND (upass LIKE login_password) AND (utype LIKE login_type) THEN
         RETURN 1;
@@ -374,12 +333,39 @@ END$$
 -- ----------------------------------------------------------------------------------------------------------------------------------
 -- TRIGGERS
 
--- Trigger: new_user_trigger
-DROP TRIGGER IF EXISTS `new_user_trigger`$$
-CREATE DEFINER=`root`@`localhost` TRIGGER `new_user_trigger` 
-    AFTER INSERT ON `user` FOR EACH ROW 
+-- Trigger: assign_credentials_trigger
+DROP TRIGGER IF EXISTS `assign_credentials_trigger`$$
+CREATE DEFINER=`root`@`localhost` TRIGGER `assign_credentials_trigger` BEFORE INSERT ON `user` FOR EACH ROW 
 BEGIN
-    CALL assign_type_procedure(NEW.id);
+    DECLARE ai_id INT(5) default NULL;
+    
+    -- Since the trigger activates BEFORE the insert the automaticly incremented Id has to be "predicted".
+    SELECT auto_increment INTO ai_id FROM information_schema.tables
+    WHERE table_name = 'user' AND table_schema = database();
+    
+    -- Assign username,password,email to the new user
+    SET NEW.username = CONCAT(ifnull(NEW.username,""),SUBSTRING(NEW.type,1,2),LPAD(ai_id,5,0)),
+        NEW.password = CONCAT(ifnull(NEW.password,""),LPAD(ai_id,5,0),SUBSTRING(NEW.type,1,2)),
+        NEW.email = CONCAT(ifnull(NEW.email,""),SUBSTRING(NEW.type,1,2),LPAD(ai_id,5,0),'@ihu.gr');
+
+END$$
+
+-- Trigger: assign_type_trigger
+DROP TRIGGER IF EXISTS `assign_type_trigger`$$
+CREATE DEFINER=`root`@`localhost` TRIGGER `assign_type_trigger` AFTER INSERT ON `user` FOR EACH ROW 
+BEGIN
+
+    -- Add new user to it's corresponding type table 
+    IF (NEW.type LIKE 'student') THEN
+        INSERT INTO student VALUES (NEW.id,DEFAULT);   
+    ELSEIF (NEW.type LIKE 'secretary') THEN
+        INSERT INTO secretary VALUES (NEW.id);
+    ELSEIF (NEW.type LIKE 'professor') THEN
+        INSERT INTO professor VALUES (NEW.id);
+    ELSEIF (NEW.type LIKE 'admin') THEN 
+        INSERT INTO admin VALUES (NEW.id);
+    END IF;
+
 END$$
 
 DELIMITER ;

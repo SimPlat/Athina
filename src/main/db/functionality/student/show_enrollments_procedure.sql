@@ -1,7 +1,7 @@
 DELIMITER $$
 DROP PROCEDURE IF EXISTS `show_enrollments_procedure`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `show_enrollments_procedure`(IN student_id INT) 
-    SQL SECURITY INVOKER
+    SQL SECURITY DEFINER
     MODIFIES SQL DATA
 BEGIN
     -- Fetch IDs and names of the enrolled lectures for the given student

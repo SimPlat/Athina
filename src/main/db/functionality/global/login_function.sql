@@ -2,7 +2,7 @@ DELIMITER $$
 DROP FUNCTION IF EXISTS `login_function`$$
 CREATE DEFINER=`root`@`localhost` FUNCTION `login_function`(IN `login_username` VARCHAR(15),IN `login_password` VARCHAR (35),IN `login_type` ENUM('student','secretary','professor','admin'))
     RETURNS BOOLEAN 
-    SQL SECURITY INVOKER
+    SQL SECURITY DEFINER
     READS SQL DATA
 BEGIN
     -- Local variables

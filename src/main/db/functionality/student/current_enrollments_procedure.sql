@@ -1,7 +1,7 @@
 DELIMITER $$
 DROP PROCEDURE IF EXISTS `current_enrollments_procedure`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `current_enrollments_procedure`(IN student_id INT) 
-    SQL SECURITY INVOKER
+    SQL SECURITY DEFINER
     MODIFIES SQL DATA
 BEGIN
     -- Fetch IDs and names of the latest enrollment for the given student 

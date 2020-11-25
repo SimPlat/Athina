@@ -1,7 +1,7 @@
 DELIMITER $$
 DROP PROCEDURE IF EXISTS `remove_enrollment_procedure` $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `remove_enrollment_procedure`(IN `student_id` INT,IN `lecture_id` INT)
-    SQL SECURITY INVOKER
+    SQL SECURITY DEFINER
     MODIFIES SQL DATA
 BEGIN
     -- Check if removal date is on a winter or a spring term
