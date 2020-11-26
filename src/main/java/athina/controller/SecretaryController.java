@@ -3,10 +3,21 @@ The SecrataryController contains all interactions of Secretary type Users that c
  */
 package controller;
 import model.Secratary;
-/**
- *
- * @author it174
- */
+import model.Student;
+
 public class SecretaryController {
     Secratary secr;
+
+    //us011
+    public void onClickEventUploadStudent(String info){
+        //
+    }
+
+    public void onClickEventSearchStudent(String AM){
+        //
+    }
+
+    public void onClickEventDeleteStudent(Student student){
+        //
+    }
 }
