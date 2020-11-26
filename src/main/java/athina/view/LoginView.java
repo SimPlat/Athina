@@ -190,4 +190,7 @@ public class LoginView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
+    public void hideLoginView(){
+        //
+    }
 }
