@@ -15,12 +15,14 @@ BEGIN
     DECLARE password VARCHAR(7) DEFAULT NULL;
 
     -- Get the next auto increment value for table user
-    SELECT auto_increment INTO ai_id FROM information_schema.tables
-    WHERE table_name = 'user' AND table_schema = database();
+    SELECT auto_increment INTO @ai_id FROM information_schema.tables
+    WHERE table_name = 'user' AND table_schema = 'Athina_db';
     
+    SET @ai_id = @ai_id - 1;
+
     -- Build the username/user password based on the autoincremented value which is about to be used as the user ID
-    SET username = CONCAT(SUBSTRING(user_type,1,2),LPAD(ai_id,5,0)),
-        password = CONCAT(LPAD(ai_id,5,0),SUBSTRING(user_type,1,2));
+    SET username = CONCAT(SUBSTRING(user_type,1,2),LPAD(@ai_id,5,0)),
+        password = CONCAT(LPAD(@ai_id,5,0),SUBSTRING(user_type,1,2));
 
     -- Escape inputs, create and execute the create user query
     SET `db_username` = CONCAT('\'', REPLACE(TRIM(`username`), CHAR(39), CONCAT(CHAR(92), CHAR(39))), '\''),
