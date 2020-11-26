@@ -8,8 +8,6 @@ public class LoginController {
     private String password;
     private String userType = "";
 
-    private String db_username;
-    private String db_password;
     final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
     final String db_url = "jdbc:mysql://localhost/Athina_db";
     Connection conn = null;
@@ -45,8 +43,8 @@ public class LoginController {
     }
 
     public void dbConnect(){
-        System.out.println(username + " " + userType);
         checkUsernameType();
+        /**
         switch (userType) {
             case "student":
                 db_username = "athina_student";
@@ -66,12 +64,13 @@ public class LoginController {
                 break;
             default:
                 // Unkown user type
-        }
+        } 
+        */
         try {
             // Connect to DB
             Class.forName("com.mysql.cj.jdbc.Driver");
             System.out.println("Connecting to Athina DB...");
-            conn = DriverManager.getConnection(db_url,db_username,db_password);
+            conn = DriverManager.getConnection(db_url,username,password);
         }
         catch(SQLException se){se.printStackTrace();}   // Handle JDBC errors
         catch(Exception e){e.printStackTrace();}        // Handle Class.forName errors
