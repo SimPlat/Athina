@@ -118,9 +118,9 @@ public class InfoView extends javax.swing.JFrame {
                     .addComponent(YearOfRegistration)
                     .addComponent(YearOfRegistrationData))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CemesterOfEnrolment)
-                    .addComponent(CemesterOfEnrollment)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(CemesterOfEnrollment)
+                    .addComponent(CemesterOfEnrolment)))
         );
 
         jLabel23.setText("Employee Registration info:");
