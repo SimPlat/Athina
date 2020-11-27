@@ -11,6 +11,9 @@ public class Main {
         InfoView iv = new InfoView();
         LoginView lv = new LoginView();
         MainMenu mm = new MainMenu();
+        NewEnrollment ne = new NewEnrollment();
+        NewStudentView ns = new NewStudentView();
+        StudentsView sv = new StudentsView();
         
         mm.setVisible(true);
         en.setVisible(true);
