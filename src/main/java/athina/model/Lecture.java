@@ -1,4 +1,4 @@
-package model;
+package athina.model;
 
 public class Lecture {
 

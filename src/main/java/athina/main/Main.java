@@ -1,6 +1,6 @@
-package main;
+package athina.main;
 
-import controller.LoginController;
+import athina.controller.LoginController;
 
 public class Main {
 

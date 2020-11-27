@@ -1,4 +1,4 @@
-package model;
+package athina.model;
 
 public class Student extends User {
 

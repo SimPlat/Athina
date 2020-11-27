@@ -1,4 +1,4 @@
-package model;
+package athina.model;
 import java.util.Date;
 public class User {
 
