@@ -19,5 +19,8 @@ public class Main {
         en.setVisible(true);
         iv.setVisible(true);
         lv.setVisible(true);
+        ne.setVisible(true);
+        ns.setVisible(true);
+        sv.setVisible(true);
     }
 }
