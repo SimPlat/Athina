@@ -1,3 +1,5 @@
+package athina;
+
 public class Database {
 
 	/**

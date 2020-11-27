@@ -1,4 +1,4 @@
-package controller;
+package athina.controller;
 
 import java.util.regex.Pattern;
 import java.sql.*;

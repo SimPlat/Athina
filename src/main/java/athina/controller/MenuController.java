@@ -1,9 +1,9 @@
 /*
 The MenuController is an object that is used for interactions between users and MainMenu JFrame
  */
-package controller;
+package athina.controller;
 
-import model.User;
+import athina.model.User;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 
