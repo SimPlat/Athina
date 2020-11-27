@@ -2,7 +2,7 @@ DELIMITER $$
 DROP PROCEDURE IF EXISTS `user_info_procedure` $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `user_info_procedure`(IN `user_id` INT,IN `user_type` ENUM('student','secretary','professor','admin'))
     SQL SECURITY DEFINER
-    MODIFIES SQL DATA
+    CONTAINS SQL DATA
 BEGIN
     IF (user_type LIKE 'student') AND (user_id IN (SELECT id FROM student)) THEN                    -- If user is student append the student specific info
         SELECT user.*,student.ects FROM user JOIN student ON (user.id = student.id) WHERE (student.id <=> user_id);
