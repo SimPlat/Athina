@@ -72,7 +72,7 @@ public class LoginView extends javax.swing.JFrame {
             }
         });
 
-        LogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/athinaswing/cropped-ihu-logo_el-16.png"))); // NOI18N
+        LogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/athina/view/cropped-ihu-logo_el-16.png"))); // NOI18N
         LogoLabel.setText("jLabel1");
 
         UsernameLabel.setText("Username");
