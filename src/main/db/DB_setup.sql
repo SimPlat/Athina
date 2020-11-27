@@ -213,104 +213,10 @@ ALTER TABLE verify ADD CONSTRAINT verify_application FOREIGN KEY verify_applicat
     ON DELETE CASCADE
     ON UPDATE CASCADE;
 -- ----------------------------------------------------------------------------------------------------------------------------------
--- PROCEDURES
+-- ROUTINES
 DELIMITER $$
 
--- Procedure: user_info_procedure(user_id,user_type)
-DROP PROCEDURE IF EXISTS `user_info_procedure`$$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `user_info_procedure`(IN `user_id` INT,IN `user_type` ENUM('student','secretary','professor','admin'))
-    SQL SECURITY INVOKER
-    MODIFIES SQL DATA
-    DETERMINISTIC
-BEGIN
-
-    IF (user_type LIKE 'student') AND (user_id IN (SELECT id FROM student)) THEN                    -- If user is student append the student specific info
-        SELECT user.*,student.ects FROM user JOIN student ON (user.id = student.id) WHERE (student.id <=> user_id);
-    ELSEIF (user_type LIKE 'secretary') AND (user_id IN (SELECT id FROM secretary)) THEN            -- Nothing to append for user secretary ATM 
-        SELECT * FROM user WHERE (user.id <=> user_id);                                         
-    ELSEIF (user_type like 'professor') AND (user_id IN (SELECT id FROM professor)) THEN            -- Nothing to append for user professor ATM 
-        SELECT * FROM user WHERE (user.id <=> user_id);
-    ELSEIF (user_type like 'admin') AND (user_id IN (SELECT id FROM admin)) THEN                    -- Nothing to append for user admin ATM 
-        SELECT * FROM user WHERE (user.id <=> user_id);
-    END IF;
-
-END $$
-
--- Procedure: available_lectures_procedure_procedure(student_id)
-DROP PROCEDURE IF EXISTS `available_lectures_procedure`$$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `available_lectures_procedure`(`student_id` INT)
-    SQL SECURITY INVOKER 
-    MODIFIES SQL DATA 
-    DETERMINISTIC
-BEGIN
-    DECLARE passed_lecture_ids INT;
-
-    SELECT exam.lecture_id INTO passed_lecture_ids FROM exam WHERE (exam.student_id<=>student_id) AND (exam.grade >= 5);
-    
-    IF (MONTH(CURRENT_DATE) > 8) OR (MONTH(CURRENT_DATE) < 3) THEN
-        SELECT * FROM lecture WHERE lecture.semester%2=1 AND lecture.id NOT IN (passed_lecture_ids);
-    ELSE
-         SELECT * FROM lecture WHERE lecture.semester%2=0 AND lecture.id NOT IN (passed_lecture_ids);
-    END IF;
-
-END$$
-
--- Procedure: show_enrollments_procedure(student_id)
-DROP PROCEDURE IF EXISTS `show_enrollments_procedure`$$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `show_enrollments_procedure`(IN student_id INT) 
-    SQL SECURITY INVOKER
-    MODIFIES SQL DATA
-BEGIN
-    -- Fetch IDs and names of the enrolled lectures for the given student
-    SELECT E.lecture_id,L.name FROM enroll E JOIN lecture L ON (L.id = E.lecture_id) WHERE (E.student_id <=> student_id);
-END$$
-
--- Procedure: current_enrollments_procedure(student_id)
-DROP PROCEDURE IF EXISTS `current_enrollments_procedure`$$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `current_enrollments_procedure`(IN student_id INT) 
-    SQL SECURITY INVOKER
-    MODIFIES SQL DATA
-BEGIN
-    -- Fetch IDs and names of the latest enrollment for the given student 
-    IF (MONTH(CURRENT_DATE) > 8) OR (MONTH(CURRENT_DATE) < 3) THEN    
-        SELECT E.lecture_id,L.name FROM enroll E JOIN lecture L ON (L.id = E.lecture_id) WHERE (E.student_id <=> student_id) AND (e.term_year <=> YEAR(CURRENT_DATE)) AND e.term LIKE 'winter';
-    ELSE    
-        SELECT E.lecture_id,L.name FROM enroll E JOIN lecture L ON (L.id = E.lecture_id) WHERE (E.student_id <=> student_id) AND (e.term_year <=> YEAR(CURRENT_DATE)) AND e.term LIKE 'spring';
-    END IF;
-
-END$$
-
--- Procedure: new_enrollment_procedure(student_id,lecture_id)
-DROP PROCEDURE IF EXISTS `new_enrollment_procedure` $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `new_enrollment_procedure`(IN `student_id` INT,IN `lecture_id` INT)
-    SQL SECURITY INVOKER
-    MODIFIES SQL DATA
-BEGIN
-    -- NO CHECKS ON THE AVAILABILITY OF THE LECTURES!!!!!!!!!!
-    INSERT INTO enroll values (student_id,lecture_id,CURRENT_DATE);
-END $$
-
--- Procedure: remove_enrollment_procedure(student_id,lecture_id)
-DROP PROCEDURE IF EXISTS `remove_enrollment_procedure` $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `remove_enrollment_procedure`(IN `student_id` INT,IN `lecture_id` INT)
-    SQL SECURITY INVOKER
-    MODIFIES SQL DATA
-BEGIN
-    -- Check if removal date is on a winter or a spring term
-    IF (MONTH(CURRENT_DATE) > 8) OR (MONTH(CURRENT_DATE) < 3) THEN
-        -- Remove given lecture from the latest winter term enrollment
-        DELETE FROM enroll WHERE (enroll.studen_id <=> student_id) AND (enroll.lecture_id <=> lecture_id) AND (enroll.term LIKE 'winter') AND (enroll.year <=> YEAR(CURRENT_DATE));
-    ELSE
-        -- Remove given lecture from the latest spring term enrollment
-        DELETE FROM enroll WHERE (enroll.studen_id <=> student_id) AND (enroll.lecture_id <=> lecture_id) AND (enroll.term LIKE 'spring') AND (enroll.year <=> YEAR(CURRENT_DATE));
-    END IF;
-
-END $$
--- ----------------------------------------------------------------------------------------------------------------------------------
--- FUNCTIONS
-
--- Function: login(uname,upass,utype)
-DROP FUNCTION IF EXISTS `login_function`$$
+-- 1.Function: login(uname,upass,utype)
 CREATE DEFINER=`root`@`localhost` FUNCTION `login_function`(`login_username` VARCHAR(15),`login_password` VARCHAR(35),`login_type` ENUM('student','secretary','professor','admin'))
     RETURNS BOOLEAN 
     SQL SECURITY DEFINER
@@ -330,18 +236,178 @@ BEGIN
     RETURN 0;
 
 END$$
+-- 2.Procedure: user_info_procedure(user_id,user_type)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `user_info_procedure`(IN `user_id` INT,IN `user_type` ENUM('student','secretary','professor','admin'))
+    SQL SECURITY INVOKER
+    MODIFIES SQL DATA
+BEGIN
+
+    IF (user_type LIKE 'student') AND (user_id IN (SELECT id FROM student)) THEN                    -- If user is student append the student specific info
+        SELECT user.*,student.ects FROM user JOIN student ON (user.id = student.id) WHERE (student.id <=> user_id);
+    ELSEIF (user_type LIKE 'secretary') AND (user_id IN (SELECT id FROM secretary)) THEN            -- Nothing to append for user secretary ATM 
+        SELECT * FROM user WHERE (user.id <=> user_id);                                         
+    ELSEIF (user_type like 'professor') AND (user_id IN (SELECT id FROM professor)) THEN            -- Nothing to append for user professor ATM 
+        SELECT * FROM user WHERE (user.id <=> user_id);
+    ELSEIF (user_type like 'admin') AND (user_id IN (SELECT id FROM admin)) THEN                    -- Nothing to append for user admin ATM 
+        SELECT * FROM user WHERE (user.id <=> user_id);
+    END IF;
+
+END $$
+-- 3.Procedure: available_lectures_procedure_procedure(student_id)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `available_lectures_procedure`(`student_id` INT)
+    SQL SECURITY INVOKER 
+    MODIFIES SQL DATA 
+BEGIN
+    DECLARE passed_lecture_ids INT;
+
+    SELECT exam.lecture_id INTO passed_lecture_ids FROM exam WHERE (exam.student_id<=>student_id) AND (exam.grade >= 5);
+    
+    IF (MONTH(CURRENT_DATE) > 8) OR (MONTH(CURRENT_DATE) < 3) THEN
+        SELECT * FROM lecture WHERE lecture.semester%2=1 AND lecture.id NOT IN (passed_lecture_ids);
+    ELSE
+         SELECT * FROM lecture WHERE lecture.semester%2=0 AND lecture.id NOT IN (passed_lecture_ids);
+    END IF;
+
+END$$
+-- 4.Procedure: show_enrollments_procedure(student_id)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `show_enrollments_procedure`(IN student_id INT) 
+    SQL SECURITY INVOKER
+    MODIFIES SQL DATA
+BEGIN
+    -- Fetch IDs and names of the enrolled lectures for the given student
+    SELECT E.lecture_id,L.name FROM enroll E JOIN lecture L ON (L.id = E.lecture_id) WHERE (E.student_id <=> student_id);
+END$$
+-- 5.Procedure: current_enrollments_procedure(student_id)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `current_enrollments_procedure`(IN student_id INT) 
+    SQL SECURITY INVOKER
+    MODIFIES SQL DATA
+BEGIN
+    -- Fetch IDs and names of the latest enrollment for the given student 
+    IF (MONTH(CURRENT_DATE) > 8) OR (MONTH(CURRENT_DATE) < 3) THEN    
+        SELECT E.lecture_id,L.name FROM enroll E JOIN lecture L ON (L.id = E.lecture_id) WHERE (E.student_id <=> student_id) AND (e.term_year <=> YEAR(CURRENT_DATE)) AND e.term LIKE 'winter';
+    ELSE    
+        SELECT E.lecture_id,L.name FROM enroll E JOIN lecture L ON (L.id = E.lecture_id) WHERE (E.student_id <=> student_id) AND (e.term_year <=> YEAR(CURRENT_DATE)) AND e.term LIKE 'spring';
+    END IF;
+
+END$$
+-- 6.Procedure: new_enrollment_procedure(student_id,lecture_id)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `new_enrollment_procedure`(IN `student_id` INT,IN `lecture_id` INT)
+    SQL SECURITY INVOKER
+    MODIFIES SQL DATA
+BEGIN
+    -- NO CHECKS ON THE AVAILABILITY OF THE LECTURES!!!!!!!!!!
+    INSERT INTO enroll values (student_id,lecture_id,CURRENT_DATE);
+END $$
+-- 7.Procedure: remove_enrollment_procedure(student_id,lecture_id)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `remove_enrollment_procedure`(IN `student_id` INT,IN `lecture_id` INT)
+    SQL SECURITY INVOKER
+    MODIFIES SQL DATA
+BEGIN
+    -- Check if removal date is on a winter or a spring term
+    IF (MONTH(CURRENT_DATE) > 8) OR (MONTH(CURRENT_DATE) < 3) THEN
+        -- Remove given lecture from the latest winter term enrollment
+        DELETE FROM enroll WHERE (enroll.studen_id <=> student_id) AND (enroll.lecture_id <=> lecture_id) AND (enroll.term LIKE 'winter') AND (enroll.year <=> YEAR(CURRENT_DATE));
+    ELSE
+        -- Remove given lecture from the latest spring term enrollment
+        DELETE FROM enroll WHERE (enroll.studen_id <=> student_id) AND (enroll.lecture_id <=> lecture_id) AND (enroll.term LIKE 'spring') AND (enroll.year <=> YEAR(CURRENT_DATE));
+    END IF;
+
+END $$
+-- 8.Procedure: create_db_user_procedure(user_type)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `create_db_user_procedure`(IN `user_type` 
+                                                                           ENUM('secretary','student','professor','admin')) 
+    SQL SECURITY DEFINER
+    MODIFIES SQL DATA
+BEGIN
+    DECLARE ai_id INT(5) default NULL;
+    -- Create user variables
+    DECLARE `_HOST` CHAR(14) DEFAULT '@\'localhost\'';
+    DECLARE db_username VARCHAR(20) DEFAULT NULL;
+    DECLARE db_password VARCHAR(20) DEFAULT NULL; 
+    -- Username/user password variables
+    DECLARE username VARCHAR(20) DEFAULT NULL;
+    DECLARE password VARCHAR(20) DEFAULT NULL;
+
+    FLUSH PRIVILEGES;
+
+    -- Get the next auto increment value for table user
+    SELECT auto_increment INTO ai_id FROM information_schema.tables
+    WHERE table_name = 'user' AND table_schema = 'Athina_db';
+    
+    SET @ai_id = ai_id - 1;
+
+    -- Build the username/user password based on the autoincremented value which is about to be used as the user ID
+    SET username = CONCAT(SUBSTRING(user_type,1,2),LPAD(@ai_id,5,0)),
+        password = CONCAT(LPAD(@ai_id,5,0),SUBSTRING(user_type,1,2));
+
+    -- Escape inputs, create and execute the create user query
+    SET `db_username` = CONCAT('\'', REPLACE(TRIM(`username`), CHAR(39), CONCAT(CHAR(92), CHAR(39))), '\''),
+        `db_password` = CONCAT('\'', REPLACE(`password`, CHAR(39), CONCAT(CHAR(92), CHAR(39))), '\'');
+    SET @`sql` = CONCAT('CREATE USER ', `db_username`, `_HOST`, ' IDENTIFIED BY ', `db_password`);
+    PREPARE `stmt` FROM @`sql`;
+    EXECUTE `stmt`;
+    DEALLOCATE PREPARE `stmt`;
+
+    FLUSH PRIVILEGES;
+
+END$$
+-- 9.Procedure: remove_db_user_procedure(username)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `remove_db_user_procedure`(IN `username` VARCHAR(7))
+    SQL SECURITY DEFINER
+    MODIFIES SQL DATA
+BEGIN
+   -- Create user variables
+   DECLARE `_HOST` CHAR(14) DEFAULT '@\'localhost\'';
+   DECLARE db_username VARCHAR(9) DEFAULT NULL;
+
+   -- Escape inputs, create and execute the create user query
+   SET `db_username` = CONCAT('\'', REPLACE(TRIM(`username`), CHAR(39), CONCAT(CHAR(92), CHAR(39))), '\'');
+   SET @`sql` = CONCAT('DROP USER IF EXISTS', `db_username`, `_HOST`);
+   PREPARE `stmt` FROM @`sql`;
+   EXECUTE `stmt`;
+   DEALLOCATE PREPARE `stmt`;
+
+END$$
+-- 10.Procedure: register_student_procedure(student_name,student_surname,phone_number,adress)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `register_student_procedure`(IN `name` varchar(15),
+                                                                         IN `surname` varchar(20),
+                                                                         IN `phone` varchar(10),
+                                                                         IN `adress` varchar(40))
+    SQL SECURITY DEFINER
+    MODIFIES SQL DATA
+BEGIN
+
+    -- Add new student on the user table
+    INSERT INTO user values (DEFAULT,'student',NULL,NULL,name,surname,NULL,phone,adress);
+    -- Create new student user on Athina_db
+    CALL create_db_user_procedure('student');    
+
+END $$
+-- 11.Procedure: remove_student_procedure(student_id)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `remove_student_procedure`(IN `student_id` varchar(5))
+    SQL SECURITY DEFINER
+    MODIFIES SQL DATA
+BEGIN
+    DECLARE uname varchar(7) DEFAULT NULL;
+
+    -- Find students username
+    SELECT username INTO uname FROM user WHERE (id <=> student_id);
+    -- Remove student's db user
+    CALL remove_db_user_procedure(uname);
+    -- Remove student from the user table
+    DELETE FROM user WHERE (id = student_id);
+    
+END $$
 -- ----------------------------------------------------------------------------------------------------------------------------------
 -- TRIGGERS
 
--- Trigger: assign_credentials_trigger
-DROP TRIGGER IF EXISTS `assign_credentials_trigger`$$
+-- 1.Trigger: assign_credentials_trigger
 CREATE DEFINER=`root`@`localhost` TRIGGER `assign_credentials_trigger` BEFORE INSERT ON `user` FOR EACH ROW 
 BEGIN
     DECLARE ai_id INT(5) default NULL;
     
-    -- Since the trigger activates BEFORE the insert the automaticly incremented Id has to be "predicted".
     SELECT auto_increment INTO ai_id FROM information_schema.tables
-    WHERE table_name = 'user' AND table_schema = database();
+    WHERE table_name = 'user' AND table_schema = 'Athina_db';
     
     -- Assign username,password,email to the new user
     SET NEW.username = CONCAT(ifnull(NEW.username,""),SUBSTRING(NEW.type,1,2),LPAD(ai_id,5,0)),
@@ -349,9 +415,7 @@ BEGIN
         NEW.email = CONCAT(ifnull(NEW.email,""),SUBSTRING(NEW.type,1,2),LPAD(ai_id,5,0),'@ihu.gr');
 
 END$$
-
--- Trigger: assign_type_trigger
-DROP TRIGGER IF EXISTS `assign_type_trigger`$$
+-- 2.Trigger: assign_type_trigger
 CREATE DEFINER=`root`@`localhost` TRIGGER `assign_type_trigger` AFTER INSERT ON `user` FOR EACH ROW 
 BEGIN
 

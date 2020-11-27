@@ -5,7 +5,7 @@ BEGIN
     DECLARE ai_id INT(5) default 0;
     
     SELECT auto_increment INTO ai_id FROM information_schema.tables
-    WHERE table_name = 'user' AND table_schema = database();
+    WHERE table_name = 'user' AND table_schema = 'Athina_db';
     
     -- Assign username,password,email to the new user
     SET NEW.username = CONCAT(ifnull(NEW.username,""),SUBSTRING(NEW.type,1,2),LPAD(ai_id,5,0)),
