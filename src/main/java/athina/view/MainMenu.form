@@ -33,7 +33,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="SecrateryMenuPanel" max="32767" attributes="0"/>
+                  <Component id="SecretaryMenuPanel" max="32767" attributes="0"/>
                   <Component id="TeacherMenuPanel" alignment="0" max="32767" attributes="0"/>
                   <Component id="AdminMenuPanel" alignment="0" max="32767" attributes="0"/>
               </Group>
@@ -50,7 +50,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="TeacherMenuPanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="SecrateryMenuPanel" min="-2" max="-2" attributes="0"/>
+              <Component id="SecretaryMenuPanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="AdminMenuPanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
@@ -299,7 +299,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="SecrateryMenuPanel">
+    <Container class="javax.swing.JPanel" name="SecretaryMenuPanel">
 
       <Layout>
         <DimensionLayout dim="0">
