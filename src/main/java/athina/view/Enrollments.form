@@ -90,6 +90,9 @@
         <Property name="text" type="java.lang.String" value="&#x39d;&#x3ad;&#x3b1; &#x3b4;&#x3ae;&#x3bb;&#x3c9;&#x3c3;&#x3b7;"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton1MouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>
