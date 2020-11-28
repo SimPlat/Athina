@@ -11,8 +11,10 @@ import javax.swing.JFrame;
 
 public class MenuController {
     User user;
-    ArrayList<JFrame> menu; 
+    ArrayList<JFrame> menu;
 
+    MainMenu mm = new MainMenu();
+    //
     //us001
     public void connect(String username, String password){
         //
@@ -25,13 +27,6 @@ public class MenuController {
 
     //us003
     public void showInfo(User user){
-        //
-    }
-
-    public void showMainMenu(User user){
-        //
-        MainMenu mm = new MainMenu();
-        mm.setVisible(true);
         //
     }
 }
