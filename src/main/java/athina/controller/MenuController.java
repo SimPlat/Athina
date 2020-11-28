@@ -4,6 +4,8 @@ The MenuController is an object that is used for interactions between users and 
 package athina.controller;
 
 import athina.model.User;
+import athina.view.MainMenu;
+
 import java.util.ArrayList;
 import javax.swing.JFrame;
 
@@ -25,5 +27,11 @@ public class MenuController {
     public void showInfo(User user){
         //
     }
-    
+
+    public void showMainMenu(User user){
+        //
+        MainMenu mm = new MainMenu();
+        mm.setVisible(true);
+        //
+    }
 }
