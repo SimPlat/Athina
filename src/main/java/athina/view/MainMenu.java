@@ -5,6 +5,8 @@
  */
 package athina.view;
 
+import athina.model.User;
+
 /**
  *
  * @author it174
@@ -288,6 +290,8 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void EnrollmentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnrollmentButtonActionPerformed
         // TODO add your handling code here:
+        //Enrollments en = new Enrollments();
+        //en.setVisible(true);
     }//GEN-LAST:event_EnrollmentButtonActionPerformed
 
     private void CourseScoreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CourseScoreButtonActionPerformed
