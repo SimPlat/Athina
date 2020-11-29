@@ -31,22 +31,22 @@ Database code is located in `src/main/db`.
 
 ---
 
-1. Global Routines:  
+1. Global:  
     * `login_function.sql (varchar username, varchar pass, enum('student','secretary','professor','admin') type)`
     * `user_info_procedure.sql (int user_id, enum('student','secretary','professor','admin') type)`
-2. System Routines:  
+2. System:  
     * `assign_credentials_trigger.sql`
     * `assign_type_trigger.sql`
     * `create_db_user_procedure.sql`
     * `grand_db_privileges_procedure.sql`
     * `remove_db_user_procedure.sql`
-3. Student Routines:  
+3. Student:  
     * `available_lectures_procedure.sql (int student_id)`
     * `current_enrollments_procedure.sql (int student_id)`
     * `new_enrollment_procedure.sql (int student_id, int lecture_id)`
     * `remove_enrollment_procedure.sql (int student_id, int lecture_id)`
     * `show_enrollments_procedure.sql (int student_id)`
-4. Secretary Routines:  
+4. Secretary:  
     * `register_student_procedure.sql (varchar name, varchar surname, varchar phoneNo, varchar adress)`
     * `remove_student_procedure.sql (int student_id)`
     
