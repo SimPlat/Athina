@@ -71,6 +71,13 @@ public class LoginController {
             return userType;
         return null;
     }
-
+    //
+    public static String loginCheck(String username,String password,String user_type){
+        return null;
+    }
+    //
+    public static String checkResult(String rs){
+        return null;
+    }
 }
 

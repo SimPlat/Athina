@@ -4,22 +4,27 @@ The Student controller contains all interactions of Student type Users that conn
 package athina.controller;
 import athina.model.Lecture;
 import athina.model.Student;
+import java.sql.Date;
 
 public class StudentController {
     Student std;
 
-    //us005
-    public void showAvailableLectures(){
-        //
+    public static Lecture[] availableCoursesQueryParameters(Student student){
+        return null;
     }
-
-    public void onClickUploadEnrollments(Lecture lectures[]){
-        //
+    public static String checkCoursesResultSet(Student student,Date cemester){
+        return null;
     }
-    
-    //us006
-    public void onClickUploadEditedEnrollment(Lecture lectures[]){
-        //
+    public static void uploadNewEnrollment(Lecture[] choosenLectures){
+        
     }
-
+    public static boolean uploadNewEnrollmentQuery(Lecture[] choosenLectures){
+        return false;
+    }
+    public static void updateEnrollment(Lecture[] choosenLectures,String id){
+        
+    }
+    public static boolean updateEnrollmentQuery(Lecture[] choosenLectures,String id){
+        return false;
+    }
 }
