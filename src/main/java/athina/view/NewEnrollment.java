@@ -164,7 +164,18 @@ public class NewEnrollment extends javax.swing.JFrame {
             }
         });
     }
-
+    public void onClickEventShowNewEnrollment(){
+        
+    }
+    public void updateNewEnrollmentView(){
+        
+    }
+    public static void selectChoosenLectures(){
+        
+    }
+    public void onClickUploadEditedEnrollment(choosenLectures,id){
+        
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox1;
