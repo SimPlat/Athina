@@ -2,9 +2,9 @@ package athina.model;
 
 public class Student extends User {
 
-	Secratary Creates;
+	Secretary Creates;
 	private int studentdD;
-	private Secratary secretary;
+	private Secretary secretary;
 	private Enrollment[] enrollments;
 
 }

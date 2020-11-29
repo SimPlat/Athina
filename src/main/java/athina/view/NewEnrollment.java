@@ -5,6 +5,8 @@
  */
 package athina.view;
 
+import athina.model.Lecture;
+
 /**
  *
  * @author it174
@@ -187,4 +189,18 @@ public class NewEnrollment extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     // End of variables declaration//GEN-END:variables
+    //us005
+    public void onClickEventShowNewEnrollment(){
+        //
+        //NewEnrollment ne = new NewEnrollment();
+        //ne.setVisible(true);
+    }
+
+    public void updateNewEnrollmentView(){
+        //
+    }
+
+    public void selectChoosenLectures(Lecture lectures[]){
+        //
+    }
 }

@@ -5,6 +5,10 @@
  */
 package athina.view;
 
+import athina.model.Secretary;
+import athina.model.Student;
+import athina.model.User;
+
 /**
  *
  * @author it174
@@ -43,7 +47,7 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         ManagePersonelButton = new javax.swing.JButton();
         ManageLecturesButton = new javax.swing.JButton();
-        SecrateryMenuPanel = new javax.swing.JPanel();
+        SecretaryMenuPanel = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         ManageStudents = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
@@ -219,25 +223,25 @@ public class MainMenu extends javax.swing.JFrame {
 
         jButton8.setText("Βεβαιώσεις");
 
-        javax.swing.GroupLayout SecrateryMenuPanelLayout = new javax.swing.GroupLayout(SecrateryMenuPanel);
-        SecrateryMenuPanel.setLayout(SecrateryMenuPanelLayout);
-        SecrateryMenuPanelLayout.setHorizontalGroup(
-            SecrateryMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SecrateryMenuPanelLayout.createSequentialGroup()
-                .addGroup(SecrateryMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(SecrateryMenuPanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout SecretaryMenuPanelLayout = new javax.swing.GroupLayout(SecretaryMenuPanel);
+        SecretaryMenuPanel.setLayout(SecretaryMenuPanelLayout);
+        SecretaryMenuPanelLayout.setHorizontalGroup(
+            SecretaryMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SecretaryMenuPanelLayout.createSequentialGroup()
+                .addGroup(SecretaryMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(SecretaryMenuPanelLayout.createSequentialGroup()
                         .addGap(108, 108, 108)
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(SecrateryMenuPanelLayout.createSequentialGroup()
+                    .addGroup(SecretaryMenuPanelLayout.createSequentialGroup()
                         .addGap(56, 56, 56)
-                        .addGroup(SecrateryMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(SecretaryMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(ManageStudents, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
                             .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        SecrateryMenuPanelLayout.setVerticalGroup(
-            SecrateryMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SecrateryMenuPanelLayout.createSequentialGroup()
+        SecretaryMenuPanelLayout.setVerticalGroup(
+            SecretaryMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SecretaryMenuPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -259,7 +263,7 @@ public class MainMenu extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(SecrateryMenuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SecretaryMenuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(TeacherMenuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(AdminMenuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -273,7 +277,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TeacherMenuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(SecrateryMenuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SecretaryMenuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(AdminMenuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -288,6 +292,8 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void EnrollmentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnrollmentButtonActionPerformed
         // TODO add your handling code here:
+        //Enrollments en = new Enrollments();
+        //en.setVisible(true);
     }//GEN-LAST:event_EnrollmentButtonActionPerformed
 
     private void CourseScoreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CourseScoreButtonActionPerformed
@@ -344,7 +350,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton ManagePersonelButton;
     private javax.swing.JButton ManageStudents;
     private javax.swing.JButton MyLecturesButton;
-    private javax.swing.JPanel SecrateryMenuPanel;
+    private javax.swing.JPanel SecretaryMenuPanel;
     private javax.swing.JPanel StudentMenuPanel;
     private javax.swing.JPanel TeacherMenuPanel;
     private javax.swing.JButton UserInfoButton;
@@ -355,4 +361,24 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     // End of variables declaration//GEN-END:variables
+    public void showMainMenu(User user){
+        //
+        
+        //
+        if(user instanceof Student){
+            TeacherMenuPanel.setVisible(false);
+            SecretaryMenuPanel.setVisible(false);
+            AdminMenuPanel.setVisible(false);
+        }
+        else if(user instanceof Secretary){
+            StudentMenuPanel.setVisible(false);
+            TeacherMenuPanel.setVisible(false);
+            AdminMenuPanel.setVisible(false);
+        }
+        else{
+            StudentMenuPanel.setVisible(false);
+            TeacherMenuPanel.setVisible(false);
+            SecretaryMenuPanel.setVisible(false);
+        }
+    }
 }

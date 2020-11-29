@@ -42,6 +42,11 @@ public class Enrollments extends javax.swing.JFrame {
 
         jButton1.setText("Νέα δήλωση");
         jButton1.setToolTipText("");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
 
         jButton2.setText("Επεξεργασία δηλωσης");
 
@@ -98,6 +103,12 @@ public class Enrollments extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+        NewEnrollment ne = new NewEnrollment();
+        ne.setVisible(true);
+    }//GEN-LAST:event_jButton1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -149,4 +160,16 @@ public class Enrollments extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
+    //us005
+    public void updateEnrollmentView(){
+        //
+    }
+
+    public void hideEnrollmentButton(){
+        //
+    }
+    public void showEditEnrollmentButton(){
+        //
+    }
 }
