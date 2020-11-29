@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package athina.view;
-
+import athina.controller.*;
 /**
  *
  * @author it174
@@ -53,6 +53,11 @@ public class LoginView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         ConnectButton.setText("Σύνδεση");
+        ConnectButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ConnectButtonMouseClicked(evt);
+            }
+        });
         ConnectButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ConnectButtonActionPerformed(evt);
@@ -72,7 +77,7 @@ public class LoginView extends javax.swing.JFrame {
             }
         });
 
-        LogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/athina/view/cropped-ihu-logo_el-16.png"))); // NOI18N
+        LogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/athinaswing/cropped-ihu-logo_el-16.png"))); // NOI18N
         LogoLabel.setText("jLabel1");
 
         UsernameLabel.setText("Username");
@@ -143,6 +148,13 @@ public class LoginView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_PasswordTextFieldActionPerformed
 
+    private void ConnectButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConnectButtonMouseClicked
+        
+        public void onClickEventShowInfoView(User user){
+        
+        }
+    }//GEN-LAST:event_ConnectButtonMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -175,10 +187,13 @@ public class LoginView extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new LoginView().setVisible(true);
+                connect(UsernameTextField,password)
             }
         });
     }
-
+    public static void updateInfoView(){
+        //
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ConnectButton;
     private javax.swing.JLabel LogoLabel;
@@ -190,6 +205,7 @@ public class LoginView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
+    private 
     public void hideLoginView(){
         //
     }
