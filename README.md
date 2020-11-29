@@ -29,8 +29,6 @@ Database code is located in `src/main/db`.
 | Student | Students & Secretaries |
 | Secretary | Secretaries |
 
----
-
 1. Global:  
     * `login_function.sql (varchar username, varchar pass, enum('student','secretary','professor','admin') type)`
     * `user_info_procedure.sql (int user_id, enum('student','secretary','professor','admin') type)`
