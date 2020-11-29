@@ -4,6 +4,7 @@
 - [General Information](#general-information)  
 - [Database](#database)  
     - [Database Setup](#database-setup)  
+    - [Database Routines](#database-routines)  
 
 ---
 
@@ -21,10 +22,12 @@ Database code is located in `src/main/db`.
 2. Execute `DB_data.sql` to insert a testing data set.
 
 ### Database Routines
-*Global -> All user access*   
-*System -> No direct user access, db specific functions*  
-*Student -> Student & Secretary access*  
-*Secretary -> Secretary access*  
+| Category | Access |
+| --- | --- |
+| System | None |
+| Global | All Users |
+| Student | Students & Secretaries |
+| Secretary | Secretaries |
 
 ---
 
