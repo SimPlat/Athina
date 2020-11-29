@@ -22,7 +22,7 @@ Database code is located in `src/main/db`.
 
 ### Database Routines
 *Global -> All user access*   
-*System -> No direct user access, db specific functions*
+*System -> No direct user access, db specific functions*  
 *Student -> Student & Secretary access*  
 *Secretary -> Secretary access*  
 
