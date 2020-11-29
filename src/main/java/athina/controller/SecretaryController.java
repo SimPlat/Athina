@@ -7,17 +7,17 @@ import athina.model.Student;
 
 public class SecretaryController {
     Secretary secr;
-
-    //us011
-    public void onClickEventUploadStudent(String info){
-        //
+    
+    public static Boolean UploadNewStudent(String Info){
+        return null;
     }
-
-    public void onClickEventSearchStudent(String AM){
-        //
+    public static String UploadNewStudentQuery(String Info){
+        return null;
     }
-
-    public void onClickEventDeleteStudent(Student student){
-        //
+    public static Boolean SearchStudent(String AM){
+        return null;
+    }
+    public static String SearchStudentQuery(String AM){
+        return null;
     }
 }
