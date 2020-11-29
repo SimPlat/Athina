@@ -12,6 +12,11 @@ import athina.controller.*;
 public class LoginView extends javax.swing.JFrame {
 
     /**
+     *
+     */
+    private static final long serialVersionUID = -5994528210002301049L;
+
+    /**
      * Creates new form LoginView
      */
     public LoginView() {
@@ -150,9 +155,8 @@ public class LoginView extends javax.swing.JFrame {
 
     private void ConnectButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConnectButtonMouseClicked
         
-        public void onClickEventShowInfoView(User user){
-        
-        }
+    // onClickEventShowInfoView(User user){}
+    
     }//GEN-LAST:event_ConnectButtonMouseClicked
 
     /**
@@ -187,7 +191,6 @@ public class LoginView extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new LoginView().setVisible(true);
-                connect(UsernameTextField,password)
             }
         });
     }
@@ -205,7 +208,7 @@ public class LoginView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
-    private 
+    
     public void hideLoginView(){
         //
     }

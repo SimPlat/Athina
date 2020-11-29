@@ -15,6 +15,8 @@ public class Main {
         NewStudentView ns = new NewStudentView();
         StudentsView sv = new StudentsView();
         
+        lc.dbConnect();
+
         mm.setVisible(true);
         en.setVisible(true);
         iv.setVisible(true);

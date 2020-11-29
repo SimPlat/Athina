@@ -11,7 +11,6 @@ public class LoginController {
     final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
     final String db_url = "jdbc:mysql://localhost/Athina_db";
     Connection conn = null;
-    //this is a comment
     
     public LoginController(String username, String password){
         this.username = username;
@@ -44,28 +43,6 @@ public class LoginController {
 
     public void dbConnect(){
         checkUsernameType();
-        /**
-        switch (userType) {
-            case "student":
-                db_username = "athina_student";
-                db_password = "athina_student";
-                break;
-            case "secretary":
-                db_username = "athina_secretary";
-                db_password = "athina_secretary";
-                break;
-            case "professor":
-                db_username = "athina_professor";
-                db_password = "athina_professor";
-                break;
-            case "admin":
-                db_username = "athina_admin";
-                db_password = "athina_admin";
-                break;
-            default:
-                // Unkown user type
-        } 
-        */
         try {
             // Connect to DB
             Class.forName("com.mysql.cj.jdbc.Driver");
