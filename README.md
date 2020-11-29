@@ -9,8 +9,8 @@
 ---
 
 ## General information
-Athina is a University IT system able to support the basic IT needs of any higher education institution.   
-It is a team project developed for the needs of the 'Software Engineering' lecture.
+Athina is a University IT system able to support the basic IT needs of a higher education institution.   
+It is a team project developed for the needs of the 'Software Engineering' lecture of International Hellenic University.
 
 ---
 
