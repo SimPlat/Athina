@@ -132,7 +132,16 @@ public class Enrollments extends javax.swing.JFrame {
             }
         });
     }
-
+    public void updateEnrollmentView(){
+        
+    }
+    public static void hideNewEnrollmentButton(){
+        
+    }
+    public static void showEditEnrollmentButton(){
+        
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
