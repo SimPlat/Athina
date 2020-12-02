@@ -10,6 +10,7 @@ public class Secretary extends User {
 	private int secretaryID;
 
 	public Secretary(Connection conn){
+		// TODO
 	}
 
 }
