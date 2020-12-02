@@ -4,29 +4,22 @@ The MenuController is an object that is used for interactions between users and 
 package athina.controller;
 
 import athina.model.User;
-import athina.view.MainMenu;
+import athina.view.global.MainMenuView;
 
 import java.util.ArrayList;
 import javax.swing.JFrame;
 
-public class MenuController {
+public class MainMenuController {
     User user;
     ArrayList<JFrame> menu;
 
-    MainMenu mm = new MainMenu();
-    //
-    //us001
     public void connect(String username, String password){
-        //
     }
 
     public String checkUserType(String username){
-        //
         return null;
     }
 
-    //us003
     public void showInfo(User user){
-        //
     }
 }

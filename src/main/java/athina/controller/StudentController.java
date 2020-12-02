@@ -1,30 +1,35 @@
-/*
-The Student controller contains all interactions of Student type Users that connect with the database
- */
 package athina.controller;
-import athina.model.Lecture;
+
 import athina.model.Student;
-import java.sql.Date;
+import athina.view.global.*;
+import java.sql.*;
+import java.util.ArrayList;
 
-public class StudentController {
-    Student std;
+import javax.swing.JFrame;
 
-    public static Lecture[] availableCoursesQueryParameters(Student student){
-        return null;
+public class StudentController implements UserController{
+    private Student student;
+    private ArrayList<JFrame> frameList;
+    private Connection connection;
+
+    public StudentController(Student student,ArrayList<JFrame> frameList,Connection connection){
+        this.student = student;
+        this.frameList = frameList;
+        this.connection = connection;
     }
-    public static String checkCoursesResultSet(Student student,Date cemester){
-        return null;
+
+    // Updates user info frame
+    public void displayUserInfo(){
+        InfoView infoView = (InfoView) frameList.get(0);
+        infoView.setId(student.getId());
+        infoView.setFirstName(student.getFirstName());
+        infoView.setLastName(student.getLastName());
+        infoView.setEmail(student.getEmail());
+        infoView.setPhoneNumber(student.getPhoneNumber());
+        infoView.setAdress(student.getAdress());
+        infoView.setEcts(student.getEcts());
+        infoView.setVisible(true);
     }
-    public static void uploadNewEnrollment(Lecture[] choosenLectures){
-        
-    }
-    public static boolean uploadNewEnrollmentQuery(Lecture[] choosenLectures){
-        return false;
-    }
-    public static void updateEnrollment(Lecture[] choosenLectures,String id){
-        
-    }
-    public static boolean updateEnrollmentQuery(Lecture[] choosenLectures,String id){
-        return false;
-    }
+
+
 }

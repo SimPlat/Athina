@@ -6,22 +6,40 @@ import java.sql.*;
 public class LoginController {
     private String username;
     private String password;
-    private String userType = "";
-
+    private String userType = "sd";
+    private boolean connected = false;
+    private Connection conn = null;
     final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
     final String db_url = "jdbc:mysql://localhost/Athina_db";
-    Connection conn = null;
     
-    public LoginController(String username, String password){
+    public LoginController(){
+    }
+
+    public void setUsername(String username){
         this.username = username;
+    }
+
+    public void setPassword(String password){
         this.password = password;
     }
 
+    public int getUserId(){
+        return Integer.valueOf(username.substring(2));
+    }
+
+    public String getUserType(){
+        return userType;
+    }
+
+    public Connection getDbConnection(){
+        return conn;
+    }
+
     public void checkUsernameType(){
-        if (Pattern.matches("^[a-z]{2}[0-9]{8}$",username)){
+        if (Pattern.matches("^[a-z]{2}[0-9]{5}$",username)){
             switch(username.substring(0,2)){
-                case "st":    
-                    userType="student";
+                case "st":   
+                    this.userType="student";
                     break;
                 case "se":
                     userType="secretary";
@@ -51,10 +69,10 @@ public class LoginController {
         }
         catch(SQLException se){se.printStackTrace();}   // Handle JDBC errors
         catch(Exception e){e.printStackTrace();}        // Handle Class.forName errors
+        connected = true;
     }
-
     // Invokes DB routine login_function(String username, String password, Enum type(studen,secretary,professor,admin))
-    public String logIn(){
+    public String logInValidation(){
         boolean validation = false;
         dbConnect();
         try(PreparedStatement prepStmnt = conn.prepareStatement("SELECT login_function(?,?,?) as login_function",
@@ -71,11 +89,11 @@ public class LoginController {
             return userType;
         return null;
     }
-    //
-    public static String loginCheck(String username,String password,String user_type){
-        return null;
+
+    public boolean connected(){
+        return connected;
     }
-    //
+
     public static String checkResult(String rs){
         return null;
     }
