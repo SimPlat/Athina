@@ -1,10 +1,17 @@
 package athina.view.secretary;
 
+import athina.controller.SecretaryController;
+
 public class StudentsView extends javax.swing.JFrame {
 	private static final long serialVersionUID = -8262023502964023183L;
+	private SecretaryController secretaryController;
 
 	public StudentsView() {
 		initComponents();
+	}
+
+	public void setController(SecretaryController secretaryController) {
+		this.secretaryController = secretaryController;
 	}
 
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {

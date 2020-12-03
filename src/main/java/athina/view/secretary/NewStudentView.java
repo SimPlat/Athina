@@ -1,15 +1,22 @@
 package athina.view.secretary;
 
+import athina.controller.SecretaryController;
+
 public class NewStudentView extends javax.swing.JFrame {
 	private static final long serialVersionUID = 6340578523743029518L;
+	private SecretaryController secretaryController;
 
 	public NewStudentView() {
 		initComponents();
 	}
 
+	public void setController(SecretaryController secretaryController) {
+		this.secretaryController = secretaryController;
+	}
+
 	public void onClickEventShowNewStudentView() {  
 	}
-	
+
 	public static void main(String args[]) {
 		/* Set the Nimbus look and feel */
 		//<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

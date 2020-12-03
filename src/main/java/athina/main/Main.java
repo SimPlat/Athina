@@ -32,18 +32,18 @@ public class Main {
 		// Continue the flow after the connection branching out to specific user type
 		switch(((LoginView) mainFrame).getController().getUserType()) {
 			case "student":
-			// Current student connection
-			connection = ((LoginView) mainFrame).getController().getDbConnection();
+				// Current student connection
+				connection = ((LoginView) mainFrame).getController().getDbConnection();
 			 
-			// Create user student
-			ussr =  new Student(((LoginView) mainFrame).getController().getUserId(),connection);
+				// Create user student
+				ussr =  new Student(((LoginView) mainFrame).getController().getUserId(),connection);
 			 
-			// Create the needed controller and frames for student
-			frameList = new ArrayList<JFrame>();
-			frameList.add(0,new InfoView());
-			frameList.add(1,new EnrollmentsView());
-			frameList.add(2,new NewEnrollmentView());
-			controller = new StudentController((Student) ussr,frameList,connection);
+				// Create the needed controller and frames for student
+				frameList = new ArrayList<JFrame>();
+				frameList.add(0,new InfoView());
+				frameList.add(1,new EnrollmentsView());
+				frameList.add(2,new NewEnrollmentView());
+				controller = new StudentController((Student) ussr,frameList,connection);
 			 
 			 	// Replace login with main menu on the main frame
 				mainFrame.dispose();
@@ -51,6 +51,23 @@ public class Main {
 				mainFrame.setVisible(true);
 				break;
 			case "secretary":
+				// Current secretary connection
+				connection = ((LoginView) mainFrame).getController().getDbConnection();
+				
+				// Create user student
+				ussr =  new Secretary(((LoginView) mainFrame).getController().getUserId(),connection);
+				
+				// Create the needed controller and frames for student
+				frameList = new ArrayList<JFrame>();
+				frameList.add(0,new InfoView());
+				frameList.add(1,new StudentsView());
+				frameList.add(2,new NewStudentView());
+				controller = new SecretaryController((Secretary) ussr,frameList,connection);
+			 
+			 	// Replace login with main menu on the main frame
+				mainFrame.dispose();
+				mainFrame = new MainMenuView(controller);
+				mainFrame.setVisible(true);
 				break;
 			default:
 				ussr = null; // Государственный гимн СССР
