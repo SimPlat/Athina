@@ -45,7 +45,7 @@ public class Main {
 			frameList.add(2,new NewEnrollmentView());
 			controller = new StudentController((Student) ussr,frameList,connection);
 			 
-			 // Replace login with main menu on the main frame
+			 	// Replace login with main menu on the main frame
 				mainFrame.dispose();
 				mainFrame = new MainMenuView(controller);
 				mainFrame.setVisible(true);

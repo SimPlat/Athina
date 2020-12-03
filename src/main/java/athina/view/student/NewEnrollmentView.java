@@ -1,18 +1,23 @@
 package athina.view.student;
 
-import athina.model.Lecture;
+import athina.controller.StudentController;
 
 public class NewEnrollmentView extends javax.swing.JFrame {
 	private static final long serialVersionUID = 3054003590949168789L;
-
+	private StudentController studentController;
+	
 	public NewEnrollmentView() {
 		initComponents();
 	}
 
-	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+	public void setController(StudentController studentController) {
+		this.studentController = studentController;
 	}
-	public void selectChoosenLectures(Lecture lectures[]){
+
+	private void onClickEventSubmitEnrollment(java.awt.event.ActionEvent evt) {
+		studentController.submitEnrollment();
 	}
+
 	public void onClickEventShowNewEnrollment(){ 
 	}
 	public void updateNewEnrollmentView(){ 
@@ -93,7 +98,7 @@ public class NewEnrollmentView extends javax.swing.JFrame {
 		jButton1.setText("Ολοκλήρωση δήλωσης");
 		jButton1.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				jButton1ActionPerformed(evt);
+				onClickEventSubmitEnrollment(evt);
 			}
 		});
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

@@ -8,7 +8,7 @@ public class MainMenuView extends javax.swing.JFrame {
 
 	public MainMenuView(UserController controller) {
 		initComponents();
-		this.controller = (StudentController) controller;
+		this.controller = controller;
 		showMainMenu(controller);
 	}
 
@@ -27,11 +27,11 @@ public class MainMenuView extends javax.swing.JFrame {
 	}
 
 	private void UserInfoButtonActionPerformed(java.awt.event.ActionEvent evt) {
-		controller.displayUserInfo();
+		controller.displayUserInfoView();
 	}
 
 	private void EnrollmentButtonActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO
+		((StudentController) controller).displayEnrollmentsView();
 	}
 	private void CourseScoreButtonActionPerformed(java.awt.event.ActionEvent evt) {
 		// TODO

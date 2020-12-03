@@ -1,9 +1,6 @@
-/*
-The SecrataryController contains all interactions of Secretary type Users that connect with the database
- */
 package athina.controller;
+
 import athina.model.Secretary;
-import athina.model.Student;
 
 public class SecretaryController {
 	Secretary secr;

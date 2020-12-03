@@ -1,16 +1,23 @@
 package athina.view.student;
 
+import athina.controller.StudentController;
+
 public class EnrollmentsView extends javax.swing.JFrame {
 	private static final long serialVersionUID = -9034476647528064051L;
+	private StudentController studentController;
 
 	public EnrollmentsView() {
 		initComponents();
 	}
 
-	private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {
-		NewEnrollmentView ne = new NewEnrollmentView();
-		ne.setVisible(true);
+	public void setController(StudentController studentController) {
+		this.studentController = studentController;
 	}
+
+	private void NewEnrollmentButtonActionPerformed(java.awt.event.MouseEvent evt) {
+		studentController.displayNewEnrollmentView();
+	}
+
 	public void hideEnrollmentButton(){
 	}
 	public void updateEnrollmentView(){ 
@@ -71,7 +78,7 @@ public class EnrollmentsView extends javax.swing.JFrame {
 		jButton1.setToolTipText("");
 		jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
 			public void mouseClicked(java.awt.event.MouseEvent evt) {
-				jButton1MouseClicked(evt);
+				NewEnrollmentButtonActionPerformed(evt);
 			}
 		});
 		jButton2.setText("Επεξεργασία δηλωσης");
