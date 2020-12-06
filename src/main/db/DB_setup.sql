@@ -315,7 +315,7 @@ BEGIN
 END $$
 -- 8.Procedure: create_db_user_procedure(user_type)
 CREATE DEFINER=`root`@`localhost` PROCEDURE `create_db_user_procedure`(IN `user_type` 
-                                                                           ENUM('secretary','student','professor','admin')) 
+                                                                           ENUM('student','secretary','professor','admin')) 
     SQL SECURITY DEFINER
     MODIFIES SQL DATA
 BEGIN
@@ -385,11 +385,12 @@ BEGIN
     FLUSH PRIVILEGES;
 
     IF (user_type LIKE 'student') THEN
-        -- Grand student access to global(2) and student specific(5) routines 
+        -- Grand student access to global(2) routines 
         SET @`sql` = CONCAT('GRANT EXECUTE ON FUNCTION Athina_db.login_function TO' , `db_username_host`);
         PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`; 
         SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.user_info_procedure TO' , `db_username_host`);
         PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
+        -- Grand student access to student specific(5) routines
         SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.available_lectures_procedure TO' , `db_username_host`);
         PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
         SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.show_enrollments_procedure TO' , `db_username_host`);
@@ -401,11 +402,27 @@ BEGIN
         SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.remove_enrollment_procedure TO' , `db_username_host`);
         PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
     ELSEIF (user_type LIKE 'secretary') THEN
-        -- Grand secretary access to global(2) and secretary specific(0) routines 
+        -- Grand secretary access to global(2) routines 
         SET @`sql` = CONCAT('GRANT EXECUTE ON FUNCTION Athina_db.login_function TO' , `db_username_host`);
         PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`; 
         SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.user_info_procedure TO' , `db_username_host`);
         PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
+        -- Grand secretary access to student specific(5) routines
+        SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.available_lectures_procedure TO' , `db_username_host`);
+        PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
+        SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.show_enrollments_procedure TO' , `db_username_host`);
+        PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
+        SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.current_enrollments_procedure TO' , `db_username_host`);
+        PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
+        SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.new_enrollment_procedure TO' , `db_username_host`);
+        PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
+        SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.remove_enrollment_procedure TO' , `db_username_host`);
+        PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
+        -- Grand secretary access to secretary specific(2) routines
+        SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.register_student_procedure TO' , `db_username_host`);
+        PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
+        SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.remove_student_procedure TO' , `db_username_host`);
+        PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;        
     ELSEIF (user_type LIKE 'professor') THEN
         -- Grand professor access to global(2) and professor specific(0) routines 
         SET @`sql` = CONCAT('GRANT EXECUTE ON FUNCTION Athina_db.login_function TO' , `db_username_host`);
@@ -454,6 +471,22 @@ BEGIN
     -- Remove student from the user table
     DELETE FROM user WHERE (id = student_id);
     
+END $$
+-- 13.Procedure: register_employee_procedure(employee_type,employee_name,employee_surname,phone_number,adress)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `register_employee_procedure`(IN `type` enum('student','secretary','professor','admin'),
+                                                                          IN `name` varchar(15),
+                                                                          IN `surname` varchar(20),
+                                                                          IN `phone` varchar(10),
+                                                                          IN `adress` varchar(40))
+    SQL SECURITY DEFINER
+    MODIFIES SQL DATA
+BEGIN
+
+    -- Add new employee on the user table
+    INSERT INTO user values (DEFAULT,type,NULL,NULL,name,surname,NULL,phone,adress);
+    -- Create new student user on Athina_db
+    CALL create_db_user_procedure(type);    
+
 END $$
 -- ----------------------------------------------------------------------------------------------------------------------------------
 -- TRIGGERS
