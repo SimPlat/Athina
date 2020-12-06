@@ -17,7 +17,7 @@ public class StudentController implements UserController{
 		this.frameList = frameList;
 		this.connection = connection;
 		((EnrollmentsView) frameList.get(1)).setController(this);
-		((EnrollmentsView) frameList.get(2)).setController(this);
+		((NewEnrollmentView) frameList.get(2)).setController(this);
 	}
 
 	// Updates user info frame

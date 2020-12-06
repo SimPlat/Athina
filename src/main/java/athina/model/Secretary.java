@@ -13,10 +13,10 @@ public class Secretary extends User {
 
 	private void getInfoFromDb(int id){
 		try(PreparedStatement prepStmnt = connection.prepareStatement("CALL user_info_procedure(?,?)",
-																	  ResultSet.TYPE_SCROLL_SENSITIVE,
-																	  ResultSet.CONCUR_UPDATABLE)){
-            prepStmnt.setString(1, String.valueOf(id));
-			prepStmnt.setString(2, Type.student.name());
+																	  					  ResultSet.TYPE_SCROLL_SENSITIVE,
+																	  					  ResultSet.CONCUR_UPDATABLE)){
+         prepStmnt.setString(1, String.valueOf(id));
+			prepStmnt.setString(2, Type.secretary.name());
 			ResultSet rs = prepStmnt.executeQuery();
 			
 			if(rs.next()){

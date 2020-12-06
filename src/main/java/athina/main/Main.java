@@ -14,11 +14,11 @@ public class Main {
 		// Standard generalized variables
 		boolean flag = true;             // Wait for connection signal flag
 		Connection connection;           // DB Connection 
-		User ussr;                       // Connected user
+		User user;                       // Connected user
 		UserController controller;       // User controller
 		JFrame mainFrame;                // Main frame
 		ArrayList<JFrame> frameList;     // User specific frames
-		
+			
 		// Initialized login frame
 		mainFrame = new LoginView(new LoginController());
 		mainFrame.setVisible(true);
@@ -36,14 +36,14 @@ public class Main {
 				connection = ((LoginView) mainFrame).getController().getDbConnection();
 			 
 				// Create user student
-				ussr =  new Student(((LoginView) mainFrame).getController().getUserId(),connection);
+				user =  new Student(((LoginView) mainFrame).getController().getUserId(),connection);
 			 
 				// Create the needed controller and frames for student
 				frameList = new ArrayList<JFrame>();
 				frameList.add(0,new InfoView());
 				frameList.add(1,new EnrollmentsView());
 				frameList.add(2,new NewEnrollmentView());
-				controller = new StudentController((Student) ussr,frameList,connection);
+				controller = new StudentController((Student) user,frameList,connection);
 			 
 			 	// Replace login with main menu on the main frame
 				mainFrame.dispose();
@@ -55,14 +55,14 @@ public class Main {
 				connection = ((LoginView) mainFrame).getController().getDbConnection();
 				
 				// Create user student
-				ussr =  new Secretary(((LoginView) mainFrame).getController().getUserId(),connection);
+				user =  new Secretary(((LoginView) mainFrame).getController().getUserId(),connection);
 				
 				// Create the needed controller and frames for student
 				frameList = new ArrayList<JFrame>();
 				frameList.add(0,new InfoView());
 				frameList.add(1,new StudentsView());
 				frameList.add(2,new NewStudentView());
-				controller = new SecretaryController((Secretary) ussr,frameList,connection);
+				controller = new SecretaryController((Secretary) user,frameList,connection);
 			 
 			 	// Replace login with main menu on the main frame
 				mainFrame.dispose();
@@ -70,8 +70,7 @@ public class Main {
 				mainFrame.setVisible(true);
 				break;
 			default:
-				ussr = null; // Государственный гимн СССР
-		}
-					
-	}
+				user = null; // Государственный гимн СССР
+		}			
+	} 
 }
