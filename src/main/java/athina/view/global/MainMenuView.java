@@ -36,8 +36,8 @@ public class MainMenuView extends javax.swing.JFrame {
 	private void CourseScoreButtonActionPerformed(java.awt.event.ActionEvent evt) {
 		// TODO
 	}
-	private void ManageStudentsActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO
+	private void ManageStudentsButtonActionPerformed(java.awt.event.ActionEvent evt) {
+		((SecretaryController) controller).displayStudentsView();
 	}
 
 	// UI declaration - do not modify
@@ -231,7 +231,7 @@ public class MainMenuView extends javax.swing.JFrame {
 		ManageStudents.setToolTipText("");
 		ManageStudents.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				ManageStudentsActionPerformed(evt);
+				ManageStudentsButtonActionPerformed(evt);
 			}
 		});
 		jButton8.setText("Βεβαιώσεις");

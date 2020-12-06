@@ -14,15 +14,14 @@ public class StudentsView extends javax.swing.JFrame {
 		this.secretaryController = secretaryController;
 	}
 
-	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+	private void insertStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {
+		secretaryController.displayNewStudentView();
 	}
-	private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
+	private void findStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {
+		System.out.println("REEEEEEEEEEEEEEEEEE");
 	}
-	private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
-	}
-	public void showStudentsView(){
-	}
-	public void UpdateStudentView(){
+	private void deleteStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {
+		System.out.println("REEEEEEEEEEEEEEEEEE");
 	}
 	
 	public static void main(String args[]) {
@@ -83,27 +82,28 @@ public class StudentsView extends javax.swing.JFrame {
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-		jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/athina/view/cropped-ihu-logo_el-16.png"))); // NOI18N
+		jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/athina/view/cropped-ihu-logo_el-16.png")));
 		jLabel1.setText("jLabel1");
 		jLabel2.setText("Διαχείρηση φοιτητών");
 		jButton1.setText("Προσθήκη φοιτητών");
 		jButton1.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				jButton1ActionPerformed(evt);
+				insertStudentButtonActionPerformed(evt);
 			}
 		});
 		jLabel3.setText("ΑΜ φοιτητή:");
 		jTextField1.setText("stXXXXXX");
-		jTextField1.addActionListener(new java.awt.event.ActionListener() {
+		jButton2.setText("Εύρεση φοιτητή");
+		jButton2.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				jTextField1ActionPerformed(evt);
+				findStudentButtonActionPerformed(evt);
 			}
 		});
-		jButton2.setText("Εύρεση φοιτητή");
+
 		jButton3.setText("Διαγραφή φοιτητή");
 		jButton3.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				jButton3ActionPerformed(evt);
+				deleteStudentButtonActionPerformed(evt);
 			}
 		});
 		jLabel5.setText("Κλεανθης Σμαραγδένιος");

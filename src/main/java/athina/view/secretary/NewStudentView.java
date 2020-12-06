@@ -14,9 +14,23 @@ public class NewStudentView extends javax.swing.JFrame {
 		this.secretaryController = secretaryController;
 	}
 
-	public void onClickEventShowNewStudentView() {  
+	public String getName(){
+		return jTextField1.getText();
 	}
 
+	public String getSurname(){
+		return jTextField2.getText();
+	}
+
+	public String getPhoneNumber(){
+		// TODO
+		return null; 
+	}
+	
+	public String getAdress(){
+		return jTextField3.getText();
+	}
+	
 	public static void main(String args[]) {
 		/* Set the Nimbus look and feel */
 		//<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -91,7 +105,7 @@ public class NewStudentView extends javax.swing.JFrame {
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-		jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/athina/view/cropped-ihu-logo_el-16.png"))); // NOI18N
+		jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/athina/view/cropped-ihu-logo_el-16.png")));
 		jLabel1.setText("jLabel1");
 		jLabel2.setText("Προσθήκη φοιτητή");
 		jLabel3.setText("Ονομα");

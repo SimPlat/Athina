@@ -8,9 +8,9 @@ public class LoginController {
 	private String password;
 	private String userType = "sd";
 	private boolean connected = false;
-	private Connection conn = null;
-	final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-	final String db_url = "jdbc:mysql://localhost/Athina_db";
+	private Connection connection = null;
+	final private String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
+	final private String db_url = "jdbc:mysql://localhost/Athina_db";
 	
 	public LoginController(){
 	}
@@ -32,7 +32,7 @@ public class LoginController {
 	}
 
 	public Connection getDbConnection(){
-		return conn;
+		return connection;
 	}
 
 	public void checkUsernameType(){
@@ -63,20 +63,22 @@ public class LoginController {
 		checkUsernameType();
 		try {
 			// Connect to DB
-			Class.forName("com.mysql.cj.jdbc.Driver");
+			Class.forName(JDBC_DRIVER);
 			System.out.println("Connecting to Athina DB...");
-			conn = DriverManager.getConnection(db_url,username,password);
+			connection = DriverManager.getConnection(db_url,username,password);
 		}
 		catch(SQLException se){se.printStackTrace();}   // Handle JDBC errors
 		catch(Exception e){e.printStackTrace();}        // Handle Class.forName errors
 		connected = true;
 	}
+
 	// Invokes DB routine login_function(String username, String password, Enum type(studen,secretary,professor,admin))
 	public String logInValidation(){
 		boolean validation = false;
 		dbConnect();
-		try(PreparedStatement prepStmnt = conn.prepareStatement("SELECT login_function(?,?,?) as login_function",
-																ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE)){
+		try(PreparedStatement prepStmnt = connection.prepareStatement("SELECT login_function(?,?,?) as login_function",
+																						  ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE)){
+																			
 			prepStmnt.setString(1, username);
 			prepStmnt.setString(2, password);
 			prepStmnt.setString(3, userType);
@@ -92,10 +94,6 @@ public class LoginController {
 
 	public boolean connected(){
 		return connected;
-	}
-
-	public static String checkResult(String rs){
-		return null;
 	}
 }
 

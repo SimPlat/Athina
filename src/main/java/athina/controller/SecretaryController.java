@@ -21,7 +21,7 @@ public class SecretaryController implements UserController{
 		((NewStudentView) frameList.get(2)).setController(this);
 	}
 
-	// Updates user info frame
+	// Set and Reveal secretary info frame
 	public void displayUserInfoView(){
 		InfoView infoView = (InfoView) frameList.get(0);
 		infoView.setId(secretary.getId());
@@ -33,16 +33,28 @@ public class SecretaryController implements UserController{
 		infoView.setVisible(true);
 	}
 
-	public static Boolean UploadNewStudent(String Info){
-		return null;
+	// Reveal student management frame
+	public void displayStudentsView(){
+		StudentsView studentsView = ((StudentsView) frameList.get(1));
+		studentsView.setVisible(true);
 	}
-	public static String UploadNewStudentQuery(String Info){
-		return null;
+
+	// Reveal student registration frame
+	public void displayNewStudentView(){
+		NewStudentView newStudentView = ((NewStudentView) frameList.get(1));
+		newStudentView.setVisible(true);
 	}
-	public static Boolean SearchStudent(String AM){
-		return null;
-	}
-	public static String SearchStudentQuery(String AM){
-		return null;
+
+	// Registers a new student into the DB
+	public void registerNewStudent(){
+		NewStudentView newStudentView = (NewStudentView) frameList.get(2);
+		try(PreparedStatement prepStmnt = connection.prepareStatement("CALL register_student_procedure(?,?,?,?)")){
+			prepStmnt.setString(1, newStudentView.getName());
+			prepStmnt.setString(2, newStudentView.getSurname());
+			prepStmnt.setString(3, newStudentView.getPhoneNumber());
+			prepStmnt.setString(4, newStudentView.getAdress());
+			prepStmnt.executeQuery();
+		}
+		catch(SQLException se){se.printStackTrace();}					 
 	}
 }
