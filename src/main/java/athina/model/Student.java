@@ -22,9 +22,9 @@ public class Student extends User {
 
 	private void getInfoFromDb(int id){
 		try(PreparedStatement prepStmnt = connection.prepareStatement("CALL user_info_procedure(?,?)",
-																	  ResultSet.TYPE_SCROLL_SENSITIVE,
-																	  ResultSet.CONCUR_UPDATABLE)){
-            prepStmnt.setString(1, String.valueOf(id));
+																	  						ResultSet.TYPE_SCROLL_SENSITIVE,
+																	  						ResultSet.CONCUR_UPDATABLE)){
+         prepStmnt.setString(1, String.valueOf(id));
 			prepStmnt.setString(2, Type.student.name());
 			ResultSet rs = prepStmnt.executeQuery();
 			

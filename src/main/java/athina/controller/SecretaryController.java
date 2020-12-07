@@ -11,8 +11,10 @@ import java.sql.*;
 public class SecretaryController implements UserController{
 	private Secretary secretary;
 	private ArrayList<JFrame> frameList; // 0=InfoView | 1=StudentsView | 2=NewStudentView
+	private enum Type {student, secretary, professor, admin};
+	private String targetStudentId;
 	private Connection connection;
-
+	
 	public SecretaryController(Secretary secretary,ArrayList<JFrame> frameList,Connection connection){
 		this.secretary = secretary;
 		this.frameList = frameList;
@@ -56,5 +58,33 @@ public class SecretaryController implements UserController{
 			prepStmnt.executeQuery();
 		}
 		catch(SQLException se){se.printStackTrace();}					 
+	}
+
+	// Fetches the student with the given ID and updates StudentsView 
+	public void findStudent(){
+		StudentsView studentsView = (StudentsView) frameList.get(1);
+		String fullName;
+		targetStudentId = studentsView.getId();
+		try(PreparedStatement prepStmnt = connection.prepareStatement("CALL user_info_procedure(?,?)")){
+			prepStmnt.setString(1, targetStudentId);
+			prepStmnt.setString(2, Type.student.name());
+			ResultSet resultSet = prepStmnt.executeQuery();
+			if(resultSet.next()){
+				fullName = resultSet.getString("name").concat(" ").concat(resultSet.getString("surname"));
+				studentsView.setFullName(fullName);
+			}
+		}
+		catch(SQLException se){se.printStackTrace();}	
+	}
+	
+	// Fetches the student with the given ID and updates StudentsView 
+	public void removeStudent(){
+		if(targetStudentId != null){ 
+			try(PreparedStatement prepStmnt = connection.prepareStatement("CALL remove_student_procedure(?)")){
+				prepStmnt.setString(1, targetStudentId);
+				prepStmnt.executeQuery();
+			}
+			catch(SQLException se){se.printStackTrace();}	
+		}
 	}
 }

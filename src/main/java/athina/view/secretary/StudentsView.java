@@ -14,14 +14,24 @@ public class StudentsView extends javax.swing.JFrame {
 		this.secretaryController = secretaryController;
 	}
 
+	public String getId(){
+		return jTextField1.getText();
+	}
+
+	public void setFullName(String fullName){
+		jLabel5.setText(fullName);
+	}
+
 	private void insertStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {
 		secretaryController.displayNewStudentView();
 	}
+
 	private void findStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {
-		System.out.println("REEEEEEEEEEEEEEEEEE");
+		secretaryController.findStudent();
 	}
+
 	private void deleteStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {
-		System.out.println("REEEEEEEEEEEEEEEEEE");
+		secretaryController.removeStudent();
 	}
 	
 	public static void main(String args[]) {
