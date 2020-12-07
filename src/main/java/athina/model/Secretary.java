@@ -12,21 +12,22 @@ public class Secretary extends User {
 	}
 
 	private void getInfoFromDb(int id){
-		try(PreparedStatement prepStmnt = connection.prepareStatement("CALL user_info_procedure(?,?)",
-																	  					  ResultSet.TYPE_SCROLL_SENSITIVE,
-																	  					  ResultSet.CONCUR_UPDATABLE)){
-         prepStmnt.setString(1, String.valueOf(id));
-			prepStmnt.setString(2, Type.secretary.name());
-			ResultSet rs = prepStmnt.executeQuery();
-			
-			if(rs.next()){
+		try(CallableStatement callStmnt = connection.prepareCall("CALL user_info_procedure(?,?)",
+																ResultSet.TYPE_SCROLL_SENSITIVE,
+																ResultSet.CONCUR_UPDATABLE)){
+        	callStmnt.setString(1, String.valueOf(id));
+			callStmnt.setString(2, Type.secretary.name());
+			ResultSet resultSet = callStmnt.executeQuery();
+
+			if(resultSet.next()){
 				super.setId(id);
-				super.setFirstName(rs.getString("name"));
-				super.setLastName(rs.getString("surname"));
-				super.setEmail(rs.getString("email"));
-				super.setPhoneNumber(rs.getString("phone"));
-				super.setAdress(rs.getString("adress"));
+				super.setFirstName(resultSet.getString(5));
+				super.setLastName(resultSet.getString(6));
+				super.setEmail(resultSet.getString(7));
+				super.setPhoneNumber(resultSet.getString(8));
+				super.setAdress(resultSet.getString(9));
 			}
+			callStmnt.close();
         }
 		catch(SQLException se){se.printStackTrace();}
 	}

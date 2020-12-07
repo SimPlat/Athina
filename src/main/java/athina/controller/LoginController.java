@@ -10,7 +10,7 @@ public class LoginController {
 	private boolean connected = false;
 	private Connection connection = null;
 	final private String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-	final private String db_url = "jdbc:mysql://localhost/Athina_db";
+	final private String db_url = "jdbc:mysql://localhost/Athina_db?noAccessToProcedureBodies=true";
 	
 	public LoginController(){
 	}
@@ -61,15 +61,17 @@ public class LoginController {
 
 	public void dbConnect(){
 		checkUsernameType();
+		// Connect to DB
 		try {
-			// Connect to DB
 			Class.forName(JDBC_DRIVER);
-			System.out.println("Connecting to Athina DB...");
 			connection = DriverManager.getConnection(db_url,username,password);
+			System.out.println("Connecting to Athina DB...");
+			PreparedStatement prpStmnt = connection.prepareStatement("USE Athina_db");
+			prpStmnt.execute();
 		}
 		catch(SQLException se){se.printStackTrace();}   // Handle JDBC errors
 		catch(Exception e){e.printStackTrace();}        // Handle Class.forName errors
-		connected = true;
+		finally{connected = true;}
 	}
 
 	// Invokes DB routine login_function(String username, String password, Enum type(studen,secretary,professor,admin))
@@ -77,7 +79,8 @@ public class LoginController {
 		boolean validation = false;
 		dbConnect();
 		try(PreparedStatement prepStmnt = connection.prepareStatement("SELECT login_function(?,?,?) as login_function",
-																						  ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE)){
+																	ResultSet.TYPE_SCROLL_SENSITIVE,
+																	ResultSet.CONCUR_UPDATABLE)){
 																			
 			prepStmnt.setString(1, username);
 			prepStmnt.setString(2, password);
