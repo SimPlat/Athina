@@ -3,7 +3,6 @@
 import random
 
 type = ['secretary','professor','admin']
-tp = ['se','pr','ad']
 
 file=open("employee_data.sql",'w')
 
