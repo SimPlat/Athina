@@ -110,11 +110,11 @@ CALL register_student_procedure('Onoma99','Eponimo99','2310000099','Address99');
 CALL register_student_procedure('Onoma100','Eponimo100','2310000100','Address100');
 
 -- Employees
+CALL register_employee_procedure('secretary','Onoma4','Eponimo4','2310000004','Address4');
+CALL register_employee_procedure('professor','Onoma5','Eponimo5','2310000005','Address5');
 CALL register_employee_procedure('admin','Onoma1','Eponimo1','2310000001','Address1');
 CALL register_employee_procedure('admin','Onoma2','Eponimo2','2310000002','Address2');
 CALL register_employee_procedure('admin','Onoma3','Eponimo3','2310000003','Address3');
-CALL register_employee_procedure('secretary','Onoma4','Eponimo4','2310000004','Address4');
-CALL register_employee_procedure('professor','Onoma5','Eponimo5','2310000005','Address5');
 CALL register_employee_procedure('secretary','Onoma6','Eponimo6','2310000006','Address6');
 CALL register_employee_procedure('secretary','Onoma7','Eponimo7','2310000007','Address7');
 CALL register_employee_procedure('secretary','Onoma8','Eponimo8','2310000008','Address8');

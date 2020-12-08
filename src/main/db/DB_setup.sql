@@ -1,4 +1,4 @@
--- Last modification date: 2020-11-25 19:41:26.923
+-- Last modification date: 2020-12-08 19:41:26.923
 
 -- DATABASE
 DROP DATABASE IF EXISTS Athina_db;
@@ -245,7 +245,7 @@ BEGIN
     SELECT user.*,student.ects FROM user JOIN student ON (user.id = student.id) WHERE (student.id <=> user_id);
 END $$
 -- 3.Procedure: employee_info_procedure(user_id,employee_type)
-CREATE DEFINER=`root`@`localhost` PROCEDURE `employee_info_procedure`(IN `user_id` INT,IN `user_type` ENUM('student','secretary','professor','admin'))
+CREATE DEFINER=`root`@`localhost` PROCEDURE `employee_info_procedure`(IN `user_id` INT,IN `user_type` ENUM('secretary','professor','admin'))
     SQL SECURITY DEFINER
     READS SQL DATA
 BEGIN
@@ -332,7 +332,7 @@ BEGIN
     DECLARE db_password VARCHAR(20) DEFAULT NULL; 
     -- Username/user password variables
     DECLARE username VARCHAR(20) DEFAULT NULL;
-    DECLARE password VARCHAR(20) DEFAULT NULL;
+    DECLARE `password` VARCHAR(20) DEFAULT NULL;
 
     FLUSH PRIVILEGES;
 
@@ -344,7 +344,7 @@ BEGIN
 
     -- Build the username/user password based on the autoincremented value which is about to be used as the user ID
     SET username = CONCAT(SUBSTRING(user_type,1,2),LPAD(@ai_id,5,0)),
-        password = CONCAT(LPAD(@ai_id,5,0),SUBSTRING(user_type,1,2));
+        `password` = CONCAT(LPAD(@ai_id,5,0),SUBSTRING(user_type,1,2));
 
     -- Escape inputs, create and execute the create user query
     SET db_username = CONCAT('\'', REPLACE(TRIM(`username`), CHAR(39), CONCAT(CHAR(92), CHAR(39))), '\''),

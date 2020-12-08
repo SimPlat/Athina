@@ -11,7 +11,6 @@ import java.sql.*;
 public class SecretaryController implements UserController{
 	private Secretary secretary;
 	private ArrayList<JFrame> frameList; // 0=InfoView | 1=StudentsView | 2=NewStudentView
-	private enum Type {student, secretary, professor, admin};
 	private String targetStudentId;
 	private Connection connection;
 	
@@ -66,9 +65,8 @@ public class SecretaryController implements UserController{
 		StudentsView studentsView = (StudentsView) frameList.get(1);
 		String fullName = null;
 		targetStudentId = studentsView.getId();
-		try(CallableStatement callStmnt = connection.prepareCall("CALL user_info_procedure(?,?)")){
+		try(CallableStatement callStmnt = connection.prepareCall("CALL student_info_procedure(?)")){
 			callStmnt.setString(1, targetStudentId);
-			callStmnt.setString(2, Type.student.name());
 			ResultSet resultSet = callStmnt.executeQuery();
 			fullName = (resultSet.next()) ? resultSet.getString(5).concat(" ").concat(resultSet.getString(6))
 										  : fullName;
