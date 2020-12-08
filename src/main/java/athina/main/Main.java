@@ -29,12 +29,12 @@ public class Main {
 			System.out.println("Not connected");
 		}
 	
+		// Current user connection
+		connection = ((LoginView) mainFrame).getController().getDbConnection();
+			
 		// Continue the flow after the connection branching out to specific user type
 		switch(((LoginView) mainFrame).getController().getUserType()) {
 			case "student":
-				// Current student connection
-				connection = ((LoginView) mainFrame).getController().getDbConnection();
-			 
 				// Create user student
 				user =  new Student(((LoginView) mainFrame).getController().getUserId(),connection);
 			 
@@ -51,9 +51,6 @@ public class Main {
 				mainFrame.setVisible(true);
 				break;
 			case "secretary":
-				// Current secretary connection
-				connection = ((LoginView) mainFrame).getController().getDbConnection();
-				
 				// Create user student
 				user =  new Secretary(((LoginView) mainFrame).getController().getUserId(),connection);
 				
