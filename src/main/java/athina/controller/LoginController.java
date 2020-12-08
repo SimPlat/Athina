@@ -6,11 +6,11 @@ import java.sql.*;
 public class LoginController {
 	private String username;
 	private String password;
-	private String userType = "sd";
+	private String userType = "";
 	private boolean connected = false;
 	private Connection connection = null;
 	final private String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-	final private String db_url = "jdbc:mysql://localhost/Athina_db?noAccessToProcedureBodies=true";
+	final private String db_url = "jdbc:mysql://localhost:3306/Athina_db?noAccessToProcedureBodies=true";
 	
 	public LoginController(){
 	}
