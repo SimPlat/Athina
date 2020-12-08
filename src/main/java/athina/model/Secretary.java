@@ -13,8 +13,8 @@ public class Secretary extends User {
 
 	private void getInfoFromDb(int id){
 		try(PreparedStatement prpdStmnt = connection.prepareStatement("CALL employee_info_procedure(?,?)",
-																ResultSet.TYPE_SCROLL_SENSITIVE,
-																ResultSet.CONCUR_UPDATABLE)){
+																							ResultSet.TYPE_SCROLL_SENSITIVE,
+																							ResultSet.CONCUR_UPDATABLE)){
         	prpdStmnt.setString(1, String.valueOf(id));
 			prpdStmnt.setString(2, Type.secretary.name());
 			ResultSet resultSet = prpdStmnt.executeQuery();
