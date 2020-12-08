@@ -28,9 +28,11 @@ public class StudentsView extends javax.swing.JFrame {
 
 	private void findStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {
 		secretaryController.findStudent();
+		secretaryController.findStudent();
 	}
 
 	private void deleteStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {
+		secretaryController.removeStudent();
 		secretaryController.removeStudent();
 	}
 	

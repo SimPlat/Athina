@@ -10,7 +10,7 @@ public class LoginController {
 	private boolean connected = false;
 	private Connection connection = null;
 	final private String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-	final private String db_url = "jdbc:mysql://localhost:3306/Athina_db?noAccessToProcedureBodies=true";
+	final private String db_url = "jdbc:mysql://localhost:3306/Athina_db?";// + "useInformationSchema=true";
 	
 	public LoginController(){
 	}
@@ -66,8 +66,6 @@ public class LoginController {
 			Class.forName(JDBC_DRIVER);
 			connection = DriverManager.getConnection(db_url,username,password);
 			System.out.println("Connecting to Athina DB...");
-			PreparedStatement prpStmnt = connection.prepareStatement("USE Athina_db");
-			prpStmnt.execute();
 		}
 		catch(SQLException se){se.printStackTrace();}   // Handle JDBC errors
 		catch(Exception e){e.printStackTrace();}        // Handle Class.forName errors

@@ -65,12 +65,16 @@ public class SecretaryController implements UserController{
 		StudentsView studentsView = (StudentsView) frameList.get(1);
 		String fullName = null;
 		targetStudentId = studentsView.getId();
-		try(CallableStatement callStmnt = connection.prepareCall("CALL student_info_procedure(?)")){
-			callStmnt.setString(1, targetStudentId);
-			ResultSet resultSet = callStmnt.executeQuery();
-			fullName = (resultSet.next()) ? resultSet.getString(5).concat(" ").concat(resultSet.getString(6))
-										  : fullName;
-			callStmnt.close(); 
+		try(PreparedStatement prpdStmnt = connection.prepareStatement("CALL student_info_procedure(?)",
+																					ResultSet.TYPE_SCROLL_SENSITIVE,
+																					ResultSet.CONCUR_UPDATABLE)){
+			prpdStmnt.setString(1, targetStudentId);
+			ResultSet resultSet = prpdStmnt.executeQuery();
+			resultSet = prpdStmnt.executeQuery();
+			if (resultSet.next()){
+				fullName = resultSet.getString(5).concat(" ").concat(resultSet.getString(6)); 
+			}
+			prpdStmnt.close();
 		}
 		catch(SQLException se){se.printStackTrace();}
 		finally{studentsView.setFullName(fullName);}
@@ -79,10 +83,10 @@ public class SecretaryController implements UserController{
 	// Fetches the student with the given ID and updates StudentsView 
 	public void removeStudent(){
 		if(targetStudentId != null){ 
-			try(CallableStatement callStmnt = connection.prepareCall("CALL remove_student_procedure(?)")){
-				callStmnt.setString(1, targetStudentId);
-				callStmnt.execute();
-				callStmnt.close();
+			try(PreparedStatement prpdStmnt = connection.prepareStatement("CALL remove_student_procedure(?)")){
+				prpdStmnt.setString(1, targetStudentId);
+				prpdStmnt.execute();
+				prpdStmnt.close();
 			}
 			catch(SQLException se){se.printStackTrace();}	
 		}
