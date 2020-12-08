@@ -245,7 +245,7 @@ BEGIN
     SELECT user.*,student.ects FROM user JOIN student ON (user.id = student.id) WHERE (student.id <=> user_id);
 END $$
 -- 3.Procedure: employee_info_procedure(user_id,employee_type)
-CREATE DEFINER=`root`@`localhost` PROCEDURE `user_info_procedure`(IN `user_id` INT,IN `user_type` ENUM('student','secretary','professor','admin'))
+CREATE DEFINER=`root`@`localhost` PROCEDURE `employee_info_procedure`(IN `user_id` INT,IN `user_type` ENUM('student','secretary','professor','admin'))
     SQL SECURITY DEFINER
     READS SQL DATA
 BEGIN
