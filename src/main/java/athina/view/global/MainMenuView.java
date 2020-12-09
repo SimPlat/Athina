@@ -37,7 +37,7 @@ public class MainMenuView extends javax.swing.JFrame {
 		// TODO
 	}
 	private void ManageStudentsButtonActionPerformed(java.awt.event.ActionEvent evt) {
-		((SecretaryController) controller).displayStudentsView();
+		((SecretaryController) controller).displayStudentManagementView();
 	}
 
 	// UI declaration - do not modify

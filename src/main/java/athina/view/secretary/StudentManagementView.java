@@ -2,11 +2,11 @@ package athina.view.secretary;
 
 import athina.controller.SecretaryController;
 
-public class StudentsView extends javax.swing.JFrame {
+public class StudentManagementView extends javax.swing.JFrame {
 	private static final long serialVersionUID = -8262023502964023183L;
 	private SecretaryController secretaryController;
 
-	public StudentsView() {
+	public StudentManagementView() {
 		initComponents();
 	}
 
@@ -22,8 +22,8 @@ public class StudentsView extends javax.swing.JFrame {
 		jLabel5.setText(fullName);
 	}
 
-	private void insertStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {
-		secretaryController.displayNewStudentView();
+	private void registerStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {
+		secretaryController.displayRegisterStudentView();
 	}
 
 	private void findStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {
@@ -50,19 +50,19 @@ public class StudentsView extends javax.swing.JFrame {
 				}
 			}
 		} catch (ClassNotFoundException ex) {
-			java.util.logging.Logger.getLogger(StudentsView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+			java.util.logging.Logger.getLogger(StudentManagementView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		} catch (InstantiationException ex) {
-			java.util.logging.Logger.getLogger(StudentsView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+			java.util.logging.Logger.getLogger(StudentManagementView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		} catch (IllegalAccessException ex) {
-			java.util.logging.Logger.getLogger(StudentsView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+			java.util.logging.Logger.getLogger(StudentManagementView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
-			java.util.logging.Logger.getLogger(StudentsView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+			java.util.logging.Logger.getLogger(StudentManagementView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		}
 
 		/* Create and display the form */
 		java.awt.EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				new StudentsView().setVisible(true);
+				new StudentManagementView().setVisible(true);
 			}
 		});
 	}
@@ -100,7 +100,7 @@ public class StudentsView extends javax.swing.JFrame {
 		jButton1.setText("Προσθήκη φοιτητών");
 		jButton1.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				insertStudentButtonActionPerformed(evt);
+				registerStudentButtonActionPerformed(evt);
 			}
 		});
 		jLabel3.setText("ΑΜ φοιτητή:");

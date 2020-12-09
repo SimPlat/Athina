@@ -10,7 +10,7 @@ import java.sql.*;
 
 public class SecretaryController implements UserController{
 	private Secretary secretary;
-	private ArrayList<JFrame> frameList; // 0=InfoView | 1=StudentsView | 2=NewStudentView
+	private ArrayList<JFrame> frameList; // 0=InfoView | 1=ManagementView | 2=RegisterView
 	private String targetStudentId;
 	private Connection connection;
 	
@@ -18,8 +18,8 @@ public class SecretaryController implements UserController{
 		this.secretary = secretary;
 		this.frameList = frameList;
 		this.connection = connection;
-		((StudentsView) frameList.get(1)).setController(this);
-		((NewStudentView) frameList.get(2)).setController(this);
+		((StudentManagementView) frameList.get(1)).setController(this);
+		((RegisterStudentView) frameList.get(2)).setController(this);
 	}
 
 	// Set and Reveal secretary info frame
@@ -35,34 +35,34 @@ public class SecretaryController implements UserController{
 	}
 
 	// Reveal student management frame
-	public void displayStudentsView(){
-		StudentsView studentsView = ((StudentsView) frameList.get(1));
+	public void displayStudentManagementView(){
+		StudentManagementView studentsView = ((StudentManagementView) frameList.get(1));
 		studentsView.setVisible(true);
 	}
 
 	// Reveal student registration frame
-	public void displayNewStudentView(){
-		NewStudentView newStudentView = ((NewStudentView) frameList.get(1));
+	public void displayRegisterStudentView(){
+		RegisterStudentView newStudentView = ((RegisterStudentView) frameList.get(2));
 		newStudentView.setVisible(true);
 	}
 
 	// Registers a new student into the DB
 	public void registerNewStudent(){
-		NewStudentView newStudentView = (NewStudentView) frameList.get(2);
-		try(CallableStatement callStmnt = connection.prepareCall("CALL register_student_procedure(?,?,?,?)")){
-			callStmnt.setString(1, newStudentView.getName());
-			callStmnt.setString(2, newStudentView.getSurname());
-			callStmnt.setString(3, newStudentView.getPhoneNumber());
-			callStmnt.setString(4, newStudentView.getAdress());
-			callStmnt.execute();
-			callStmnt.close();
+		RegisterStudentView newStudentView = (RegisterStudentView) frameList.get(2);
+		try(PreparedStatement prpdStmnt = connection.prepareStatement("CALL register_student_procedure(?,?,?,?)")){
+			prpdStmnt.setString(1, newStudentView.getName());
+			prpdStmnt.setString(2, newStudentView.getSurname());
+			prpdStmnt.setString(3, newStudentView.getPhoneNumber());
+			prpdStmnt.setString(4, newStudentView.getAdress());
+			prpdStmnt.execute();
+			prpdStmnt.close();
 		}
 		catch(SQLException se){se.printStackTrace();}					 
 	}
 
 	// Fetches the student with the given ID and updates StudentsView 
 	public void findStudent(){
-		StudentsView studentsView = (StudentsView) frameList.get(1);
+		StudentManagementView studentsView = (StudentManagementView) frameList.get(1);
 		String fullName = null;
 		targetStudentId = studentsView.getId();
 		try(PreparedStatement prpdStmnt = connection.prepareStatement("CALL student_info_procedure(?)",
@@ -80,7 +80,7 @@ public class SecretaryController implements UserController{
 		finally{studentsView.setFullName(fullName);}
 	}
 	
-	// Fetches the student with the given ID and updates StudentsView 
+	// Removes the student found during the search procedure on StudentManagementView 
 	public void removeStudent(){
 		if(targetStudentId != null){ 
 			try(PreparedStatement prpdStmnt = connection.prepareStatement("CALL remove_student_procedure(?)")){
