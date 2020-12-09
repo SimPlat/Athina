@@ -44,6 +44,7 @@ public class StudentController implements UserController{
 	}
 
 	public void submitEnrollment(){
+		
 	}
 	
 }
