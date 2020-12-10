@@ -6,131 +6,84 @@ public class EnrollmentsView extends javax.swing.JFrame {
 	private static final long serialVersionUID = -9034476647528064051L;
 	private StudentController studentController;
 
-	public EnrollmentsView() {
-		initComponents();
-	}
+    public EnrollmentsView() {
+        initComponents();
+    }
 
 	public void setController(StudentController studentController) {
 		this.studentController = studentController;
-	}
+    }
+    
+    private void newEnrollmentButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newEnrollmentButtonMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_newEnrollmentButtonMouseClicked
 
-	private void NewEnrollmentButtonActionPerformed(java.awt.event.MouseEvent evt) {
-		studentController.displayNewEnrollmentView();
-	}
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:variables
+    private javax.swing.JButton editEnrollmentButton;
+    private javax.swing.JLabel logoLabel;
+    private javax.swing.JButton newEnrollmentButton;
+    private javax.swing.JLabel titleLabel;
+    // </editor-fold>//GEN-END:variables
 
-	public void hideEnrollmentButton(){
-	}
-	public void updateEnrollmentView(){ 
-	}
-	public static void hideNewEnrollmentButton(){
-	}
-	public static void showEditEnrollmentButton(){
-	}
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
 
-	public static void main(String args[]) {
-		try {
-			for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-				if ("Nimbus".equals(info.getName())) {
-					javax.swing.UIManager.setLookAndFeel(info.getClassName());
-					break;
-				}
-			}
-		} catch (ClassNotFoundException ex) {
-			java.util.logging.Logger.getLogger(EnrollmentsView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		} catch (InstantiationException ex) {
-			java.util.logging.Logger.getLogger(EnrollmentsView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		} catch (IllegalAccessException ex) {
-			java.util.logging.Logger.getLogger(EnrollmentsView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
-			java.util.logging.Logger.getLogger(EnrollmentsView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		}
-		//</editor-fold>
+        logoLabel = new javax.swing.JLabel();
+        titleLabel = new javax.swing.JLabel();
+        newEnrollmentButton = new javax.swing.JButton();
+        editEnrollmentButton = new javax.swing.JButton();
 
-		/* Create and display the form */
-		java.awt.EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				new EnrollmentsView().setVisible(true);
-			}
-		});
-	}	
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-	// UI declaration - do not modify
-	private javax.swing.JButton jButton1;
-	private javax.swing.JButton jButton2;
-	private javax.swing.JLabel jLabel1;
-	private javax.swing.JLabel jLabel2;
-	private javax.swing.JPanel jPanel1;
+        logoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        logoLabel.setText("logo");
 
-	private void initComponents() {
+        titleLabel.setText("Enrollments");
 
-		jLabel1 = new javax.swing.JLabel();
-		jLabel2 = new javax.swing.JLabel();
-		jButton1 = new javax.swing.JButton();
-		jButton2 = new javax.swing.JButton();
-		jPanel1 = new javax.swing.JPanel();
+        newEnrollmentButton.setText("New Enrollment");
+        newEnrollmentButton.setToolTipText("");
+        newEnrollmentButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                newEnrollmentButtonMouseClicked(evt);
+            }
+        });
 
-		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        editEnrollmentButton.setText("Edit Enrollment");
 
-		jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/athina/view/cropped-ihu-logo_el-16.png"))); // NOI18N
-		jLabel1.setText("jLabel1");
-		jLabel2.setText("Δηλώσεις");
-		jButton1.setText("Νέα δήλωση");
-		jButton1.setToolTipText("");
-		jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-			public void mouseClicked(java.awt.event.MouseEvent evt) {
-				NewEnrollmentButtonActionPerformed(evt);
-			}
-		});
-		jButton2.setText("Επεξεργασία δηλωσης");
-		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-		jPanel1.setLayout(jPanel1Layout);
-		jPanel1Layout.setHorizontalGroup(
-			jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-			.addGap(0, 372, Short.MAX_VALUE)
-		);
-		jPanel1Layout.setVerticalGroup(
-			jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-			.addGap(0, 136, Short.MAX_VALUE)
-		);
-		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-		getContentPane().setLayout(layout);
-		layout.setHorizontalGroup(
-			layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-			.addGroup(layout.createSequentialGroup()
-				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-					.addGroup(layout.createSequentialGroup()
-						.addContainerGap()
-						.addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-							.addGroup(layout.createSequentialGroup()
-								.addGap(131, 131, 131)
-								.addComponent(jLabel2))
-							.addGroup(layout.createSequentialGroup()
-								.addGap(52, 52, 52)
-								.addComponent(jButton1)
-								.addGap(18, 18, 18)
-								.addComponent(jButton2))))
-					.addGroup(layout.createSequentialGroup()
-						.addGap(20, 20, 20)
-						.addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-				.addContainerGap(42, Short.MAX_VALUE))
-		);
-		layout.setVerticalGroup(
-			layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-			.addGroup(layout.createSequentialGroup()
-				.addContainerGap()
-				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-					.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-						.addComponent(jButton1)
-						.addComponent(jButton2))
-					.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addComponent(jLabel2)
-						.addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
-				.addGap(18, 18, 18)
-				.addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-				.addContainerGap(286, Short.MAX_VALUE))
-		);
-		pack();
-	}
-	// End of UI declaration
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(logoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addComponent(newEnrollmentButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(editEnrollmentButton)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addComponent(titleLabel)
+                        .addGap(110, 110, 110))))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(titleLabel)
+                        .addGap(20, 20, 20)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(newEnrollmentButton)
+                            .addComponent(editEnrollmentButton)))
+                    .addComponent(logoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
 }

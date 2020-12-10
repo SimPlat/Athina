@@ -24,8 +24,7 @@ public class StudentController implements UserController{
 	public void displayUserInfoView(){
 		InfoView infoView = (InfoView) frameList.get(0);
 		infoView.setId(student.getId());
-		infoView.setFirstName(student.getFirstName());
-		infoView.setLastName(student.getLastName());
+		infoView.setName(student.getFirstName().concat(" ").concat(student.getLastName()));
 		infoView.setEmail(student.getEmail());
 		infoView.setPhoneNumber(student.getPhoneNumber());
 		infoView.setAdress(student.getAdress());

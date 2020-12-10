@@ -26,8 +26,7 @@ public class SecretaryController implements UserController{
 	public void displayUserInfoView(){
 		InfoView infoView = (InfoView) frameList.get(0);
 		infoView.setId(secretary.getId());
-		infoView.setFirstName(secretary.getFirstName());
-		infoView.setLastName(secretary.getLastName());
+		infoView.setName(secretary.getFirstName().concat(" ").concat(secretary.getLastName()));
 		infoView.setEmail(secretary.getEmail());
 		infoView.setPhoneNumber(secretary.getPhoneNumber());
 		infoView.setAdress(secretary.getAdress());

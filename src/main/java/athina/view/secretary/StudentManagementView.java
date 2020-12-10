@@ -15,183 +15,149 @@ public class StudentManagementView extends javax.swing.JFrame {
 	}
 
 	public String getId(){
-		return jTextField1.getText();
+		return studentIdTextField.getText();
 	}
 
 	public void setFullName(String fullName){
-		jLabel5.setText(fullName);
+		nameData.setText(fullName);
 	}
+   
+    private void registerStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerStudentButtonActionPerformed
+        secretaryController.displayRegisterStudentView();
+    }//GEN-LAST:event_registerStudentButtonActionPerformed
 
-	private void registerStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {
-		secretaryController.displayRegisterStudentView();
-	}
-
-	private void findStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {
+    private void findStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_findStudentButtonActionPerformed
+        secretaryController.findStudent();
 		secretaryController.findStudent();
-		secretaryController.findStudent();
-	}
+    }//GEN-LAST:event_findStudentButtonActionPerformed
 
-	private void deleteStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {
+    private void removeStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeStudentButtonActionPerformed
+        secretaryController.removeStudent();
 		secretaryController.removeStudent();
-		secretaryController.removeStudent();
-	}
-	
-	public static void main(String args[]) {
-		/* Set the Nimbus look and feel */
-		//<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-		/* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-		 * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-		 */
-		try {
-			for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-				if ("Nimbus".equals(info.getName())) {
-					javax.swing.UIManager.setLookAndFeel(info.getClassName());
-					break;
-				}
-			}
-		} catch (ClassNotFoundException ex) {
-			java.util.logging.Logger.getLogger(StudentManagementView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		} catch (InstantiationException ex) {
-			java.util.logging.Logger.getLogger(StudentManagementView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		} catch (IllegalAccessException ex) {
-			java.util.logging.Logger.getLogger(StudentManagementView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
-			java.util.logging.Logger.getLogger(StudentManagementView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		}
+    }//GEN-LAST:event_removeStudentButtonActionPerformed
 
-		/* Create and display the form */
-		java.awt.EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				new StudentManagementView().setVisible(true);
-			}
-		});
-	}
-	
-	// UI declaration - do not modify
-	private javax.swing.JButton jButton1;
-	private javax.swing.JButton jButton2;
-	private javax.swing.JButton jButton3;
-	private javax.swing.JLabel jLabel1;
-	private javax.swing.JLabel jLabel2;
-	private javax.swing.JLabel jLabel3;
-	private javax.swing.JLabel jLabel4;
-	private javax.swing.JLabel jLabel5;
-	private javax.swing.JPanel jPanel1;
-	private javax.swing.JTextField jTextField1;
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:variables
+    private javax.swing.JButton findStudentButton;
+    private javax.swing.JLabel logoLabel;
+    private javax.swing.JLabel nameData;
+    private javax.swing.JLabel nameLabel;
+    private javax.swing.JButton registerStudentButton;
+    private javax.swing.JButton removeStudentButton;
+    private javax.swing.JLabel studentIdLabel;
+    private javax.swing.JTextField studentIdTextField;
+    private javax.swing.JLabel titleLabel;
+    // </editor-fold>//GEN-END:variables
 
-	private void initComponents() {
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
 
-		jLabel1 = new javax.swing.JLabel();
-		jLabel2 = new javax.swing.JLabel();
-		jButton1 = new javax.swing.JButton();
-		jLabel3 = new javax.swing.JLabel();
-		jTextField1 = new javax.swing.JTextField();
-		jButton2 = new javax.swing.JButton();
-		jPanel1 = new javax.swing.JPanel();
-		jButton3 = new javax.swing.JButton();
-		jLabel5 = new javax.swing.JLabel();
-		jLabel4 = new javax.swing.JLabel();
+        logoLabel = new javax.swing.JLabel();
+        titleLabel = new javax.swing.JLabel();
+        registerStudentButton = new javax.swing.JButton();
+        studentIdLabel = new javax.swing.JLabel();
+        studentIdTextField = new javax.swing.JTextField();
+        findStudentButton = new javax.swing.JButton();
+        nameLabel = new javax.swing.JLabel();
+        nameData = new javax.swing.JLabel();
+        removeStudentButton = new javax.swing.JButton();
 
-		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-		jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/athina/view/cropped-ihu-logo_el-16.png")));
-		jLabel1.setText("jLabel1");
-		jLabel2.setText("Διαχείρηση φοιτητών");
-		jButton1.setText("Προσθήκη φοιτητών");
-		jButton1.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				registerStudentButtonActionPerformed(evt);
-			}
-		});
-		jLabel3.setText("ΑΜ φοιτητή:");
-		jTextField1.setText("stXXXXXX");
-		jButton2.setText("Εύρεση φοιτητή");
-		jButton2.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				findStudentButtonActionPerformed(evt);
-			}
-		});
+        logoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        logoLabel.setText("logo");
 
-		jButton3.setText("Διαγραφή φοιτητή");
-		jButton3.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				deleteStudentButtonActionPerformed(evt);
-			}
-		});
-		jLabel5.setText("Κλεανθης Σμαραγδένιος");
-		jLabel4.setText("Ονομα:");
-		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-		jPanel1.setLayout(jPanel1Layout);
-		jPanel1Layout.setHorizontalGroup(
-			jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-			.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-				.addContainerGap()
-				.addComponent(jLabel4)
-				.addGap(18, 18, 18)
-				.addComponent(jLabel5)
-				.addGap(53, 53, 53)
-				.addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-				.addContainerGap())
-		);
-		jPanel1Layout.setVerticalGroup(
-			jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-			.addGroup(jPanel1Layout.createSequentialGroup()
-				.addContainerGap()
-				.addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-					.addComponent(jLabel5)
-					.addComponent(jLabel4)
-					.addComponent(jButton3))
-				.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-		);
-		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-		getContentPane().setLayout(layout);
-		layout.setHorizontalGroup(
-			layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-			.addGroup(layout.createSequentialGroup()
-				.addContainerGap()
-				.addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-					.addGroup(layout.createSequentialGroup()
-						.addGap(18, 18, 18)
-						.addComponent(jLabel2)
-						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-					.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-							.addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-							.addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-						.addGap(47, 47, 47))))
-			.addGroup(layout.createSequentialGroup()
-				.addGap(22, 22, 22)
-				.addComponent(jLabel3)
-				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-				.addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-				.addContainerGap(303, Short.MAX_VALUE))
-			.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-				.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-				.addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-				.addGap(47, 47, 47))
-		);
-		layout.setVerticalGroup(
-			layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-			.addGroup(layout.createSequentialGroup()
-				.addContainerGap()
-				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-					.addGroup(layout.createSequentialGroup()
-						.addComponent(jLabel2)
-						.addGap(18, 18, 18)
-						.addComponent(jButton1))
-					.addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-					.addComponent(jLabel3)
-					.addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-					.addComponent(jButton2))
-				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-				.addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-				.addContainerGap(15, Short.MAX_VALUE))
-		);
-		pack();
-	}
-	// End of UI declaration
+        titleLabel.setText("Student Management");
+
+        registerStudentButton.setText("Register Student");
+        registerStudentButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registerStudentButtonActionPerformed(evt);
+            }
+        });
+
+        studentIdLabel.setText("Student ID");
+
+        studentIdTextField.setText("XXXXX");
+
+        findStudentButton.setText("Find Student");
+        findStudentButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                findStudentButtonActionPerformed(evt);
+            }
+        });
+
+        nameLabel.setText("Name");
+
+        nameData.setText("Name Surname");
+
+        removeStudentButton.setText("Remove Student");
+        removeStudentButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeStudentButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(studentIdLabel)
+                                    .addComponent(nameLabel))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(studentIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(60, 60, 60)
+                                .addComponent(nameData, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, 0)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(removeStudentButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(findStudentButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(logoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(150, 150, 150)
+                                .addComponent(registerStudentButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(46, 46, 46)
+                                .addComponent(titleLabel)))))
+                .addGap(12, 12, 12))
+        );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {nameLabel, studentIdLabel});
+
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(logoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addComponent(titleLabel)
+                        .addGap(20, 20, 20)
+                        .addComponent(registerStudentButton)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(studentIdLabel)
+                    .addComponent(studentIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(findStudentButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nameLabel)
+                    .addComponent(nameData)
+                    .addComponent(removeStudentButton))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
 }
