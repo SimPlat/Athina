@@ -365,7 +365,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `remove_db_user_procedure`(IN `usern
     MODIFIES SQL DATA
 BEGIN
    -- Create user variables
-   DECLARE `_HOST` CHAR(14) DEFAULT '@\'localhost\'';
+   DECLARE `_HOST` CHAR(14) DEFAULT '@\'%\'';
    DECLARE db_username VARCHAR(9) DEFAULT NULL;
 
    -- Escape inputs, create and execute the create user query
@@ -383,7 +383,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `grand_db_privileges_procedure`(IN u
     MODIFIES SQL DATA
 BEGIN
     -- Assign privilege variables
-    DECLARE `_HOST` CHAR(14) DEFAULT '@\'localhost\'';
+    DECLARE `_HOST` CHAR(14) DEFAULT '@\'%\'';
     DECLARE db_username_host VARCHAR(25) DEFAULT username;
 
     SET db_username_host = CONCAT(username,`_HOST`);
