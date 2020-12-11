@@ -20,11 +20,11 @@ public class Student extends User {
 	}
 
 	private void getInfoFromDb(int id){
-		try(CallableStatement callStmnt = connection.prepareCall("CALL student_info_procedure(?)",
+		try(PreparedStatement prepStmnt = connection.prepareStatement("CALL student_info_procedure(?)",
 																ResultSet.TYPE_SCROLL_SENSITIVE,
 																ResultSet.CONCUR_UPDATABLE)){
-			callStmnt.setString(1, String.valueOf(id));
-			ResultSet resultSet = callStmnt.executeQuery();
+			prepStmnt.setString(1, String.valueOf(id));
+			ResultSet resultSet = prepStmnt.executeQuery();
 
 			if(resultSet.next()){
 				super.setId(id);
@@ -35,7 +35,7 @@ public class Student extends User {
 				super.setAdress(resultSet.getString(9));
 				setEcts(resultSet.getInt(10));
 			}
-			callStmnt.close();
+			prepStmnt.close();
 		}
 		catch(SQLException se){se.printStackTrace();}
 	}

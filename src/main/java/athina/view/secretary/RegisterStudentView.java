@@ -31,22 +31,11 @@ public class RegisterStudentView extends javax.swing.JFrame {
     }
     
     private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
-        // TODO add your handling code here:
+        secretaryController.registerNewStudent();
+        secretaryController.registerNewStudent();
     }//GEN-LAST:event_registerButtonActionPerformed
 
-    private void registerButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerButtonMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_registerButtonMouseClicked
-
-    private void surnameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_surnameTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_surnameTextFieldActionPerformed
-
-    private void nameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nameTextFieldActionPerformed
-
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:variables
+    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel adressLabel;
     private javax.swing.JTextField adressTextField;
     private javax.swing.JLabel cityLabel;
@@ -64,7 +53,7 @@ public class RegisterStudentView extends javax.swing.JFrame {
     private javax.swing.JLabel surnameLabel;
     private javax.swing.JTextField surnameTextField;
     private javax.swing.JLabel titleLabel;
-    // </editor-fold>//GEN-END:variables
+    // End of variables declaration//GEN-END:variables
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -98,20 +87,10 @@ public class RegisterStudentView extends javax.swing.JFrame {
         nameLabel.setText("Name");
 
         nameTextField.setText("name");
-        nameTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nameTextFieldActionPerformed(evt);
-            }
-        });
 
         surnameLabel.setText("Surname");
 
         surnameTextField.setText("surname");
-        surnameTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                surnameTextFieldActionPerformed(evt);
-            }
-        });
 
         phoneNumberLabel.setText("Phone Num.");
 
@@ -134,11 +113,6 @@ public class RegisterStudentView extends javax.swing.JFrame {
         countryTextField.setText("country");
 
         registerButton.setText("Register");
-        registerButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                registerButtonMouseClicked(evt);
-            }
-        });
         registerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 registerButtonActionPerformed(evt);
