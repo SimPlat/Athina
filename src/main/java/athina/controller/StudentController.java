@@ -29,6 +29,7 @@ public class StudentController implements UserController{
 		infoView.setPhoneNumber(student.getPhoneNumber());
 		infoView.setAdress(student.getAdress());
 		infoView.setEcts(student.getEcts());
+		infoView.showTypeSpecificInfo(student);
 		infoView.setVisible(true);
 	}
 

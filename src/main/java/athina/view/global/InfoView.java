@@ -1,10 +1,27 @@
 package athina.view.global;
 
+import athina.model.*;
+
 public class InfoView extends javax.swing.JFrame {
     private static final long serialVersionUID = -7488325200857978581L;
-    
+
     public InfoView() {
         initComponents();
+        studentInfoPanel.setVisible(false);
+        employeeInfoPanel.setVisible(false);
+        // Hidden untill they are supported by the DB
+        cityData.setVisible(false);
+        postalCodeData.setVisible(false);
+        countryData.setVisible(false);
+    }
+
+    public void showTypeSpecificInfo(User user){
+        if(user instanceof Student){
+			studentInfoPanel.setVisible(true);
+		}
+		else if(user instanceof Secretary){
+			employeeInfoPanel.setVisible(true);
+		}
     }
 
     public void setId(int id){
@@ -31,7 +48,7 @@ public class InfoView extends javax.swing.JFrame {
 		ectsData.setText(String.valueOf(ects));
     }
     
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:variables
+    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel adressData;
     private javax.swing.JLabel adressLabel;
     private javax.swing.JLabel cityData;
@@ -61,7 +78,7 @@ public class InfoView extends javax.swing.JFrame {
     private javax.swing.JLabel userIDData;
     private javax.swing.JLabel userIDLabel;
     private javax.swing.JLabel userInfoLabel;
-    // </editor-fold>//GEN-END:variables
+    // End of variables declaration//GEN-END:variables
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -217,15 +234,15 @@ public class InfoView extends javax.swing.JFrame {
 
         ectsLabel.setText("ECTS");
 
-        ectsData.setText("60");
+        ectsData.setText("0");
 
         semesterLabel.setText("Semester");
 
-        semesterData.setText("9");
+        semesterData.setText("0");
 
         registrationDateLabel.setText("Registration Date");
 
-        registrationDateData.setText("23/09/2000");
+        registrationDateData.setText("00/00/0000");
 
         javax.swing.GroupLayout studentInfoPanelLayout = new javax.swing.GroupLayout(studentInfoPanel);
         studentInfoPanel.setLayout(studentInfoPanelLayout);

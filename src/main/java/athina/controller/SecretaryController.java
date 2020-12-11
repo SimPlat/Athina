@@ -30,6 +30,7 @@ public class SecretaryController implements UserController{
 		infoView.setEmail(secretary.getEmail());
 		infoView.setPhoneNumber(secretary.getPhoneNumber());
 		infoView.setAdress(secretary.getAdress());
+		infoView.showTypeSpecificInfo(secretary);
 		infoView.setVisible(true);
 	}
 

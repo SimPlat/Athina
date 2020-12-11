@@ -316,7 +316,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="ectsData">
           <Properties>
-            <Property name="text" type="java.lang.String" value="60"/>
+            <Property name="text" type="java.lang.String" value="0"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="semesterLabel">
@@ -326,7 +326,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="semesterData">
           <Properties>
-            <Property name="text" type="java.lang.String" value="9"/>
+            <Property name="text" type="java.lang.String" value="0"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="registrationDateLabel">
@@ -336,7 +336,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="registrationDateData">
           <Properties>
-            <Property name="text" type="java.lang.String" value="23/09/2000"/>
+            <Property name="text" type="java.lang.String" value="00/00/0000"/>
           </Properties>
         </Component>
       </SubComponents>
