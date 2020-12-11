@@ -1,8 +1,7 @@
 -- Last modification date: 2020-12-08 19:41:26.923
 
 -- DATABASE
-SOURCE /home/simon/athina/src/main/db/data/drop_data.sql;
-DROP DATABASE IF EXISTS Athina_db;
+SOURCE /home/simon/athina/src/main/db/data/DB_drop.sql;
 CREATE DATABASE Athina_db;
 USE Athina_db;
 -- ----------------------------------------------------------------------------------------------------------------------------------
@@ -328,7 +327,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `create_db_user_procedure`(IN `user_
 BEGIN
     DECLARE ai_id INT(5) default NULL;
     -- Create user variables
-    DECLARE `_HOST` CHAR(14) DEFAULT '@\'localhost\'';
+    DECLARE `_HOST` CHAR(14) DEFAULT '@\'%\'';
     DECLARE db_username VARCHAR(20) DEFAULT NULL;
     DECLARE db_password VARCHAR(20) DEFAULT NULL; 
     -- Username/user password variables
@@ -500,7 +499,7 @@ BEGIN
 
 END $$
 -- ----------------------------------------------------------------------------------------------------------------------------------
--- TRIGGERS
+-- TRIGGERS 
 
 -- 1.Trigger: assign_credentials_trigger
 CREATE DEFINER=`root`@`localhost` TRIGGER `assign_credentials_trigger` BEFORE INSERT ON `user` FOR EACH ROW 
@@ -536,7 +535,7 @@ END$$
 DELIMITER ;
 
 -- Insert Data
-SOURCE /home/simon/athina/src/main/db/DB_data.sql;
+SOURCE /home/simon/athina/src/main/db/data/DB_data.sql;
 
 -- End of file.
 
