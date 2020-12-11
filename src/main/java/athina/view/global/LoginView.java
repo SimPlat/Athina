@@ -21,7 +21,7 @@ public class LoginView extends javax.swing.JFrame {
 		loginController.dbConnect();
     }//GEN-LAST:event_connectButtonActionPerformed
 
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:variables
+    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton connectButton;
     private javax.swing.JLabel logoLabel;
     private javax.swing.JLabel passwordLabel;
@@ -29,7 +29,7 @@ public class LoginView extends javax.swing.JFrame {
     private javax.swing.JLabel univericityLabel;
     private javax.swing.JLabel usernameLabel;
     private javax.swing.JTextField usernameTextField;
-     // </editor-fold>//GEN-END:variables
+    // End of variables declaration//GEN-END:variables
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -103,8 +103,9 @@ public class LoginView extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(passwordLabel)
                         .addComponent(passwordTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(connectButton)
-                .addGap(16, 16, 16))
+                .addGap(10, 10, 10))
         );
 
         pack();
