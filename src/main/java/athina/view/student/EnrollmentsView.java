@@ -15,7 +15,7 @@ public class EnrollmentsView extends javax.swing.JFrame {
     }
     
     private void newEnrollmentButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newEnrollmentButtonMouseClicked
-        // TODO add your handling code here:
+        studentController.displayNewEnrollmentView();
     }//GEN-LAST:event_newEnrollmentButtonMouseClicked
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:variables
