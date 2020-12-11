@@ -1,6 +1,7 @@
 -- Last modification date: 2020-12-08 19:41:26.923
 
 -- DATABASE
+SOURCE /home/simon/athina/src/main/db/data/drop_data.sql;
 DROP DATABASE IF EXISTS Athina_db;
 CREATE DATABASE Athina_db;
 USE Athina_db;
@@ -533,5 +534,9 @@ BEGIN
 END$$
 
 DELIMITER ;
+
+-- Insert Data
+SOURCE /home/simon/athina/src/main/db/DB_data.sql;
+
 -- End of file.
 
