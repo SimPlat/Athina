@@ -18,12 +18,12 @@ public class EnrollmentsView extends javax.swing.JFrame {
         studentController.displayNewEnrollmentView();
     }//GEN-LAST:event_newEnrollmentButtonMouseClicked
 
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:variables
+    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton editEnrollmentButton;
     private javax.swing.JLabel logoLabel;
     private javax.swing.JButton newEnrollmentButton;
     private javax.swing.JLabel titleLabel;
-    // </editor-fold>//GEN-END:variables
+    // End of variables declaration//GEN-END:variables
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -36,6 +36,7 @@ public class EnrollmentsView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         logoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        logoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/athina/view/cropped-ihu-logo_el-16.png"))); // NOI18N
         logoLabel.setText("logo");
 
         titleLabel.setText("Enrollments");
