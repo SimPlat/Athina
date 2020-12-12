@@ -79,6 +79,7 @@ public class RegisterStudentView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         logoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        logoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/athina/view/cropped-ihu-logo_el-16.png"))); // NOI18N
         logoLabel.setText("logo");
 
         titleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
