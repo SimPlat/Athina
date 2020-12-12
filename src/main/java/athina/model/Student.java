@@ -3,7 +3,6 @@ package athina.model;
 import java.sql.*;
 
 public class Student extends User {
-	private enum Type {student, secretary, professor, admin};
 	private Connection connection;
 	private int ects;
 	
@@ -21,12 +20,11 @@ public class Student extends User {
 	}
 
 	private void getInfoFromDb(int id){
-		try(CallableStatement callStmnt = connection.prepareCall("CALL user_info_procedure(?,?)",
+		try(PreparedStatement prepStmnt = connection.prepareStatement("CALL student_info_procedure(?)",
 																ResultSet.TYPE_SCROLL_SENSITIVE,
 																ResultSet.CONCUR_UPDATABLE)){
-			callStmnt.setString(1, String.valueOf(id));
-			callStmnt.setString(2, Type.student.name());
-			ResultSet resultSet = callStmnt.executeQuery();
+			prepStmnt.setString(1, String.valueOf(id));
+			ResultSet resultSet = prepStmnt.executeQuery();
 
 			if(resultSet.next()){
 				super.setId(id);
@@ -37,7 +35,7 @@ public class Student extends User {
 				super.setAdress(resultSet.getString(9));
 				setEcts(resultSet.getInt(10));
 			}
-			callStmnt.close();
+			prepStmnt.close();
 		}
 		catch(SQLException se){se.printStackTrace();}
 	}

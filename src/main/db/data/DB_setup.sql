@@ -1,7 +1,7 @@
--- Last modification date: 2020-11-25 19:41:26.923
+-- Last modification date: 2020-12-08 19:41:26.923
 
 -- DATABASE
-DROP DATABASE IF EXISTS Athina_db;
+SOURCE /home/simon/athina/src/main/db/data/DB_drop.sql;
 CREATE DATABASE Athina_db;
 USE Athina_db;
 -- ----------------------------------------------------------------------------------------------------------------------------------
@@ -220,7 +220,7 @@ DELIMITER $$
 CREATE DEFINER=`root`@`localhost` FUNCTION `login_function`(`login_username` VARCHAR(15),`login_password` VARCHAR(35),`login_type` ENUM('student','secretary','professor','admin'))
     RETURNS BOOLEAN 
     SQL SECURITY DEFINER
-    READS SQL DATA
+    MODIFIES SQL DATA
 BEGIN
     -- Local variables
     DECLARE uname VARCHAR(15);
@@ -239,15 +239,15 @@ END$$
 -- 2.Procedure: student_info_procedure(user_id)
 CREATE DEFINER=`root`@`localhost` PROCEDURE `student_info_procedure`(IN `user_id` INT)
     SQL SECURITY DEFINER
-    READS SQL DATA
+    MODIFIES SQL DATA
 BEGIN
     -- Select table user and append the student specific info
     SELECT user.*,student.ects FROM user JOIN student ON (user.id = student.id) WHERE (student.id <=> user_id);
 END $$
 -- 3.Procedure: employee_info_procedure(user_id,employee_type)
-CREATE DEFINER=`root`@`localhost` PROCEDURE `employee_info_procedure`(IN `user_id` INT,IN `user_type` ENUM('student','secretary','professor','admin'))
+CREATE DEFINER=`root`@`localhost` PROCEDURE `employee_info_procedure`(IN `user_id` INT,IN `user_type` ENUM('secretary','professor','admin'))
     SQL SECURITY DEFINER
-    READS SQL DATA
+    MODIFIES SQL DATA
 BEGIN
 
     IF (user_type LIKE 'secretary') AND (user_id IN (SELECT id FROM secretary)) THEN      -- Nothing to append for user secretary ATM 
@@ -262,7 +262,7 @@ END $$
 -- 4.Procedure: available_lectures_procedure_procedure(student_id)
 CREATE DEFINER=`root`@`localhost` PROCEDURE `available_lectures_procedure`(`student_id` INT)
     SQL SECURITY DEFINER 
-    READS SQL DATA 
+    MODIFIES SQL DATA 
 BEGIN
     DECLARE passed_lecture_ids INT;
 
@@ -278,7 +278,7 @@ END$$
 -- 5.Procedure: show_enrollments_procedure(student_id)
 CREATE DEFINER=`root`@`localhost` PROCEDURE `show_enrollments_procedure`(IN student_id INT) 
     SQL SECURITY DEFINER
-    READS SQL DATA
+    MODIFIES SQL DATA
 BEGIN
     -- Fetch IDs and names of the enrolled lectures for the given student
     SELECT E.lecture_id,L.name FROM enroll E JOIN lecture L ON (L.id = E.lecture_id) WHERE (E.student_id <=> student_id);
@@ -286,7 +286,7 @@ END$$
 -- 6.Procedure: current_enrollments_procedure(student_id)
 CREATE DEFINER=`root`@`localhost` PROCEDURE `current_enrollments_procedure`(IN student_id INT) 
     SQL SECURITY DEFINER
-    READS SQL DATA
+    MODIFIES SQL DATA
 BEGIN
     -- Fetch IDs and names of the latest enrollment for the given student 
     IF (MONTH(CURRENT_DATE) > 8) OR (MONTH(CURRENT_DATE) < 3) THEN    
@@ -327,7 +327,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `create_db_user_procedure`(IN `user_
 BEGIN
     DECLARE ai_id INT(5) default NULL;
     -- Create user variables
-    DECLARE `_HOST` CHAR(14) DEFAULT '@\'localhost\'';
+    DECLARE `_HOST` CHAR(14) DEFAULT '@\'%\'';
     DECLARE db_username VARCHAR(20) DEFAULT NULL;
     DECLARE db_password VARCHAR(20) DEFAULT NULL; 
     -- Username/user password variables
@@ -365,7 +365,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `remove_db_user_procedure`(IN `usern
     MODIFIES SQL DATA
 BEGIN
    -- Create user variables
-   DECLARE `_HOST` CHAR(14) DEFAULT '@\'localhost\'';
+   DECLARE `_HOST` CHAR(14) DEFAULT '@\'%\'';
    DECLARE db_username VARCHAR(9) DEFAULT NULL;
 
    -- Escape inputs, create and execute the create user query
@@ -383,7 +383,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `grand_db_privileges_procedure`(IN u
     MODIFIES SQL DATA
 BEGIN
     -- Assign privilege variables
-    DECLARE `_HOST` CHAR(14) DEFAULT '@\'localhost\'';
+    DECLARE `_HOST` CHAR(14) DEFAULT '@\'%\'';
     DECLARE db_username_host VARCHAR(25) DEFAULT username;
 
     SET db_username_host = CONCAT(username,`_HOST`);
@@ -499,7 +499,7 @@ BEGIN
 
 END $$
 -- ----------------------------------------------------------------------------------------------------------------------------------
--- TRIGGERS
+-- TRIGGERS 
 
 -- 1.Trigger: assign_credentials_trigger
 CREATE DEFINER=`root`@`localhost` TRIGGER `assign_credentials_trigger` BEFORE INSERT ON `user` FOR EACH ROW 
@@ -533,5 +533,9 @@ BEGIN
 END$$
 
 DELIMITER ;
+
+-- Insert Data
+SOURCE /home/simon/athina/src/main/db/data/DB_data.sql;
+
 -- End of file.
 

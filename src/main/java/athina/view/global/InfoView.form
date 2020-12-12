@@ -23,87 +23,256 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jPanel3" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                      <Component id="LogoLabel" min="-2" pref="73" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                      <Component id="UserInfoLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jPanel1" max="32767" attributes="0"/>
-                          <Component id="jPanel2" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+              <Component id="logoLabel" min="-2" pref="73" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+              <Component id="userInfoLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
+          <Component id="globalInfoPanel" alignment="1" max="32767" attributes="0"/>
+          <Component id="studentInfoPanel" alignment="1" max="32767" attributes="0"/>
+          <Component id="employeeInfoPanel" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+              <EmptySpace pref="20" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="LogoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="UserInfoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="logoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="userInfoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-              <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+              <Component id="globalInfoPanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <Component id="studentInfoPanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <Component id="employeeInfoPanel" min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="LogoLabel">
+    <Component class="javax.swing.JLabel" name="logoLabel">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/athinaswing/cropped-ihu-logo_el-16.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="jLabel7"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="UserInfoLabel">
+    <Component class="javax.swing.JLabel" name="userInfoLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&#x3a0;&#x3bb;&#x3b7;&#x3c1;&#x3bf;&#x3c6;&#x3bf;&#x3c1;&#x3af;&#x3b5;&#x3c2; &#x3a7;&#x3c1;&#x3ae;&#x3c3;&#x3c4;&#x3b7; (Type)"/>
+        <Property name="text" type="java.lang.String" value="User Information"/>
       </Properties>
     </Component>
-    <Container class="javax.swing.JPanel" name="jPanel1">
+    <Container class="javax.swing.JPanel" name="globalInfoPanel">
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="StudentRegistrationInfoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="YearOfRegistration" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="CemesterOfEnrolment" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="TypicalCemesterLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="TypicalCemesterData" min="-2" pref="48" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="YearOfRegistrationData" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="CemesterOfEnrollment" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="nameLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="nameData" pref="130" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="userIDLabel" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="userIDData" min="-2" pref="65" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="phoneNumberLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                  <Component id="phoneNumberData" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="emailLabel" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="emailData" max="32767" attributes="0"/>
                               </Group>
                           </Group>
+                          <EmptySpace min="70" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="postalCodeLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="postalCodeData" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="adressLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="adressData" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="cityLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="cityData" min="-2" pref="97" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="countryLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="countryData" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace pref="53" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="userIDLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="userIDData" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="adressLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="adressData" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                          <Component id="cityLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cityData" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="nameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="nameData" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="postalCodeData" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="postalCodeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="emailLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="emailData" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="phoneNumberLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="phoneNumberData" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="countryData" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="countryLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="userIDLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ID:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="userIDData">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="12345"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="nameLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Name:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="nameData">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="name surname"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="emailLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="E-mail:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="emailData">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="xx12345@ihu.gr"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="phoneNumberLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Phone Num. :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="phoneNumberData">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="6912345678"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="adressLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Adress:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="adressData">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="adress"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="cityLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="City:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="cityData">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="city"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="postalCodeLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Postal Code:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="postalCodeData">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="12345"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="countryLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Country:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="countryData">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="country"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="studentInfoPanel">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="studentInfoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="registrationDateLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="registrationDateData" min="-2" pref="85" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="ectsLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="ectsData" min="-2" pref="85" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="semesterLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="semesterData" min="-2" pref="85" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
@@ -113,73 +282,73 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="StudentRegistrationInfoLabel" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  <Component id="studentInfoLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="TypicalCemesterLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="TypicalCemesterData" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="ectsLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="ectsData" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="YearOfRegistration" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="YearOfRegistrationData" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="semesterLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="semesterData" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="CemesterOfEnrollment" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="CemesterOfEnrolment" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="registrationDateLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="registrationDateData" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="StudentRegistrationInfoLabel">
+        <Component class="javax.swing.JLabel" name="studentInfoLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Student Registration Info:"/>
+            <Property name="text" type="java.lang.String" value="Student Information"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="TypicalCemesterLabel">
+        <Component class="javax.swing.JLabel" name="ectsLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="&#x3a4;&#x3c5;&#x3c0;&#x3b9;&#x3ba;&#x3cc; &#x395;&#x3be;&#x3ac;&#x3bc;&#x3b7;&#x3bd;&#x3bf;:"/>
+            <Property name="text" type="java.lang.String" value="ECTS"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="YearOfRegistration">
+        <Component class="javax.swing.JLabel" name="ectsData">
           <Properties>
-            <Property name="text" type="java.lang.String" value="&#x391;&#x3ba;&#x3b1;&#x3b4;&#x3b7;&#x3bc;&#x3b1;&#x3b9;&#x3ba;&#x3cc; &#x3b5;&#x3c4;&#x3bf;&#x3c2; &#x3b5;&#x3b3;&#x3b3;&#x3c1;&#x3b1;&#x3c6;&#x3b7;&#x3c2;:"/>
+            <Property name="text" type="java.lang.String" value="0"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="CemesterOfEnrolment">
+        <Component class="javax.swing.JLabel" name="semesterLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="&#x3a0;&#x3b5;&#x3c1;&#x3af;&#x3bf;&#x3b4;&#x3bf;&#x3c2;"/>
+            <Property name="text" type="java.lang.String" value="Semester"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="TypicalCemesterData">
+        <Component class="javax.swing.JLabel" name="semesterData">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel20"/>
+            <Property name="text" type="java.lang.String" value="0"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="YearOfRegistrationData">
+        <Component class="javax.swing.JLabel" name="registrationDateLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel21"/>
+            <Property name="text" type="java.lang.String" value="Registration Date"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="CemesterOfEnrollment">
+        <Component class="javax.swing.JLabel" name="registrationDateData">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel22"/>
+            <Property name="text" type="java.lang.String" value="00/00/0000"/>
           </Properties>
         </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="jPanel2">
+    <Container class="javax.swing.JPanel" name="employeeInfoPanel">
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
+                  <Component id="employeeInfoLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -187,218 +356,17 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  <Component id="employeeInfoLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="78" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel23">
+        <Component class="javax.swing.JLabel" name="employeeInfoLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Employee Registration info:"/>
-          </Properties>
-        </Component>
-      </SubComponents>
-    </Container>
-    <Container class="javax.swing.JPanel" name="jPanel3">
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="UsernameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="NameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="UserIDLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="PhoneNumberLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="EmailLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="UsernameData" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="NameData" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="UserIDData" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="PhoneNumberData" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="UserAdressInfoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                  <Group type="103" alignment="1" groupAlignment="1" max="-2" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="AdressLabel" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="AdressData" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="CityLabel" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                                          <Component id="CityData" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="CountryLabel" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="CountryData" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="PostalCodeLabel" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="PostalCodeData" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                          </Group>
-                      </Group>
-                      <Component id="EmailData" alignment="0" min="-2" pref="227" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="65" max="32767" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="UserAdressInfoLabel" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="UsernameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="UsernameData" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="CityLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="CityData" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="NameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="NameData" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="AdressLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="AdressData" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="UserIDLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="UserIDData" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="PostalCodeData" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="PostalCodeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="PhoneNumberLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="PhoneNumberData" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="CountryData" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="CountryLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="EmailData" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="EmailLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-      </Layout>
-      <SubComponents>
-        <Component class="javax.swing.JLabel" name="UsernameData">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel1"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="NameData">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel3"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="UserIDData">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel4"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="PhoneNumberData">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel5"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="EmailData">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="somebodys@gmail.com"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="UserAdressInfoLabel">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="User Adress Info:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="CityLabel">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="City:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="AdressLabel">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Adress:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="PostalCodeLabel">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Postal Code:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="CountryLabel">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Country:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="UsernameLabel">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Username:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="CityData">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel13"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="AdressData">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel14"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="NameLabel">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Name:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="PostalCodeData">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel15"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="UserIDLabel">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="UserID:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="CountryData">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel16"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="PhoneNumberLabel">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="&#x3a4;&#x3b7;&#x3bb;&#x3ad;&#x3c6;&#x3c9;&#x3bd;&#x3bf;:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="EmailLabel">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="E-maill:"/>
+            <Property name="text" type="java.lang.String" value="Employee  Information"/>
           </Properties>
         </Component>
       </SubComponents>

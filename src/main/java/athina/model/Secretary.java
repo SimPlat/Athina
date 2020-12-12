@@ -3,7 +3,7 @@ package athina.model;
 import java.sql.*;
 
 public class Secretary extends User {
-	private enum Type {student, secretary, professor, admin};
+	private enum Type {secretary, professor, admin};
 	private Connection connection;
 
 	public Secretary(int id,Connection connection){
@@ -12,12 +12,12 @@ public class Secretary extends User {
 	}
 
 	private void getInfoFromDb(int id){
-		try(CallableStatement callStmnt = connection.prepareCall("CALL user_info_procedure(?,?)",
-																ResultSet.TYPE_SCROLL_SENSITIVE,
-																ResultSet.CONCUR_UPDATABLE)){
-        	callStmnt.setString(1, String.valueOf(id));
-			callStmnt.setString(2, Type.secretary.name());
-			ResultSet resultSet = callStmnt.executeQuery();
+		try(PreparedStatement prepStmnt = connection.prepareStatement("CALL employee_info_procedure(?,?)",
+																							ResultSet.TYPE_SCROLL_SENSITIVE,
+																							ResultSet.CONCUR_UPDATABLE)){
+        	prepStmnt.setString(1, String.valueOf(id));
+			prepStmnt.setString(2, Type.secretary.name());
+			ResultSet resultSet = prepStmnt.executeQuery();
 
 			if(resultSet.next()){
 				super.setId(id);
@@ -27,7 +27,7 @@ public class Secretary extends User {
 				super.setPhoneNumber(resultSet.getString(8));
 				super.setAdress(resultSet.getString(9));
 			}
-			callStmnt.close();
+			prepStmnt.close();
         }
 		catch(SQLException se){se.printStackTrace();}
 	}
