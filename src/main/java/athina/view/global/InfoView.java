@@ -9,7 +9,7 @@ public class InfoView extends javax.swing.JFrame {
         initComponents();
         studentInfoPanel.setVisible(false);
         employeeInfoPanel.setVisible(false);
-        // Hidden untill they are supported by the DB
+        // Hidden untill they are supported by the DB 
         cityData.setVisible(false);
         postalCodeData.setVisible(false);
         countryData.setVisible(false);
