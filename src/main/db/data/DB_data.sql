@@ -57,12 +57,6 @@ INSERT INTO lecture VALUES (DEFAULT,'Software Engineering','9',DEFAULT,'0');
 INSERT INTO lecture VALUES (DEFAULT,'CCNA 2','9',DEFAULT,'0');
 INSERT INTO lecture VALUES (DEFAULT,'Advanced Machine Learning','9',DEFAULT,'0');
 
--- Exams
--- INSERT INTO exam VALUES (5,1,'2020-02-02',2,1),(5,2,'2020-02-03',8,7),(6,2,'2018-02-01',2,5),(17,5,'2020-07-07',2,1);
-
--- Enrollments
--- INSERT INTO enroll VALUES (DEFAULT,5,5,2015,'winter'),(DEFAULT,5,5,2016,'winter'),(DEFAULT,5,4,2015,'spring'),(DEFAULT,23,8,2019,'spring');
-
 -- Students
 CALL register_student_procedure('Onoma1','Eponimo1','2310000001','Address1');
 CALL register_student_procedure('Onoma2','Eponimo2','2310000002','Address2');
@@ -216,3 +210,12 @@ CALL register_employee_procedure('admin','Onoma47','Eponimo47','2310000047','Add
 CALL register_employee_procedure('professor','Onoma48','Eponimo48','2310000048','Address48');
 CALL register_employee_procedure('professor','Onoma49','Eponimo49','2310000049','Address49');
 CALL register_employee_procedure('professor','Onoma50','Eponimo50','2310000050','Address50');
+
+-- Exams
+INSERT INTO exam VALUES (1,1,'2020-02-02',102,5);
+INSERT INTO exam VALUES (1,2,'2020-02-03',102,4);
+INSERT INTO exam VALUES (3,3,'2018-02-01',102,10);
+INSERT INTO exam VALUES (3,4,'2020-07-07',102,1);
+
+-- Enrollments
+-- INSERT INTO enroll VALUES (DEFAULT,5,5,2015,'winter'),(DEFAULT,5,5,2016,'winter'),(DEFAULT,5,4,2015,'spring'),(DEFAULT,23,8,2019,'spring');
