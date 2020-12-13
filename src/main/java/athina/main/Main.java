@@ -41,8 +41,8 @@ public class Main {
 				// Create the needed controller and frames for student
 				frameList = new ArrayList<JFrame>();
 				frameList.add(0,new InfoView());
-				frameList.add(1,new EnrollmentsView());
-				frameList.add(2,new NewEnrollmentView());
+				frameList.add(1,new EnrollmentManagementView());
+				frameList.add(2,new RegisterEnrollmentView());
 				controller = new StudentController((Student) user,frameList,connection);
 			 
 			 	// Replace login with main menu on the main frame
