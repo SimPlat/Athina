@@ -220,7 +220,7 @@ DELIMITER $$
 CREATE DEFINER=`root`@`localhost` FUNCTION `login_function`(`login_username` VARCHAR(15),`login_password` VARCHAR(35),`login_type` ENUM('student','secretary','professor','admin'))
 	RETURNS BOOLEAN 
 	SQL SECURITY DEFINER
-	MODIFIES SQL DATA
+	READS SQL DATA
 BEGIN
 	-- Local variables
 	DECLARE uname VARCHAR(15);
@@ -239,7 +239,7 @@ END$$
 -- 2.Procedure: student_info_procedure(user_id)
 CREATE DEFINER=`root`@`localhost` PROCEDURE `student_info_procedure`(IN `user_id` INT)
 	SQL SECURITY DEFINER
-	MODIFIES SQL DATA
+	READS SQL DATA
 BEGIN
 	-- Select table user and append the student specific info
 	SELECT user.*,student.ects FROM user JOIN student ON (user.id = student.id) WHERE (student.id <=> user_id);
@@ -247,7 +247,7 @@ END $$
 -- 3.Procedure: employee_info_procedure(user_id,employee_type)
 CREATE DEFINER=`root`@`localhost` PROCEDURE `employee_info_procedure`(IN `user_id` INT,IN `user_type` ENUM('secretary','professor','admin'))
 	SQL SECURITY DEFINER
-	MODIFIES SQL DATA
+	READS SQL DATA
 BEGIN
 
 	IF (user_type LIKE 'secretary') AND (user_id IN (SELECT id FROM secretary)) THEN      -- Nothing to append for user secretary ATM 
@@ -262,23 +262,23 @@ END $$
 -- 4.Procedure: available_lectures_procedure_procedure(student_id)
 CREATE DEFINER=`root`@`localhost` PROCEDURE `available_lectures_procedure`(`student_id` INT)
 	SQL SECURITY DEFINER 
-	MODIFIES SQL DATA 
+	READS SQL DATA 
 BEGIN
 	DECLARE passed_lecture_ids INT;
-
-	SELECT exam.lecture_id INTO passed_lecture_ids FROM exam WHERE (exam.student_id<=>student_id) AND (exam.grade >= 5);
 	
 	IF (MONTH(CURRENT_DATE) > 8) OR (MONTH(CURRENT_DATE) < 3) THEN
-		SELECT * FROM lecture WHERE lecture.semester%2=1 AND lecture.id NOT IN (passed_lecture_ids);
+		SELECT * FROM lecture WHERE semester%2=1 AND id NOT IN 
+			(SELECT lecture_id FROM exam WHERE (exam.student_id <=> `student_id` AND grade >= 5));
 	ELSE
-		 SELECT * FROM lecture WHERE lecture.semester%2=0 AND lecture.id NOT IN (passed_lecture_ids);
+				SELECT * FROM lecture WHERE semester%2=0 AND id NOT IN 
+					(SELECT lecture_id FROM exam WHERE (exam.student_id <=> `student_id` AND grade >= 5));
 	END IF;
 
 END$$
 -- 5.Procedure: show_enrollments_procedure(student_id)
 CREATE DEFINER=`root`@`localhost` PROCEDURE `show_enrollments_procedure`(IN student_id INT) 
 	SQL SECURITY DEFINER
-	MODIFIES SQL DATA
+	READS SQL DATA
 BEGIN
 	-- Fetch IDs and names of the enrolled lectures for the given student
 	SELECT E.lecture_id,L.name FROM enroll E JOIN lecture L ON (L.id = E.lecture_id) WHERE (E.student_id <=> student_id);
@@ -286,7 +286,7 @@ END$$
 -- 6.Procedure: current_enrollments_procedure(student_id)
 CREATE DEFINER=`root`@`localhost` PROCEDURE `current_enrollments_procedure`(IN student_id INT) 
 	SQL SECURITY DEFINER
-	MODIFIES SQL DATA
+	READS SQL DATA
 BEGIN
 	-- Fetch IDs and names of the latest enrollment for the given student 
 	IF (MONTH(CURRENT_DATE) > 8) OR (MONTH(CURRENT_DATE) < 3) THEN    
