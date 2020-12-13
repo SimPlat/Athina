@@ -216,25 +216,13 @@ ALTER TABLE verify ADD CONSTRAINT verify_application FOREIGN KEY verify_applicat
 -- ROUTINES
 DELIMITER $$
 
--- 1.Function: login(username,password,user_type)
-CREATE DEFINER=`root`@`localhost` FUNCTION `login_function`(`login_username` VARCHAR(15),`login_password` VARCHAR(35),`login_type` ENUM('student','secretary','professor','admin'))
-	RETURNS BOOLEAN 
+-- 1.Procedure: lecture_info_procedure(lecture_id)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `lecture_info_procedure`(IN `lecture_id` INT)
 	SQL SECURITY DEFINER
 	READS SQL DATA
 BEGIN
-	-- Local variables
-	DECLARE uname VARCHAR(15);
-	DECLARE upass VARCHAR(35);
-	DECLARE utype ENUM('student','secretary','professor','admin');
-	-- Fetch username, password and type of the given username
-	SELECT user.username,user.password,user.type INTO uname,upass,utype from user where (user.username <=> login_username);
-	-- Check if username, password and type are correct
-	IF (uname LIKE login_username) AND (upass LIKE login_password) AND (utype LIKE login_type) THEN
-		RETURN 1;
-	END IF;
-
-	RETURN 0;
-
+	-- Select table lecture
+	SELECT * FROM TABLE lecture;
 END$$
 -- 2.Procedure: student_info_procedure(user_id)
 CREATE DEFINER=`root`@`localhost` PROCEDURE `student_info_procedure`(IN `user_id` INT)
