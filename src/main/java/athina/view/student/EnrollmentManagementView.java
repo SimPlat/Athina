@@ -14,9 +14,9 @@ public class EnrollmentManagementView extends javax.swing.JFrame {
 		this.studentController = studentController;
 	}
 	
-	private void newEnrollmentButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newEnrollmentButtonMouseClicked 
+	private void newEnrollmentButtonMouseClicked(java.awt.event.MouseEvent evt) {                                                  
 		studentController.displayNewEnrollmentView();
-	}//GEN-LAST:event_newEnrollmentButtonMouseClicked
+	}                                                
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton editEnrollmentButton;
@@ -32,8 +32,6 @@ public class EnrollmentManagementView extends javax.swing.JFrame {
         titleLabel = new javax.swing.JLabel();
         newEnrollmentButton = new javax.swing.JButton();
         editEnrollmentButton = new javax.swing.JButton();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         logoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         logoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/athina/view/cropped-ihu-logo_el-16.png"))); // NOI18N
