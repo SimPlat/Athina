@@ -277,7 +277,6 @@ public class RegisterEnrollmentView extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         studentData1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         logoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
