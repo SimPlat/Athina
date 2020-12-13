@@ -14,7 +14,7 @@ public class EnrollmentManagementView extends javax.swing.JFrame {
 		this.studentController = studentController;
 	}
 	
-	private void newEnrollmentButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newEnrollmentButtonMouseClicked
+	private void newEnrollmentButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newEnrollmentButtonMouseClicked 
 		studentController.displayNewEnrollmentView();
 	}//GEN-LAST:event_newEnrollmentButtonMouseClicked
 
