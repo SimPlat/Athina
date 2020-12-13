@@ -2,55 +2,55 @@
 USE Athina_db;
 
 -- Lectures
-   -- Semester 1
+	-- Semester 1
 INSERT INTO lecture VALUES (DEFAULT,'Mathematics I','1',DEFAULT,'1');
 INSERT INTO lecture VALUES (DEFAULT,'Structured Programming','1',DEFAULT,'1');
 INSERT INTO lecture VALUES (DEFAULT,'Intro to CS','1',DEFAULT,'1');
 INSERT INTO lecture VALUES (DEFAULT,'Electronic Physics','1',DEFAULT,'1');
 INSERT INTO lecture VALUES (DEFAULT,'DC Circuits','1',DEFAULT,'1');
-   -- Semeseter 2
+	-- Semeseter 2
 INSERT INTO lecture VALUES (DEFAULT,'Mathematics II','2',DEFAULT,'1');
 INSERT INTO lecture VALUES (DEFAULT,'Object Oriented Programming','2',DEFAULT,'1');
 INSERT INTO lecture VALUES (DEFAULT,'Technical Writing','2',DEFAULT,'1');
 INSERT INTO lecture VALUES (DEFAULT,'Digital Circuits','2',DEFAULT,'1');
 INSERT INTO lecture VALUES (DEFAULT,'AC Circuits','2',DEFAULT,'1');
-   -- Semeseter 3
+	-- Semeseter 3
 INSERT INTO lecture VALUES (DEFAULT,'Mathematics III','3',DEFAULT,'1');
 INSERT INTO lecture VALUES (DEFAULT,'Data Structures','3',DEFAULT,'1');
 INSERT INTO lecture VALUES (DEFAULT,'Intro to Web Development','3',DEFAULT,'1');
 INSERT INTO lecture VALUES (DEFAULT,'Statistics','3',DEFAULT,'1');
 INSERT INTO lecture VALUES (DEFAULT,'Signal Processing','3',DEFAULT,'1');
-   -- Semeseter 4
+	-- Semeseter 4
 INSERT INTO lecture VALUES (DEFAULT,'Computer Architecture','4',DEFAULT,'1');
 INSERT INTO lecture VALUES (DEFAULT,'Intro to Operating Systems','4',DEFAULT,'1');
 INSERT INTO lecture VALUES (DEFAULT,'Database Management Systems','4',DEFAULT,'1');
 INSERT INTO lecture VALUES (DEFAULT,'Telecommunication Systems','4',DEFAULT,'1');
 INSERT INTO lecture VALUES (DEFAULT,'Electronic Circuits','4',DEFAULT,'1');
-   -- Semeseter 5
+	-- Semeseter 5
 INSERT INTO lecture VALUES (DEFAULT,'Operating Systems Design','5',DEFAULT,'1');
 INSERT INTO lecture VALUES (DEFAULT,'Microcontrollers','5',DEFAULT,'1');
 INSERT INTO lecture VALUES (DEFAULT,'Human Machine Interaction','5',DEFAULT,'1');
 INSERT INTO lecture VALUES (DEFAULT,'Wireless Communications','5',DEFAULT,'1');
 INSERT INTO lecture VALUES (DEFAULT,'Electronic Devices','5',DEFAULT,'1');
-   -- Semeseter 6
+	-- Semeseter 6
 INSERT INTO lecture VALUES (DEFAULT,'Artificial Intelligence','6',DEFAULT,'1');
 INSERT INTO lecture VALUES (DEFAULT,'Embedded Systems','6',DEFAULT,'1');
 INSERT INTO lecture VALUES (DEFAULT,'Project Management','6',DEFAULT,'0');
 INSERT INTO lecture VALUES (DEFAULT,'Optoelectronics Communications','6',DEFAULT,'0');
 INSERT INTO lecture VALUES (DEFAULT,'Quantum Computing','6',DEFAULT,'0');
-   -- Semeseter 7
+	-- Semeseter 7
 INSERT INTO lecture VALUES (DEFAULT,'Computer Networks','7',DEFAULT,'1');
 INSERT INTO lecture VALUES (DEFAULT,'Power Electronics','7',DEFAULT,'1');
 INSERT INTO lecture VALUES (DEFAULT,'Software Engineering','7',DEFAULT,'0');
 INSERT INTO lecture VALUES (DEFAULT,'Database Technology','7',DEFAULT,'0');
 INSERT INTO lecture VALUES (DEFAULT,'Sensors Signal Contitioning','7',DEFAULT,'0');
-   -- Semeseter 8
+	-- Semeseter 8
 INSERT INTO lecture VALUES (DEFAULT,'Internet of Things','8',DEFAULT,'1');
 INSERT INTO lecture VALUES (DEFAULT,'Intro to Machine Learning','8',DEFAULT,'1');
 INSERT INTO lecture VALUES (DEFAULT,'Power Converters','8',DEFAULT,'0');
 INSERT INTO lecture VALUES (DEFAULT,'CCNA 1','8',DEFAULT,'0');
 INSERT INTO lecture VALUES (DEFAULT,'Data Organization and Data Mining','8',DEFAULT,'0');
-   -- Semeseter 9
+	-- Semeseter 9
 INSERT INTO lecture VALUES (DEFAULT,'Robotics','9',DEFAULT,'1');
 INSERT INTO lecture VALUES (DEFAULT,'Advanced Web Development','9',DEFAULT,'1');
 INSERT INTO lecture VALUES (DEFAULT,'Software Engineering','9',DEFAULT,'0');
