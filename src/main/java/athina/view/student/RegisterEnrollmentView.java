@@ -1,5 +1,7 @@
 package athina.view.student;
 
+import java.util.ResourceBundle.Control;
+
 import athina.controller.StudentController;
 
 public class RegisterEnrollmentView extends javax.swing.JFrame {
@@ -34,7 +36,8 @@ public class RegisterEnrollmentView extends javax.swing.JFrame {
 	}
 
 	private void completeEntrollmentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_completeEntrollmentButtonActionPerformed
-	}//GEN-LAST:event_completeEntrollmentButtonActionPerformed
+        studentController.submitEnrollment();
+    }//GEN-LAST:event_completeEntrollmentButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton completeEntrollmentButton;

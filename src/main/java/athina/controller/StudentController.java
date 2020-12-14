@@ -49,6 +49,13 @@ public class StudentController implements UserController{
 		registerEnrollmentView.setVisible(true);
 	}
 
+	public void submitEnrollment(){
+		RegisterEnrollmentView registerEnrollmentView = (RegisterEnrollmentView) frameList.get(2);
+		registerEnrollmentView.setVisible(false);
+		// TODO
+	}
+
+	// Update lecture names from DB and prevent GUI from interacting with unavailable lectures
 	public void prepareRegisterEnrollmentView(RegisterEnrollmentView registerEnrollmentView){
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -82,6 +89,7 @@ public class StudentController implements UserController{
 		disableUnavailableLectures(registerEnrollmentView);
 	}
 
+	// Disable passed lecture's checkboxes
 	public void disableUnavailableLectures(RegisterEnrollmentView registerEnrollmentView){
 		List<JCheckBox> lectureCheckboxList = getAllCheckboxes(registerEnrollmentView);
 		PreparedStatement stmt = null;
