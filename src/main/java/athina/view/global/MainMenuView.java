@@ -30,7 +30,7 @@ public class MainMenuView extends javax.swing.JFrame {
 	}//GEN-LAST:event_userInfoButtonActionPerformed
 
 	private void enrollmentsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrollmentsButtonActionPerformed
-		((StudentController) controller).displayEnrollmentsView();
+		((StudentController) controller).displayEnrollmentManagementView();
 	}//GEN-LAST:event_enrollmentsButtonActionPerformed
 
 	private void manageStudentsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageStudentsButtonActionPerformed

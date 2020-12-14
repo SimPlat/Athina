@@ -14,7 +14,7 @@ import java.sql.*;
 
 public class StudentController implements UserController{
 	private Student student;
-	private ArrayList<JFrame> frameList;	// 0=InfoView | 1=EnrollmentsView | 2=NewEnrollmentsView
+	private ArrayList<JFrame> frameList;	// 0=InfoView | 1=EnrollmentManagementView | 2=RegisterEnrollmentView
 	private Connection connection;
 
 	public StudentController(Student student,ArrayList<JFrame> frameList,Connection connection){
@@ -38,26 +38,26 @@ public class StudentController implements UserController{
 		infoView.setVisible(true);
 	}
 
-	public void displayEnrollmentsView(){
-		EnrollmentManagementView enrollmentsView = (EnrollmentManagementView) frameList.get(1);
-		enrollmentsView.setVisible(true);
+	public void displayEnrollmentManagementView(){
+		EnrollmentManagementView enrollmentManagementView = (EnrollmentManagementView) frameList.get(1);
+		enrollmentManagementView.setVisible(true);
 	}
 
-	public void displayNewEnrollmentView(){
-		RegisterEnrollmentView newEnrollmentView = (RegisterEnrollmentView) frameList.get(2);
-		newEnrollmentView.setVisible(true);
+	public void displayRegisterEnrollmentView(){
+		RegisterEnrollmentView registerEnrollmentView = (RegisterEnrollmentView) frameList.get(2);
+		registerEnrollmentView.setVisible(true);
 	}
 
-	public void prepareEnrollmentView(){
-		NewEnrollmentView newEnrollmentView = (NewEnrollmentView) frameList.get(2);
+	public void prepareRegisterEnrollmentView(){
+		RegisterEnrollmentView registerEnrollmentView = (RegisterEnrollmentView) frameList.get(2);
 		PreparedStatement prepStmt = null;
 		ResultSet rs = null;
 		List<Component> componentList = getAllComponents(frameList.get(2));
 		int currentMonth = LocalDate.now().getMonthValue();
 		
 		// Hide off season lectures
-		if (currentMonth < 3 || currentMonth > 8) newEnrollmentView.hideOutOfSeason("winter");
-		else newEnrollmentView.hideOutOfSeason("spring");
+		if (currentMonth < 3 || currentMonth > 8) registerEnrollmentView.hideOutOfSeason("winter");
+		else registerEnrollmentView.hideOutOfSeason("spring");
 
 		try{
 			// Fetch all the lecture info

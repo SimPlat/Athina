@@ -14,6 +14,25 @@ public class RegisterEnrollmentView extends javax.swing.JFrame {
 		this.studentController = studentController;
 	}
 
+	public void hideOutOfSeason(String epoch){
+		switch(epoch){
+			case "winter":
+				semesterPanel2.setVisible(false);
+				semesterPanel4.setVisible(false);
+				semesterPanel6.setVisible(false);
+				semesterPanel8.setVisible(false);
+				break;
+			case "spring":
+				semesterPanel1.setVisible(false);
+				semesterPanel3.setVisible(false);
+				semesterPanel5.setVisible(false);
+				semesterPanel7.setVisible(false);
+				semesterPanel9.setVisible(false);
+				break;
+			default:
+		}
+	}
+
 	private void completeEntrollmentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_completeEntrollmentButtonActionPerformed
 		// TODO add your handling code here:
 	}//GEN-LAST:event_completeEntrollmentButtonActionPerformed

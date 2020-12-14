@@ -15,7 +15,7 @@ public class EnrollmentManagementView extends javax.swing.JFrame {
 	}
 	
 	private void newEnrollmentButtonMouseClicked(java.awt.event.MouseEvent evt) {                                                  
-		studentController.displayNewEnrollmentView();
+		studentController.displayRegisterEnrollmentView();
 	}                                                
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
