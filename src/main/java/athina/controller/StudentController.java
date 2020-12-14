@@ -52,7 +52,7 @@ public class StudentController implements UserController{
 	public void prepareRegisterEnrollmentView(RegisterEnrollmentView registerEnrollmentView){
 		PreparedStatement prepStmt = null;
 		ResultSet rs = null;
-		List<Component> componentList = getAllComponents(frameList.get(2));
+		List<JCheckBox> checkboxList = getAllCheckboxes(frameList.get(2));
 		int currentMonth = LocalDate.now().getMonthValue();
 		
 		// Hide off season lectures
@@ -68,59 +68,44 @@ public class StudentController implements UserController{
 			rs = prepStmt.executeQuery();
 
 			// Fill the labels with the fetched lecture names
-			for(Component comp : componentList){
-				if (comp instanceof JLabel && ((JLabel) comp).getText().contains("lecture")){
-					JLabel jl = ((JLabel) comp);
+			for(Component comp : checkboxList){
+				if (comp instanceof JCheckBox){
+					JCheckBox jc = ((JCheckBox) comp);
 					if (rs.next()){
-						jl.setText(rs.getString(2));
+						jc.setText(rs.getString(2));
 					}
 				}
 			}
-			//disableUnavailableLectures();
 		}		
 		catch (SQLException se){se.printStackTrace();}
 		finally{
 			try{rs.close();} catch(SQLException se){}
 			try{prepStmt.close();} catch(SQLException se){}
 		}
+		//disableUnavailableLectures(registerEnrollmentView);
+		
 	}
 
-	public void disableUnavailableLectures(RegisterEnrollmentView registerEnrollmentView){
-		List<Component> componentList = getAllComponents(registerEnrollmentView);
+	public void disableUnavailableLectures(){
+		RegisterEnrollmentView registerEnrollmentView = (RegisterEnrollmentView) frameList.get(2);
+		List<JCheckBox> lectureCheckboxList = getAllCheckboxes(registerEnrollmentView);
 		PreparedStatement prepStmt = null;
 		ResultSet rs = null;
 		
-		// Create 2 lists to store all the lecture labels and checkboxes
-		List<JLabel> lectureLabelsList = new ArrayList<JLabel>();
-		List<JCheckBox> lectureCheckboxList = new ArrayList<JCheckBox>();
-		
-		// Fill the lists with the corresponding components
-		for (Component comp : componentList){
-			if(comp instanceof JLabel && ((JLabel) comp).getText().contains("lecture"))
-				lectureLabelsList.add((JLabel) comp);
-			else if(comp instanceof JCheckBox)
-				lectureCheckboxList.add((JCheckBox) comp);
-		}
-		
 		try{
 			// Fetch active student's unavailable lectures
-			prepStmt = connection.prepareStatement("CALL unavailable_lecture_procedure(?);",
+			prepStmt = connection.prepareStatement("CALL unavailable_lectures_procedure(?)",
 																ResultSet.TYPE_SCROLL_SENSITIVE,
 																ResultSet.CONCUR_UPDATABLE);
-			prepStmt.setString(1, String.valueOf(student.getId()));
+			prepStmt.setInt(1, student.getId());
 			rs = prepStmt.executeQuery();
 			
-			int count = 0;
-			// Disables the components responsible for the management of the received unavailable lectures
-			while(rs.next()){
-				for(Component comp : lectureLabelsList){
-					if(((JLabel) comp).getText().equals(rs.getString(1))){
-						lectureLabelsList.get(count).setEnabled(false);
-						lectureCheckboxList.get(count).setEnabled(false);
-					}
-					count++;
+			// Disables the checkboxes responsible for the received unavailable lectures
+			for(JCheckBox jc : lectureCheckboxList){	
+				if(rs.next()){
+					if(jc.getText().equals(rs.getString(2)))
+						jc.setEnabled(false);
 				}
-				count = 0;
 			}
 		}
 		catch(SQLException se){se.printStackTrace();}
@@ -131,14 +116,14 @@ public class StudentController implements UserController{
 	}
 
 	// Create using recursion, a list with all the components of the given container and return it 
-	public List<Component> getAllComponents(Container container) {
+	public List<JCheckBox> getAllCheckboxes(Container container) {
 		Component[] components = container.getComponents();
-		List<Component> componentList = new ArrayList<Component>();
+		List<JCheckBox> checkboxList = new ArrayList<JCheckBox>();
 		for (Component comp : components) {
-			componentList.add(comp);
-			if (comp instanceof Container) componentList.addAll(getAllComponents((Container) comp));
+			if (comp instanceof JCheckBox) checkboxList.add((JCheckBox) comp);
+			if (comp instanceof Container) checkboxList.addAll(getAllCheckboxes((Container) comp));
 		}
-		return componentList;
+		return checkboxList;
   }
 
 }
