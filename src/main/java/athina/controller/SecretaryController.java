@@ -8,7 +8,6 @@ import java.util.List;
 import javax.swing.JFrame;
 import java.sql.*;
 
-
 public class SecretaryController implements UserController{
 	private Secretary secretary;
 	private List<JFrame> List; // 0=InfoView | 1=ManagementView | 2=RegisterView
@@ -37,39 +36,39 @@ public class SecretaryController implements UserController{
 
 	// Reveal student management frame
 	public void displayStudentManagementView(){
-		StudentManagementView studentsView = ((StudentManagementView) List.get(1));
-		studentsView.setVisible(true);
+		StudentManagementView studentManagementView = ((StudentManagementView) List.get(1));
+		studentManagementView.setVisible(true);
 	}
 
 	// Reveal student registration frame
 	public void displayRegisterStudentView(){
-		RegisterStudentView newStudentView = ((RegisterStudentView) List.get(2));
-		newStudentView.setVisible(true);
+		RegisterStudentView registerStudentView = ((RegisterStudentView) List.get(2));
+		registerStudentView.setVisible(true);
 	}
 
 	// Registers a new student into the DB
 	public void registerNewStudent(){
-		RegisterStudentView newStudentView = (RegisterStudentView) List.get(2);
+		RegisterStudentView registerStudentView = (RegisterStudentView) List.get(2);
 		PreparedStatement prepStmt = null;;
 		try{
 			prepStmt = connection.prepareStatement("CALL register_student_procedure(?,?,?,?)");
-			prepStmt.setString(1, newStudentView.getName());
-			prepStmt.setString(2, newStudentView.getSurname());
-			prepStmt.setString(3, newStudentView.getPhoneNumber());
-			prepStmt.setString(4, newStudentView.getAdress());
+			prepStmt.setString(1, registerStudentView.getName());
+			prepStmt.setString(2, registerStudentView.getSurname());
+			prepStmt.setString(3, registerStudentView.getPhoneNumber());
+			prepStmt.setString(4, registerStudentView.getAdress());
 			prepStmt.execute();
 		}
 		catch(SQLException se){se.printStackTrace();}
 		finally{try{prepStmt.close();} catch(SQLException se){}}	 
 	}
 
-	// Fetches the student with the given ID and updates StudentsView 
+	// Fetches the student with the given ID and updates studentManagementView 
 	public void findStudent(){
-		StudentManagementView studentsView = (StudentManagementView) List.get(1);
+		StudentManagementView studentManagementView = (StudentManagementView) List.get(1);
 		PreparedStatement prepStmt = null;
 		ResultSet rs = null;
 		String fullName = null;
-		targetStudentId = studentsView.getId();
+		targetStudentId = studentManagementView.getId();
 		
 		try{
 			prepStmt = connection.prepareStatement("CALL student_info_procedure(?)");
@@ -80,7 +79,7 @@ public class SecretaryController implements UserController{
 		}
 		catch(SQLException se){se.printStackTrace();}
 		finally{
-			studentsView.setFullName(fullName);
+			studentManagementView.setFullName(fullName);
 			try{rs.close();} catch(SQLException se){}
 			try{prepStmt.close();} catch(SQLException se){}
 		}
