@@ -45,11 +45,11 @@ public class StudentController implements UserController{
 
 	public void displayRegisterEnrollmentView(){
 		RegisterEnrollmentView registerEnrollmentView = (RegisterEnrollmentView) frameList.get(2);
+		prepareRegisterEnrollmentView(registerEnrollmentView);
 		registerEnrollmentView.setVisible(true);
 	}
 
-	public void prepareRegisterEnrollmentView(){
-		RegisterEnrollmentView registerEnrollmentView = (RegisterEnrollmentView) frameList.get(2);
+	public void prepareRegisterEnrollmentView(RegisterEnrollmentView registerEnrollmentView){
 		PreparedStatement prepStmt = null;
 		ResultSet rs = null;
 		List<Component> componentList = getAllComponents(frameList.get(2));
@@ -85,8 +85,8 @@ public class StudentController implements UserController{
 		}
 	}
 
-	public void disableUnavailableLectures(){
-		List<Component> componentList = getAllComponents(frameList.get(2));
+	public void disableUnavailableLectures(RegisterEnrollmentView registerEnrollmentView){
+		List<Component> componentList = getAllComponents(registerEnrollmentView);
 		PreparedStatement prepStmt = null;
 		ResultSet rs = null;
 		
