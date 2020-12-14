@@ -18,7 +18,7 @@ public class NewEnrollmentView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_completeEntrollmentButtonActionPerformed
 
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:variables
+    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton completeEntrollmentButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JCheckBox lectureBox1;
@@ -145,7 +145,7 @@ public class NewEnrollmentView extends javax.swing.JFrame {
     private javax.swing.JLabel studentData1;
     private javax.swing.JLabel studentLabel;
     private javax.swing.JLabel titleLabel;
-    // </editor-fold>//GEN-END:variables
+    // End of variables declaration//GEN-END:variables
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -281,7 +281,7 @@ public class NewEnrollmentView extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         logoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        logoLabel.setText("logo");
+        logoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/athina/view/cropped-ihu-logo_el-16.png"))); // NOI18N
 
         studentLabel.setText("Student");
 
@@ -1078,7 +1078,7 @@ public class NewEnrollmentView extends javax.swing.JFrame {
             .addComponent(titleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(logoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(logoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -1102,7 +1102,7 @@ public class NewEnrollmentView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(logoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(logoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
