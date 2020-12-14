@@ -36,6 +36,7 @@ public class LoginController {
 	}
 
 	public void checkUsernameType(){
+		// Check if given username has the correct format "xx#####"
 		if (Pattern.matches("^[a-z]{2}[0-9]{5}$",username)){
 			switch(username.substring(0,2)){
 				case "st":   
@@ -70,27 +71,6 @@ public class LoginController {
 		catch(SQLException se){se.printStackTrace();}   // Handle JDBC errors
 		catch(Exception e){e.printStackTrace();}        // Handle Class.forName errors
 		finally{connected = true;}
-	}
-
-	// Invokes DB routine login_function(String username, String password, Enum type(studen,secretary,professor,admin))
-	public String logInValidation(){
-		boolean validation = false;
-		dbConnect();
-		try(PreparedStatement prepStmnt = connection.prepareStatement("SELECT login_function(?,?,?) as login_function",
-																	ResultSet.TYPE_SCROLL_SENSITIVE,
-																	ResultSet.CONCUR_UPDATABLE)){
-																			
-			prepStmnt.setString(1, username);
-			prepStmnt.setString(2, password);
-			prepStmnt.setString(3, userType);
-			ResultSet rs = prepStmnt.executeQuery();
-
-			validation = (1 == (rs.next() ? rs.getInt("login_function") : null));
-		}
-		catch(SQLException se){se.printStackTrace();}  
-		if (validation)
-			return userType;
-		return null;
 	}
 
 	public boolean connected(){

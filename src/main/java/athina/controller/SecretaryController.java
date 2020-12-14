@@ -3,6 +3,7 @@ package athina.controller;
 import athina.model.Secretary;
 import athina.view.global.*;
 import athina.view.secretary.*;
+
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import java.sql.*;
@@ -49,46 +50,56 @@ public class SecretaryController implements UserController{
 	// Registers a new student into the DB
 	public void registerNewStudent(){
 		RegisterStudentView newStudentView = (RegisterStudentView) frameList.get(2);
-		try(PreparedStatement prpdStmnt = connection.prepareStatement("CALL register_student_procedure(?,?,?,?)")){
-			prpdStmnt.setString(1, newStudentView.getName());
-			prpdStmnt.setString(2, newStudentView.getSurname());
-			prpdStmnt.setString(3, newStudentView.getPhoneNumber());
-			prpdStmnt.setString(4, newStudentView.getAdress());
-			prpdStmnt.execute();
-			prpdStmnt.close();
+		PreparedStatement prepStmt = null;;
+		try{
+			prepStmt = connection.prepareStatement("CALL register_student_procedure(?,?,?,?)");
+			prepStmt.setString(1, newStudentView.getName());
+			prepStmt.setString(2, newStudentView.getSurname());
+			prepStmt.setString(3, newStudentView.getPhoneNumber());
+			prepStmt.setString(4, newStudentView.getAdress());
+			prepStmt.execute();
 		}
-		catch(SQLException se){se.printStackTrace();}					 
+		catch(SQLException se){se.printStackTrace();}
+		finally{try{prepStmt.close();} catch(SQLException se){}}	 
 	}
 
 	// Fetches the student with the given ID and updates StudentsView 
 	public void findStudent(){
 		StudentManagementView studentsView = (StudentManagementView) frameList.get(1);
+		PreparedStatement prepStmt = null;
+		ResultSet rs = null;
 		String fullName = null;
 		targetStudentId = studentsView.getId();
-		try(PreparedStatement prpdStmnt = connection.prepareStatement("CALL student_info_procedure(?)",
-																					ResultSet.TYPE_SCROLL_SENSITIVE,
-																					ResultSet.CONCUR_UPDATABLE)){
-			prpdStmnt.setString(1, targetStudentId);
-			ResultSet resultSet = prpdStmnt.executeQuery();
-			resultSet = prpdStmnt.executeQuery();
-			if (resultSet.next()){
-				fullName = resultSet.getString(5).concat(" ").concat(resultSet.getString(6)); 
-			}
-			prpdStmnt.close();
+		
+		try{
+			prepStmt = connection.prepareStatement("CALL student_info_procedure(?)",
+																ResultSet.TYPE_SCROLL_SENSITIVE,
+																ResultSet.CONCUR_UPDATABLE);
+			prepStmt.setString(1, targetStudentId);
+			rs = prepStmt.executeQuery();
+			if (rs.next())
+				fullName = rs.getString(5).concat(" ").concat(rs.getString(6)); 
 		}
 		catch(SQLException se){se.printStackTrace();}
-		finally{studentsView.setFullName(fullName);}
+		finally{
+			studentsView.setFullName(fullName);
+			try{rs.close();} catch(SQLException se){}
+			try{prepStmt.close();} catch(SQLException se){}
+		}
 	}
 	
 	// Removes the student found during the search procedure on StudentManagementView 
 	public void removeStudent(){
+		PreparedStatement prepStmt = null;
 		if(targetStudentId != null){ 
-			try(PreparedStatement prpdStmnt = connection.prepareStatement("CALL remove_student_procedure(?)")){
-				prpdStmnt.setString(1, targetStudentId);
-				prpdStmnt.execute();
-				prpdStmnt.close();
+			try{
+				prepStmt = connection.prepareStatement("CALL remove_student_procedure(?)");
+				prepStmt.setString(1, targetStudentId);
+				prepStmt.execute();
 			}
-			catch(SQLException se){se.printStackTrace();}	
+			catch(SQLException se){se.printStackTrace();}
+			finally{try{prepStmt.close();} catch(SQLException se){}}	
 		}
 	}
+
 }

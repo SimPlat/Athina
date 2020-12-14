@@ -5,7 +5,7 @@ import athina.controller.StudentController;
 public class NewEnrollmentView extends javax.swing.JFrame {
 	private static final long serialVersionUID = 3054003590949168789L;
 	private StudentController studentController;
-	
+
 	public NewEnrollmentView() {
 		initComponents();
 	}
@@ -15,8 +15,27 @@ public class NewEnrollmentView extends javax.swing.JFrame {
 	}
 
 	private void completeEntrollmentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_completeEntrollmentButtonActionPerformed
-		// TODO add your handling code here:
+		// TODO add your handling code 
 	}//GEN-LAST:event_completeEntrollmentButtonActionPerformed
+
+	public void hideOutOfSeason(String epoch){
+		switch(epoch){
+			case "winter":
+				semesterPanel2.setVisible(false);
+				semesterPanel4.setVisible(false);
+				semesterPanel6.setVisible(false);
+				semesterPanel8.setVisible(false);
+				break;
+			case "spring":
+				semesterPanel1.setVisible(false);
+				semesterPanel3.setVisible(false);
+				semesterPanel5.setVisible(false);
+				semesterPanel7.setVisible(false);
+				semesterPanel9.setVisible(false);
+				break;
+			default:
+		}
+	}
 
 	// Variables declaration - do not modify//GEN-BEGIN:variables
 	private javax.swing.JButton completeEntrollmentButton;

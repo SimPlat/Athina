@@ -20,24 +20,33 @@ public class Student extends User {
 	}
 
 	private void getInfoFromDb(int id){
-		try(PreparedStatement prepStmnt = connection.prepareStatement("CALL student_info_procedure(?)",
-																ResultSet.TYPE_SCROLL_SENSITIVE,
-																ResultSet.CONCUR_UPDATABLE)){
-			prepStmnt.setString(1, String.valueOf(id));
-			ResultSet resultSet = prepStmnt.executeQuery();
+		PreparedStatement prepStmt = null;
+		ResultSet rs = null;
 
-			if(resultSet.next()){
+		try{
+			prepStmt = connection.prepareStatement("CALL student_info_procedure(?)",
+																ResultSet.TYPE_SCROLL_SENSITIVE,
+																ResultSet.CONCUR_UPDATABLE);
+			prepStmt.setString(1, String.valueOf(id));
+			rs = prepStmt.executeQuery();
+
+			if(rs.next()){
 				super.setId(id);
-				super.setFirstName(resultSet.getString(5));
-				super.setLastName(resultSet.getString(6));
-				super.setEmail(resultSet.getString(7));
-				super.setPhoneNumber(resultSet.getString(8));
-				super.setAdress(resultSet.getString(9));
-				setEcts(resultSet.getInt(10));
+				super.setFirstName(rs.getString(5));
+				super.setLastName(rs.getString(6));
+				super.setEmail(rs.getString(7));
+				super.setPhoneNumber(rs.getString(8));
+				super.setAdress(rs.getString(9));
+				setEcts(rs.getInt(10));
 			}
-			prepStmnt.close();
+
+			prepStmt.close();
 		}
 		catch(SQLException se){se.printStackTrace();}
+		finally{
+			try{rs.close();} catch(SQLException se){}
+			try{prepStmt.close();} catch(SQLException se){}
+		}
 	}
 
 }

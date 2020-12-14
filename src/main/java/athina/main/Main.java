@@ -5,6 +5,7 @@ import athina.controller.*;
 import athina.view.global.*;
 import athina.view.student.*;
 import athina.view.secretary.*;
+
 import java.sql.Connection;
 import java.util.ArrayList;
 import javax.swing.JFrame;
@@ -18,7 +19,10 @@ public class Main {
 		UserController controller;       // User controller
 		JFrame mainFrame;                // Main frame
 		ArrayList<JFrame> frameList;     // User specific frames
-			
+		
+		// Student variables
+		ArrayList<Lecture> availableLecturesList; // Lectures available for the current enrollment	
+
 		// Initialized login frame
 		mainFrame = new LoginView(new LoginController());
 		mainFrame.setVisible(true);
@@ -38,12 +42,13 @@ public class Main {
 				// Create user student
 				user =  new Student(((LoginView) mainFrame).getController().getUserId(),connection);
 			 
-				// Create the needed controller and frames for student
+				// Create the needed controller, frames for student
+				availableLecturesList = new ArrayList<Lecture>();
 				frameList = new ArrayList<JFrame>();
 				frameList.add(0,new InfoView());
 				frameList.add(1,new EnrollmentsView());
 				frameList.add(2,new NewEnrollmentView());
-				controller = new StudentController((Student) user,frameList,connection);
+				controller = new StudentController((Student) user,availableLecturesList,frameList,connection);
 			 
 			 	// Replace login with main menu on the main frame
 				mainFrame.dispose();
