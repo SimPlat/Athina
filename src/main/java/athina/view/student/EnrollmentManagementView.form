@@ -22,7 +22,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="logoLabel" min="-2" pref="78" max="-2" attributes="0"/>
+              <Component id="logoLabel" min="-2" pref="72" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
@@ -53,7 +53,7 @@
                           <Component id="editEnrollmentButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Component id="logoLabel" min="-2" pref="73" max="-2" attributes="0"/>
+                  <Component id="logoLabel" min="-2" pref="75" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -67,7 +67,10 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/athina/view/cropped-ihu-logo_el-16.png"/>
         </Property>
+<<<<<<< HEAD:src/main/java/athina/view/student/EnrollmentManagementView.form
         <Property name="text" type="java.lang.String" value="logo"/>
+=======
+>>>>>>> dev:src/main/java/athina/view/student/EnrollmentsView.form
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="titleLabel">
