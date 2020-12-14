@@ -7,8 +7,10 @@ import athina.view.student.*;
 import athina.view.secretary.*;
 
 import java.sql.Connection;
+import java.util.List;
 import java.util.ArrayList;
 import javax.swing.JFrame;
+import javax.swing.JCheckBox;
 
 public class Main {
 	public static void main(String[] args) {
@@ -18,8 +20,10 @@ public class Main {
 		User user;                       // Connected user
 		UserController controller;       // User controller
 		JFrame mainFrame;                // Main frame
-		ArrayList<JFrame> frameList;     // User specific frames
-		
+		List<Lecture> lectureList;			// List containing all the lectures
+		List<JFrame> frameList;     		// User specific frames
+		List<JCheckBox> checkboxList;		// List of Components
+
 		// Initialized login frame
 		mainFrame = new LoginView(new LoginController());
 		mainFrame.setVisible(true);
@@ -38,13 +42,20 @@ public class Main {
 			case "student":
 				// Create user student
 				user =  new Student(((LoginView) mainFrame).getController().getUserId(),connection);
-			 
+				
+				// Fill lectureList
+				lectureList = new ArrayList<Lecture>();
+				for(int i=1; i<=45; i++){
+					lectureList.add(new Lecture(i, connection));
+				}
+
 				// Create the needed controller, frames for student
 				frameList = new ArrayList<JFrame>();
+				checkboxList = new ArrayList<JCheckBox>();
 				frameList.add(0,new InfoView());
 				frameList.add(1,new EnrollmentManagementView());
 				frameList.add(2,new RegisterEnrollmentView());
-				controller = new StudentController((Student) user,frameList,connection);
+				controller = new StudentController((Student) user,lectureList,checkboxList,frameList,connection);
 			 
 			 	// Replace login with main menu on the main frame
 				mainFrame.dispose();
