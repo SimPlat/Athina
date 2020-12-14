@@ -1,7 +1,5 @@
 package athina.view.student;
 
-import java.util.ResourceBundle.Control;
-
 import athina.controller.StudentController;
 
 public class RegisterEnrollmentView extends javax.swing.JFrame {

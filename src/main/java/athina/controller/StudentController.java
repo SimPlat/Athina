@@ -1,11 +1,11 @@
 package athina.controller;
 
 import athina.model.Student;
+import athina.model.Lecture;
 import athina.view.global.*;
 import athina.view.student.*;
 
 import java.util.List;
-import java.util.ArrayList;
 import java.awt.Container;
 import java.awt.Component;
 import java.time.LocalDate;
@@ -14,15 +14,20 @@ import java.sql.*;
 
 public class StudentController implements UserController{
 	private Student student;
-	private ArrayList<JFrame> frameList;	// 0=InfoView | 1=EnrollmentManagementView | 2=RegisterEnrollmentView
+	private List<Lecture> lectureList;
+	private List<JCheckBox> checkboxList;
+	private List<JFrame> frameList;	// 0=InfoView | 1=EnrollmentManagementView | 2=RegisterEnrollmentView
 	private Connection connection;
 
-	public StudentController(Student student,ArrayList<JFrame> frameList,Connection connection){
+	public StudentController(Student student,List<Lecture> lectureList,List<JCheckBox> checkboxList,
+									List<JFrame> List,Connection connection){
 		this.student = student;
-		this.frameList = frameList;
+		this.lectureList = lectureList;
+		this.checkboxList = checkboxList;
+		this.frameList = List;
 		this.connection = connection;
-		((EnrollmentManagementView) frameList.get(1)).setController(this);
-		((RegisterEnrollmentView) frameList.get(2)).setController(this);
+		((EnrollmentManagementView) List.get(1)).setController(this);
+		((RegisterEnrollmentView) List.get(2)).setController(this);
 	}
 
 	// Updates user info frame
@@ -49,10 +54,17 @@ public class StudentController implements UserController{
 		registerEnrollmentView.setVisible(true);
 	}
 
+	// Sends the selected lectures to the DB
 	public void submitEnrollment(){
 		RegisterEnrollmentView registerEnrollmentView = (RegisterEnrollmentView) frameList.get(2);
+		List<JCheckBox> checkBoxList = getAllCheckboxes(registerEnrollmentView);
+		String Lecture;
+
+		for (JCheckBox jc : checkBoxList){
+			Lecture = jc.isSelected() ? jc.getText() : null;
+			
+		}
 		registerEnrollmentView.setVisible(false);
-		// TODO
 	}
 
 	// Update lecture names from DB and prevent GUI from interacting with unavailable lectures
@@ -119,12 +131,13 @@ public class StudentController implements UserController{
 	// Create using recursion, a list with all the components of the given container and return it 
 	public List<JCheckBox> getAllCheckboxes(Container container) {
 		Component[] components = container.getComponents();
-		List<JCheckBox> checkboxList = new ArrayList<JCheckBox>();
 		for (Component comp : components) {
 			if (comp instanceof JCheckBox) checkboxList.add((JCheckBox) comp);
 			if (comp instanceof Container) checkboxList.addAll(getAllCheckboxes((Container) comp));
 		}
 		return checkboxList;
-  }
+   }
+
+	public void tost(){}
 
 }
