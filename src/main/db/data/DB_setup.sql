@@ -222,7 +222,11 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `lecture_info_procedure`(IN `lecture
 	READS SQL DATA
 BEGIN
 	-- Select table lecture
-	SELECT * FROM TABLE lecture;
+	IF (`lecture_id` <=> -1) THEN
+		SELECT * FROM lecture;
+	ELSE
+		SELECT * FROM lecture WHERE (id <=> `lecture_id`);
+	END IF;
 END$$
 -- 2.Procedure: student_info_procedure(user_id)
 CREATE DEFINER=`root`@`localhost` PROCEDURE `student_info_procedure`(IN `user_id` INT)
@@ -252,18 +256,32 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `available_lectures_procedure`(`stud
 	SQL SECURITY DEFINER 
 	READS SQL DATA 
 BEGIN
-	DECLARE passed_lecture_ids INT;
-	
+
 	IF (MONTH(CURRENT_DATE) > 8) OR (MONTH(CURRENT_DATE) < 3) THEN
-		SELECT * FROM lecture WHERE semester%2=1 AND id NOT IN 
-			(SELECT lecture_id FROM exam WHERE (exam.student_id <=> `student_id` AND grade >= 5));
+		SELECT * FROM lecture WHERE (semester%2=1 AND id NOT IN 
+			(SELECT lecture_id FROM exam WHERE (exam.student_id <=> `student_id` AND grade >= 5)));
 	ELSE
-				SELECT * FROM lecture WHERE semester%2=0 AND id NOT IN 
-					(SELECT lecture_id FROM exam WHERE (exam.student_id <=> `student_id` AND grade >= 5));
+				SELECT * FROM lecture WHERE (semester%2=0 AND id NOT IN 
+					(SELECT lecture_id FROM exam WHERE (exam.student_id <=> `student_id` AND grade >= 5)));
+	END IF;
+	
+END$$
+-- 5.Procedure: unavailable_lectures_procedure_procedure(student_id)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `unavailable_lectures_procedure`(`student_id` INT)
+	SQL SECURITY DEFINER 
+	READS SQL DATA 
+BEGIN
+
+	IF (MONTH(CURRENT_DATE) > 8) OR (MONTH(CURRENT_DATE) < 3) THEN
+		SELECT * FROM lecture WHERE (semester%2=0 OR id IN 
+			(SELECT lecture_id FROM exam WHERE (exam.student_id <=> `student_id` AND grade >= 5)));
+	ELSE
+				SELECT * FROM lecture WHERE (semester%2=1 OR id IN 
+					(SELECT lecture_id FROM exam WHERE (exam.student_id <=> `student_id` AND grade >= 5)));
 	END IF;
 
 END$$
--- 5.Procedure: show_enrollments_procedure(student_id)
+-- 6.Procedure: show_enrollments_procedure(student_id)
 CREATE DEFINER=`root`@`localhost` PROCEDURE `show_enrollments_procedure`(IN student_id INT) 
 	SQL SECURITY DEFINER
 	READS SQL DATA
@@ -271,7 +289,7 @@ BEGIN
 	-- Fetch IDs and names of the enrolled lectures for the given student
 	SELECT E.lecture_id,L.name FROM enroll E JOIN lecture L ON (L.id = E.lecture_id) WHERE (E.student_id <=> student_id);
 END$$
--- 6.Procedure: current_enrollments_procedure(student_id)
+-- 7.Procedure: current_enrollments_procedure(student_id)
 CREATE DEFINER=`root`@`localhost` PROCEDURE `current_enrollments_procedure`(IN student_id INT) 
 	SQL SECURITY DEFINER
 	READS SQL DATA
@@ -284,7 +302,7 @@ BEGIN
 	END IF;
 
 END$$
--- 7.Procedure: new_enrollment_procedure(student_id,lecture_id)
+-- 8.Procedure: new_enrollment_procedure(student_id,lecture_id)
 CREATE DEFINER=`root`@`localhost` PROCEDURE `new_enrollment_procedure`(IN `student_id` INT,IN `lecture_id` INT)
 	SQL SECURITY DEFINER
 	MODIFIES SQL DATA
@@ -292,7 +310,7 @@ BEGIN
 	-- NO CHECKS ON THE AVAILABILITY OF THE LECTURES!!!!!!!!!!
 	INSERT INTO enroll values (student_id,lecture_id,CURRENT_DATE);
 END $$
--- 8.Procedure: remove_enrollment_procedure(student_id,lecture_id)
+-- 9.Procedure: remove_enrollment_procedure(student_id,lecture_id)
 CREATE DEFINER=`root`@`localhost` PROCEDURE `remove_enrollment_procedure`(IN `student_id` INT,IN `lecture_id` INT)
 	SQL SECURITY DEFINER
 	MODIFIES SQL DATA
@@ -307,7 +325,7 @@ BEGIN
 	END IF;
 
 END $$
--- 9.Procedure: create_db_user_procedure(user_type)
+-- 10.Procedure: create_db_user_procedure(user_type)
 CREATE DEFINER=`root`@`localhost` PROCEDURE `create_db_user_procedure`(IN `user_type` 
 																		   ENUM('student','secretary','professor','admin')) 
 	SQL SECURITY DEFINER
@@ -347,7 +365,7 @@ BEGIN
 	CALL grand_db_privileges_procedure(db_username,user_type);
 
 END$$
--- 10.Procedure: remove_db_user_procedure(username)
+-- 11.Procedure: remove_db_user_procedure(username)
 CREATE DEFINER=`root`@`localhost` PROCEDURE `remove_db_user_procedure`(IN `username` VARCHAR(7))
 	SQL SECURITY DEFINER
 	MODIFIES SQL DATA
@@ -364,7 +382,7 @@ BEGIN
    DEALLOCATE PREPARE `stmt`;
 
 END$$
--- 11.Procedure: grand_db_privileges_procedure(quoted_username,usertype)
+-- 12.Procedure: grand_db_privileges_procedure(quoted_username,usertype)
 CREATE DEFINER=`root`@`localhost` PROCEDURE `grand_db_privileges_procedure`(IN username VARCHAR(20),
 																			IN `user_type` ENUM('student','secretary','professor','admin')) 
 	SQL SECURITY DEFINER
@@ -379,13 +397,14 @@ BEGIN
 	FLUSH PRIVILEGES;
 
 	IF (user_type LIKE 'student') THEN
-		-- Grand student access to global(1) routines 
-		SET @`sql` = CONCAT('GRANT EXECUTE ON FUNCTION Athina_db.login_function TO' , `db_username_host`);
-		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`; 
-		-- Grand student access to student specific(6) routines
+		-- Grand student access to student specific(8) routines
+		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.lecture_info_procedure TO' , `db_username_host`);
+		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
 		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.student_info_procedure TO' , `db_username_host`);
 		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
 		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.available_lectures_procedure TO' , `db_username_host`);
+		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
+		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.unavailable_lectures_procedure TO' , `db_username_host`);
 		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
 		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.show_enrollments_procedure TO' , `db_username_host`);
 		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
@@ -396,13 +415,21 @@ BEGIN
 		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.remove_enrollment_procedure TO' , `db_username_host`);
 		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
 	ELSEIF (user_type LIKE 'secretary') THEN
-		-- Grand secretary access to global(1) routines 
-		SET @`sql` = CONCAT('GRANT EXECUTE ON FUNCTION Athina_db.login_function TO' , `db_username_host`);
+		-- Grand secretary access to secretary specific(3) routines
+		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.employee_info_procedure TO' , `db_username_host`);
+		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
+		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.register_student_procedure TO' , `db_username_host`);
+		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
+		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.remove_student_procedure TO' , `db_username_host`);
 		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`; 
-		-- Grand secretary access to student specific(5) routines
+		-- Grand secretary access to student specific(8) routines
+		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.lecture_info_procedure TO' , `db_username_host`);
+		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
 		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.student_info_procedure TO' , `db_username_host`);
 		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
 		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.available_lectures_procedure TO' , `db_username_host`);
+		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
+		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.unavailable_lectures_procedure TO' , `db_username_host`);
 		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
 		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.show_enrollments_procedure TO' , `db_username_host`);
 		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
@@ -411,25 +438,12 @@ BEGIN
 		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.new_enrollment_procedure TO' , `db_username_host`);
 		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
 		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.remove_enrollment_procedure TO' , `db_username_host`);
-		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
-		-- Grand secretary access to secretary specific(3) routines
-		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.employee_info_procedure TO' , `db_username_host`);
-		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
-		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.register_student_procedure TO' , `db_username_host`);
-		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
-		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.remove_student_procedure TO' , `db_username_host`);
-		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;        
+		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;       
 	ELSEIF (user_type LIKE 'professor') THEN
-		-- Grand professor access to global(1) routines 
-		SET @`sql` = CONCAT('GRANT EXECUTE ON FUNCTION Athina_db.login_function TO' , `db_username_host`);
-		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`; 
 		-- Grand professor access to professor specific(1) routines 
 		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.employee_info_procedure TO' , `db_username_host`);
 		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
 	ELSEIF (user_type LIKE 'admin') THEN
-		-- Grand admin access to global(1) routines 
-		SET @`sql` = CONCAT('GRANT EXECUTE ON FUNCTION Athina_db.login_function TO' , `db_username_host`);
-		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`; 
 		-- Grand admin access to admin specific(1) routines 
 		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.employee_info_procedure TO' , `db_username_host`);
 		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
@@ -440,7 +454,7 @@ BEGIN
 	FLUSH PRIVILEGES;
 
 END$$
--- 12.Procedure: register_student_procedure(student_name,student_surname,phone_number,adress)
+-- 13.Procedure: register_student_procedure(student_name,student_surname,phone_number,adress)
 CREATE DEFINER=`root`@`localhost` PROCEDURE `register_student_procedure`(IN `name` varchar(15),
 																		 IN `surname` varchar(20),
 																		 IN `phone` varchar(10),
@@ -455,7 +469,7 @@ BEGIN
 	CALL create_db_user_procedure('student');    
 
 END $$
--- 13.Procedure: remove_student_procedure(student_id)
+-- 14.Procedure: remove_student_procedure(student_id)
 CREATE DEFINER=`root`@`localhost` PROCEDURE `remove_student_procedure`(IN `student_id` varchar(5))
 	SQL SECURITY DEFINER
 	MODIFIES SQL DATA
@@ -470,7 +484,7 @@ BEGIN
 	DELETE FROM user WHERE (id = student_id);
 	
 END $$
--- 14.Procedure: register_employee_procedure(employee_type,employee_name,employee_surname,phone_number,adress)
+-- 15.Procedure: register_employee_procedure(employee_type,employee_name,employee_surname,phone_number,adress)
 CREATE DEFINER=`root`@`localhost` PROCEDURE `register_employee_procedure`(IN `type` enum('student','secretary','professor','admin'),
 																		  IN `name` varchar(15),
 																		  IN `surname` varchar(20),
