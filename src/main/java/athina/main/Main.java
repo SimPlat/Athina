@@ -20,9 +20,6 @@ public class Main {
 		JFrame mainFrame;                // Main frame
 		ArrayList<JFrame> frameList;     // User specific frames
 		
-		// Student variables
-		ArrayList<Lecture> availableLecturesList; // Lectures available for the current enrollment	
-
 		// Initialized login frame
 		mainFrame = new LoginView(new LoginController());
 		mainFrame.setVisible(true);
@@ -43,12 +40,11 @@ public class Main {
 				user =  new Student(((LoginView) mainFrame).getController().getUserId(),connection);
 			 
 				// Create the needed controller, frames for student
-				availableLecturesList = new ArrayList<Lecture>();
 				frameList = new ArrayList<JFrame>();
 				frameList.add(0,new InfoView());
-				frameList.add(1,new EnrollmentsView());
-				frameList.add(2,new NewEnrollmentView());
-				controller = new StudentController((Student) user,availableLecturesList,frameList,connection);
+				frameList.add(1,new EnrollmentManagementView());
+				frameList.add(2,new RegisterEnrollmentView());
+				controller = new StudentController((Student) user,frameList,connection);
 			 
 			 	// Replace login with main menu on the main frame
 				mainFrame.dispose();

@@ -1,7 +1,6 @@
 package athina.controller;
 
 import athina.model.Student;
-import athina.model.Lecture;
 import athina.view.global.*;
 import athina.view.student.*;
 
@@ -18,12 +17,12 @@ public class StudentController implements UserController{
 	private ArrayList<JFrame> frameList;	// 0=InfoView | 1=EnrollmentsView | 2=NewEnrollmentsView
 	private Connection connection;
 
-	public StudentController(Student student,ArrayList<Lecture> availableLecturesList,ArrayList<JFrame> frameList,Connection connection){
+	public StudentController(Student student,ArrayList<JFrame> frameList,Connection connection){
 		this.student = student;
 		this.frameList = frameList;
 		this.connection = connection;
-		((EnrollmentsView) frameList.get(1)).setController(this);
-		((NewEnrollmentView) frameList.get(2)).setController(this);
+		((EnrollmentManagementView) frameList.get(1)).setController(this);
+		((RegisterEnrollmentView) frameList.get(2)).setController(this);
 	}
 
 	// Updates user info frame
@@ -40,13 +39,12 @@ public class StudentController implements UserController{
 	}
 
 	public void displayEnrollmentsView(){
-		EnrollmentsView enrollmentsView = (EnrollmentsView) frameList.get(1);
+		EnrollmentManagementView enrollmentsView = (EnrollmentManagementView) frameList.get(1);
 		enrollmentsView.setVisible(true);
 	}
 
 	public void displayNewEnrollmentView(){
-		NewEnrollmentView newEnrollmentView = (NewEnrollmentView) frameList.get(2);
-		prepareEnrollmentView();
+		RegisterEnrollmentView newEnrollmentView = (RegisterEnrollmentView) frameList.get(2);
 		newEnrollmentView.setVisible(true);
 	}
 
