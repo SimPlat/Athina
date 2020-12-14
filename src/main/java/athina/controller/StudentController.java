@@ -14,20 +14,21 @@ import java.sql.*;
 
 public class StudentController implements UserController{
 	private Student student;
+	private Connection connection;
+	private List<JFrame> frameList;	// 0=InfoView | 1=EnrollmentManagementView | 2=RegisterEnrollmentView
 	private List<Lecture> lectureList;
 	private List<JCheckBox> checkboxList;
-	private List<JFrame> frameList;	// 0=InfoView | 1=EnrollmentManagementView | 2=RegisterEnrollmentView
-	private Connection connection;
 
 	public StudentController(Student student,List<Lecture> lectureList,List<JCheckBox> checkboxList,
-									List<JFrame> List,Connection connection){
+									List<JFrame> frameList,Connection connection){
 		this.student = student;
 		this.lectureList = lectureList;
 		this.checkboxList = checkboxList;
-		this.frameList = List;
+		this.frameList = frameList;
 		this.connection = connection;
-		((EnrollmentManagementView) List.get(1)).setController(this);
-		((RegisterEnrollmentView) List.get(2)).setController(this);
+		((EnrollmentManagementView) frameList.get(1)).setController(this);
+		((RegisterEnrollmentView) frameList.get(2)).setController(this);
+		getAllCheckboxes(frameList.get(2));
 	}
 
 	// Updates user info frame
@@ -57,21 +58,35 @@ public class StudentController implements UserController{
 	// Sends the selected lectures to the DB
 	public void submitEnrollment(){
 		RegisterEnrollmentView registerEnrollmentView = (RegisterEnrollmentView) frameList.get(2);
-		List<JCheckBox> checkBoxList = getAllCheckboxes(registerEnrollmentView);
-		String Lecture;
+		List<JCheckBox> lecturCheckBoxList = checkboxList;
+		PreparedStatement prepStmt = null;
 
-		for (JCheckBox jc : checkBoxList){
-			Lecture = jc.isSelected() ? jc.getText() : null;
-			
+		try{
+			prepStmt = connection.prepareStatement("CALL register_enrollment_procedure(?,?)");
+			prepStmt.setInt(1, student.getId());
+
+			for (JCheckBox jc : lecturCheckBoxList){
+				if(jc.isSelected()){
+					for(Lecture le : lectureList){
+						if(le.getName().equals(jc.getText())){
+							prepStmt.setInt(2,le.getId());
+							prepStmt.execute();
+						} 
+					}
+				}
+			}
+		}catch (SQLException se){se.printStackTrace();}
+		finally{
+			try{prepStmt.close();} catch(SQLException se){}
+			registerEnrollmentView.setVisible(false);
 		}
-		registerEnrollmentView.setVisible(false);
 	}
 
 	// Update lecture names from DB and prevent GUI from interacting with unavailable lectures
 	public void prepareRegisterEnrollmentView(RegisterEnrollmentView registerEnrollmentView){
 		Statement stmt = null;
 		ResultSet rs = null;
-		List<JCheckBox> checkboxList = getAllCheckboxes(frameList.get(2));
+		List<JCheckBox> lecturCheckBoxList = checkboxList;
 		int currentMonth = LocalDate.now().getMonthValue();
 		
 		// Hide off season lectures
@@ -84,7 +99,7 @@ public class StudentController implements UserController{
 			rs = stmt.executeQuery("CALL lecture_info_procedure(-1)");
 
 			// Fill the labels with the fetched lecture names
-			for(Component comp : checkboxList){
+			for(Component comp : lecturCheckBoxList){
 				if (comp instanceof JCheckBox){
 					JCheckBox jc = ((JCheckBox) comp);
 					if (rs.next()){
@@ -102,8 +117,8 @@ public class StudentController implements UserController{
 	}
 
 	// Disable passed lecture's checkboxes
-	public void disableUnavailableLectures(RegisterEnrollmentView registerEnrollmentView){
-		List<JCheckBox> lectureCheckboxList = getAllCheckboxes(registerEnrollmentView);
+	private void disableUnavailableLectures(RegisterEnrollmentView registerEnrollmentView){
+		List<JCheckBox> lectureCheckboxList = checkboxList;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		
@@ -129,15 +144,12 @@ public class StudentController implements UserController{
 	}
 
 	// Create using recursion, a list with all the components of the given container and return it 
-	public List<JCheckBox> getAllCheckboxes(Container container) {
+	private void getAllCheckboxes(Container container) {
 		Component[] components = container.getComponents();
 		for (Component comp : components) {
 			if (comp instanceof JCheckBox) checkboxList.add((JCheckBox) comp);
-			if (comp instanceof Container) checkboxList.addAll(getAllCheckboxes((Container) comp));
+			if (comp instanceof Container) getAllCheckboxes((Container) comp);
 		}
-		return checkboxList;
    }
-
-	public void tost(){}
 
 }
