@@ -15,9 +15,7 @@ public class Secretary extends User {
 		PreparedStatement prepStmt = null;
 		ResultSet rs = null;
 		try{
-			prepStmt = connection.prepareStatement("CALL employee_info_procedure(?,?)",
-																ResultSet.TYPE_SCROLL_SENSITIVE,
-																ResultSet.CONCUR_UPDATABLE);
+			prepStmt = connection.prepareStatement("CALL employee_info_procedure(?,?)");
         	prepStmt.setString(1, String.valueOf(id));
 			prepStmt.setString(2, Type.secretary.name());
 			rs = prepStmt.executeQuery();

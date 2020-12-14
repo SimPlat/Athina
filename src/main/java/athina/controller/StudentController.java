@@ -50,7 +50,7 @@ public class StudentController implements UserController{
 	}
 
 	public void prepareRegisterEnrollmentView(RegisterEnrollmentView registerEnrollmentView){
-		PreparedStatement prepStmt = null;
+		Statement stmt = null;
 		ResultSet rs = null;
 		List<JCheckBox> checkboxList = getAllCheckboxes(frameList.get(2));
 		int currentMonth = LocalDate.now().getMonthValue();
@@ -61,11 +61,8 @@ public class StudentController implements UserController{
 
 		try{
 			// Fetch all the lecture info
-			prepStmt = connection.prepareStatement("CALL lecture_info_procedure(?)",
-																ResultSet.TYPE_SCROLL_SENSITIVE,
-																ResultSet.CONCUR_UPDATABLE);
-			prepStmt.setInt(1, -1);
-			rs = prepStmt.executeQuery();
+			stmt = connection.createStatement();
+			rs = stmt.executeQuery("CALL lecture_info_procedure(-1)");
 
 			// Fill the labels with the fetched lecture names
 			for(Component comp : checkboxList){
@@ -80,29 +77,25 @@ public class StudentController implements UserController{
 		catch (SQLException se){se.printStackTrace();}
 		finally{
 			try{rs.close();} catch(SQLException se){}
-			try{prepStmt.close();} catch(SQLException se){}
+			try{stmt.close();} catch(SQLException se){}
 		}
-		//disableUnavailableLectures(registerEnrollmentView);
-		
+		disableUnavailableLectures(registerEnrollmentView);
 	}
 
-	public void disableUnavailableLectures(){
-		RegisterEnrollmentView registerEnrollmentView = (RegisterEnrollmentView) frameList.get(2);
+	public void disableUnavailableLectures(RegisterEnrollmentView registerEnrollmentView){
 		List<JCheckBox> lectureCheckboxList = getAllCheckboxes(registerEnrollmentView);
-		PreparedStatement prepStmt = null;
+		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		
 		try{
 			// Fetch active student's unavailable lectures
-			prepStmt = connection.prepareStatement("CALL unavailable_lectures_procedure(?)",
-																ResultSet.TYPE_SCROLL_SENSITIVE,
-																ResultSet.CONCUR_UPDATABLE);
-			prepStmt.setInt(1, student.getId());
-			rs = prepStmt.executeQuery();
+			stmt = connection.prepareStatement("CALL unavailable_lectures_procedure(?)");
+			stmt.setInt(1, student.getId());
+			rs = stmt.executeQuery();
 			
 			// Disables the checkboxes responsible for the received unavailable lectures
-			for(JCheckBox jc : lectureCheckboxList){	
-				if(rs.next()){
+			while(rs.next()){
+				for(JCheckBox jc : lectureCheckboxList){	
 					if(jc.getText().equals(rs.getString(2)))
 						jc.setEnabled(false);
 				}
@@ -111,7 +104,7 @@ public class StudentController implements UserController{
 		catch(SQLException se){se.printStackTrace();}
 		finally{
 			try{rs.close();} catch(SQLException se){}
-			try{prepStmt.close();} catch(SQLException se){}
+			try{stmt.close();} catch(SQLException se){}
 		}
 	}
 

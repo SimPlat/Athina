@@ -57,9 +57,7 @@ public class Lecture {
 		ResultSet rs = null;
 		PreparedStatement prepStmt = null;
 		try{
-			prepStmt = connection.prepareStatement("CALL lecture_info_procedure(?)",
-																ResultSet.TYPE_SCROLL_SENSITIVE,
-																ResultSet.CONCUR_UPDATABLE);
+			prepStmt = connection.prepareStatement("CALL lecture_info_procedure(?)");
         	prepStmt.setString(1, String.valueOf(id));
 			rs = prepStmt.executeQuery();
 

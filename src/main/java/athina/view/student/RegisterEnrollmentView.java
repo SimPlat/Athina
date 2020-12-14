@@ -34,7 +34,6 @@ public class RegisterEnrollmentView extends javax.swing.JFrame {
 	}
 
 	private void completeEntrollmentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_completeEntrollmentButtonActionPerformed
-		studentController.disableUnavailableLectures();
 	}//GEN-LAST:event_completeEntrollmentButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

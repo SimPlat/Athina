@@ -72,9 +72,7 @@ public class SecretaryController implements UserController{
 		targetStudentId = studentsView.getId();
 		
 		try{
-			prepStmt = connection.prepareStatement("CALL student_info_procedure(?)",
-																ResultSet.TYPE_SCROLL_SENSITIVE,
-																ResultSet.CONCUR_UPDATABLE);
+			prepStmt = connection.prepareStatement("CALL student_info_procedure(?)");
 			prepStmt.setString(1, targetStudentId);
 			rs = prepStmt.executeQuery();
 			if (rs.next())

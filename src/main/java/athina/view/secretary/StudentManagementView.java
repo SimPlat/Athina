@@ -24,16 +24,13 @@ public class StudentManagementView extends javax.swing.JFrame {
    
 	private void registerStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerStudentButtonActionPerformed
 		secretaryController.displayRegisterStudentView();
-		secretaryController.displayRegisterStudentView();
 	}//GEN-LAST:event_registerStudentButtonActionPerformed
 
 	private void findStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_findStudentButtonActionPerformed
 		secretaryController.findStudent();
-		secretaryController.findStudent();
 	}//GEN-LAST:event_findStudentButtonActionPerformed
 
 	private void removeStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeStudentButtonActionPerformed
-		secretaryController.removeStudent();
 		secretaryController.removeStudent();
 	}//GEN-LAST:event_removeStudentButtonActionPerformed
 
