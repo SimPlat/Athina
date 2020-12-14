@@ -289,8 +289,8 @@ BEGIN
 	-- Fetch IDs and names of the enrolled lectures for the given student
 	SELECT E.lecture_id,L.name FROM enroll E JOIN lecture L ON (L.id = E.lecture_id) WHERE (E.student_id <=> student_id);
 END$$
--- 7.Procedure: current_enrollments_procedure(student_id)
-CREATE DEFINER=`root`@`localhost` PROCEDURE `current_enrollments_procedure`(IN student_id INT) 
+-- 7.Procedure: current_enrollment_procedure(student_id)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `current_enrollment_procedure`(IN student_id INT) 
 	SQL SECURITY DEFINER
 	READS SQL DATA
 BEGIN
@@ -302,13 +302,17 @@ BEGIN
 	END IF;
 
 END$$
--- 8.Procedure: new_enrollment_procedure(student_id,lecture_id)
-CREATE DEFINER=`root`@`localhost` PROCEDURE `new_enrollment_procedure`(IN `student_id` INT,IN `lecture_id` INT)
+-- 8.Procedure: register_enrollment_procedure(student_id,lecture_id)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `register_enrollment_procedure`(IN `student_id` INT,IN `lecture_id` INT)
 	SQL SECURITY DEFINER
 	MODIFIES SQL DATA
 BEGIN
 	-- NO CHECKS ON THE AVAILABILITY OF THE LECTURES!!!!!!!!!!
-	INSERT INTO enroll values (student_id,lecture_id,CURRENT_DATE);
+	IF (MONTH(CURRENT_DATE) < 3 OR MONTH(CURRENT_DATE) > 8) THEN    
+		INSERT INTO enroll values (DEFAULT,student_id,lecture_id,YEAR(CURRENT_DATE),'winter');
+	ELSE
+		INSERT INTO enroll values (DEFAULT,student_id,lecture_id,YEAR(CURRENT_DATE),'spring');
+	END IF;
 END $$
 -- 9.Procedure: remove_enrollment_procedure(student_id,lecture_id)
 CREATE DEFINER=`root`@`localhost` PROCEDURE `remove_enrollment_procedure`(IN `student_id` INT,IN `lecture_id` INT)
@@ -408,9 +412,9 @@ BEGIN
 		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
 		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.show_enrollments_procedure TO' , `db_username_host`);
 		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
-		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.current_enrollments_procedure TO' , `db_username_host`);
+		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.current_enrollment_procedure TO' , `db_username_host`);
 		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
-		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.new_enrollment_procedure TO' , `db_username_host`);
+		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.register_enrollment_procedure TO' , `db_username_host`);
 		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
 		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.remove_enrollment_procedure TO' , `db_username_host`);
 		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
@@ -433,9 +437,9 @@ BEGIN
 		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
 		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.show_enrollments_procedure TO' , `db_username_host`);
 		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
-		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.current_enrollments_procedure TO' , `db_username_host`);
+		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.current_enrollment_procedure TO' , `db_username_host`);
 		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
-		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.new_enrollment_procedure TO' , `db_username_host`);
+		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.register_enrollment_procedure TO' , `db_username_host`);
 		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
 		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.remove_enrollment_procedure TO' , `db_username_host`);
 		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;       
