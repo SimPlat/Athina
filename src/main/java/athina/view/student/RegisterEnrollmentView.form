@@ -172,40 +172,20 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="333" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="375" max="32767" attributes="0"/>
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox1" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel1" pref="264" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox5" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel5" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox2" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel2" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox3" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel3" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox4" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel4" max="32767" attributes="0"/>
-                                          </Group>
+                                          <Component id="lectureBox5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox2" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                      <EmptySpace min="12" pref="339" max="32767" attributes="0"/>
                                   </Group>
                                   <Component id="seperator1" alignment="1" max="32767" attributes="0"/>
                                   <Component id="semesterLabel1" alignment="0" max="32767" attributes="0"/>
@@ -223,30 +203,15 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="semesterLabel1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel1" alignment="0" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox2" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel2" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox3" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel3" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox4" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel4" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox4" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox5" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel5" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox5" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="seperator1" min="-2" pref="10" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
@@ -264,38 +229,13 @@
                 </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox1">
                 </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel1">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 1"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox2">
-                </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel2">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 2"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox3">
                 </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel3">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 3"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox4">
                 </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel4">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 4"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox5">
-                </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel5">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 5"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JSeparator" name="seperator1">
                 </Component>
@@ -306,40 +246,20 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="333" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="375" max="32767" attributes="0"/>
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox6" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel6" pref="264" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox10" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel10" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox7" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel7" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox8" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel8" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox9" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel9" max="32767" attributes="0"/>
-                                          </Group>
+                                          <Component id="lectureBox10" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox8" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox6" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox7" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                      <EmptySpace min="12" pref="339" max="32767" attributes="0"/>
                                   </Group>
                                   <Component id="seperator2" alignment="1" max="32767" attributes="0"/>
                                   <Component id="semesterLabel2" alignment="0" max="32767" attributes="0"/>
@@ -357,30 +277,15 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="semesterLabel2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox6" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel6" alignment="0" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox6" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox7" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel7" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox7" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox8" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel8" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox8" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox9" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel9" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox9" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox10" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel10" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox10" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="seperator2" min="-2" pref="10" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
@@ -398,38 +303,13 @@
                 </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox6">
                 </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel6">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 1"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox7">
-                </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel7">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 2"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox8">
                 </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel8">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 3"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox9">
                 </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel9">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 4"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox10">
-                </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel10">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 5"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JSeparator" name="seperator2">
                 </Component>
@@ -440,40 +320,20 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="333" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="375" max="32767" attributes="0"/>
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox11" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel11" pref="264" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox15" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel15" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox12" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel12" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox13" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel13" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox14" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel14" max="32767" attributes="0"/>
-                                          </Group>
+                                          <Component id="lectureBox15" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox14" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox13" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox12" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                      <EmptySpace min="12" pref="339" max="32767" attributes="0"/>
                                   </Group>
                                   <Component id="seperator3" alignment="1" max="32767" attributes="0"/>
                                   <Component id="semesterLabel3" alignment="0" max="32767" attributes="0"/>
@@ -491,30 +351,15 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="semesterLabel3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox11" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel11" alignment="0" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox11" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox12" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel12" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox12" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox13" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel13" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox13" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox14" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel14" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox14" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox15" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel15" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox15" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="seperator3" min="-2" pref="10" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
@@ -532,38 +377,13 @@
                 </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox11">
                 </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel11">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 1"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox12">
-                </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel12">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 2"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox13">
                 </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel13">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 3"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox14">
                 </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel14">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 4"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox15">
-                </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel15">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 5"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JSeparator" name="seperator3">
                 </Component>
@@ -574,40 +394,20 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="333" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="375" max="32767" attributes="0"/>
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox16" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel16" pref="264" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox20" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel20" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox17" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel17" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox18" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel18" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox19" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel19" max="32767" attributes="0"/>
-                                          </Group>
+                                          <Component id="lectureBox20" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox19" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox18" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox16" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox17" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                      <EmptySpace min="12" pref="339" max="32767" attributes="0"/>
                                   </Group>
                                   <Component id="seperator4" alignment="1" max="32767" attributes="0"/>
                                   <Component id="semesterLabel4" alignment="0" max="32767" attributes="0"/>
@@ -625,30 +425,15 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="semesterLabel4" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox16" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel16" alignment="0" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox16" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox17" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel17" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox17" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox18" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel18" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox18" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox19" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel19" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox19" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox20" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel20" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox20" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="seperator4" min="-2" pref="10" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
@@ -666,38 +451,13 @@
                 </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox16">
                 </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel16">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 1"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox17">
-                </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel17">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 2"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox18">
                 </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel18">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 3"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox19">
                 </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel19">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 4"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox20">
-                </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel20">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 5"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JSeparator" name="seperator4">
                 </Component>
@@ -708,40 +468,20 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="333" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="375" max="32767" attributes="0"/>
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox21" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel21" pref="266" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox25" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel25" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox22" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel22" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox23" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel23" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox24" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel24" max="32767" attributes="0"/>
-                                          </Group>
+                                          <Component id="lectureBox25" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox24" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox23" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox21" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox22" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                      <EmptySpace min="12" pref="339" max="32767" attributes="0"/>
                                   </Group>
                                   <Component id="seperator5" alignment="1" max="32767" attributes="0"/>
                                   <Component id="semesterLabel5" alignment="0" max="32767" attributes="0"/>
@@ -759,30 +499,15 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="semesterLabel5" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox21" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel21" alignment="0" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox21" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox22" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel22" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox22" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox23" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel23" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox23" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox24" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel24" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox24" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox25" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel25" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox25" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="seperator5" min="-2" pref="10" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
@@ -800,38 +525,13 @@
                 </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox21">
                 </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel21">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 1"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox22">
-                </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel22">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 2"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox23">
                 </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel23">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 3"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox24">
                 </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel24">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 4"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox25">
-                </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel25">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 5"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JSeparator" name="seperator5">
                 </Component>
@@ -842,40 +542,20 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="333" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="375" max="32767" attributes="0"/>
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox26" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel26" pref="264" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox30" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel30" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox27" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel27" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox28" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel28" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox29" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel29" max="32767" attributes="0"/>
-                                          </Group>
+                                          <Component id="lectureBox30" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox29" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox28" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox26" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox27" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                      <EmptySpace min="12" pref="339" max="32767" attributes="0"/>
                                   </Group>
                                   <Component id="seperator6" alignment="1" max="32767" attributes="0"/>
                                   <Component id="semesterLabel6" alignment="0" max="32767" attributes="0"/>
@@ -893,30 +573,15 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="semesterLabel6" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox26" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel26" alignment="0" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox26" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox27" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel27" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox27" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox28" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel28" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox28" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox29" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel29" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox29" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox30" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel30" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox30" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="seperator6" min="-2" pref="10" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
@@ -934,38 +599,13 @@
                 </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox26">
                 </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel26">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 1"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox27">
-                </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel27">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 2"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox28">
                 </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel28">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 3"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox29">
                 </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel29">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 4"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox30">
-                </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel30">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 5"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JSeparator" name="seperator6">
                 </Component>
@@ -976,40 +616,20 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="333" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="375" max="32767" attributes="0"/>
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox31" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel31" pref="266" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox35" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel35" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox32" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel32" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox33" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel33" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox34" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel34" max="32767" attributes="0"/>
-                                          </Group>
+                                          <Component id="lectureBox35" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox34" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox33" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox31" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox32" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                      <EmptySpace min="12" pref="339" max="32767" attributes="0"/>
                                   </Group>
                                   <Component id="seperator7" alignment="1" max="32767" attributes="0"/>
                                   <Component id="semesterLabel7" alignment="0" max="32767" attributes="0"/>
@@ -1027,30 +647,15 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="semesterLabel7" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox31" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel31" alignment="0" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox31" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox32" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel32" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox32" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox33" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel33" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox33" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox34" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel34" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox34" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox35" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel35" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox35" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="seperator7" min="-2" pref="10" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
@@ -1068,38 +673,13 @@
                 </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox31">
                 </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel31">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 1"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox32">
-                </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel32">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 2"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox33">
                 </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel33">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 3"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox34">
                 </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel34">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 4"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox35">
-                </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel35">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 5"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JSeparator" name="seperator7">
                 </Component>
@@ -1110,40 +690,20 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="333" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="375" max="32767" attributes="0"/>
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox36" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel36" pref="264" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox40" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel40" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox37" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel37" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox38" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel38" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox39" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel39" max="32767" attributes="0"/>
-                                          </Group>
+                                          <Component id="lectureBox40" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox39" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox38" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox36" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox37" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                      <EmptySpace min="12" pref="339" max="32767" attributes="0"/>
                                   </Group>
                                   <Component id="seperator8" alignment="1" max="32767" attributes="0"/>
                                   <Component id="semesterLabel8" alignment="0" max="32767" attributes="0"/>
@@ -1161,30 +721,15 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="semesterLabel8" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox36" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel36" alignment="0" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox36" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox37" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel37" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox37" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox38" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel38" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox38" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox39" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel39" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox39" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox40" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel40" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox40" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="seperator8" min="-2" pref="10" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
@@ -1202,38 +747,13 @@
                 </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox36">
                 </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel36">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 1"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox37">
-                </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel37">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 2"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox38">
                 </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel38">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 3"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox39">
                 </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel39">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 4"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox40">
-                </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel40">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 5"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JSeparator" name="seperator8">
                 </Component>
@@ -1244,40 +764,20 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="375" max="32767" attributes="0"/>
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox41" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel41" pref="264" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox45" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel45" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox42" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel42" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox43" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel43" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lectureBox44" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lectureLabel44" max="32767" attributes="0"/>
-                                          </Group>
+                                          <Component id="lectureBox45" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox44" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox43" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox41" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lectureBox42" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                      <EmptySpace min="12" pref="339" max="32767" attributes="0"/>
                                   </Group>
                                   <Component id="seperator9" alignment="1" max="32767" attributes="0"/>
                                   <Component id="semesterLabel9" alignment="0" max="32767" attributes="0"/>
@@ -1295,30 +795,15 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="semesterLabel9" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox41" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel41" alignment="0" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox41" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox42" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel42" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox42" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox43" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel43" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox43" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox44" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel44" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox44" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lectureBox45" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lectureLabel45" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lectureBox45" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="seperator9" min="-2" pref="10" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
@@ -1336,38 +821,13 @@
                 </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox41">
                 </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel41">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 1"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox42">
-                </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel42">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 2"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox43">
                 </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel43">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 3"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox44">
                 </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel44">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 4"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JCheckBox" name="lectureBox45">
-                </Component>
-                <Component class="javax.swing.JLabel" name="lectureLabel45">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="lecture 5"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JSeparator" name="seperator9">
                 </Component>
