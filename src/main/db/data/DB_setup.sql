@@ -401,9 +401,10 @@ BEGIN
 	FLUSH PRIVILEGES;
 
 	IF (user_type LIKE 'student') THEN
-		-- Grand student access to student specific(8) routines
+		-- Grand student access to glogbl(1) routines
 		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.lecture_info_procedure TO' , `db_username_host`);
 		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
+		-- Grand student access to student specific(7) routines
 		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.student_info_procedure TO' , `db_username_host`);
 		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
 		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.available_lectures_procedure TO' , `db_username_host`);
@@ -419,6 +420,9 @@ BEGIN
 		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.remove_enrollment_procedure TO' , `db_username_host`);
 		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
 	ELSEIF (user_type LIKE 'secretary') THEN
+		-- Grand secretary access to global(1) routines
+		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.lecture_info_procedure TO' , `db_username_host`);
+		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
 		-- Grand secretary access to secretary specific(3) routines
 		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.employee_info_procedure TO' , `db_username_host`);
 		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
@@ -426,9 +430,7 @@ BEGIN
 		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
 		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.remove_student_procedure TO' , `db_username_host`);
 		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`; 
-		-- Grand secretary access to student specific(8) routines
-		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.lecture_info_procedure TO' , `db_username_host`);
-		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
+		-- Grand secretary access to student specific(7) routines
 		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.student_info_procedure TO' , `db_username_host`);
 		PREPARE `stmt` FROM @`sql`; EXECUTE `stmt`;
 		SET @`sql` = CONCAT('GRANT EXECUTE ON PROCEDURE Athina_db.available_lectures_procedure TO' , `db_username_host`);
