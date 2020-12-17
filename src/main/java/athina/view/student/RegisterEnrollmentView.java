@@ -85,51 +85,6 @@ public class RegisterEnrollmentView extends javax.swing.JFrame {
     private javax.swing.JCheckBox lectureBox7;
     private javax.swing.JCheckBox lectureBox8;
     private javax.swing.JCheckBox lectureBox9;
-    private javax.swing.JLabel lectureLabel1;
-    private javax.swing.JLabel lectureLabel10;
-    private javax.swing.JLabel lectureLabel11;
-    private javax.swing.JLabel lectureLabel12;
-    private javax.swing.JLabel lectureLabel13;
-    private javax.swing.JLabel lectureLabel14;
-    private javax.swing.JLabel lectureLabel15;
-    private javax.swing.JLabel lectureLabel16;
-    private javax.swing.JLabel lectureLabel17;
-    private javax.swing.JLabel lectureLabel18;
-    private javax.swing.JLabel lectureLabel19;
-    private javax.swing.JLabel lectureLabel2;
-    private javax.swing.JLabel lectureLabel20;
-    private javax.swing.JLabel lectureLabel21;
-    private javax.swing.JLabel lectureLabel22;
-    private javax.swing.JLabel lectureLabel23;
-    private javax.swing.JLabel lectureLabel24;
-    private javax.swing.JLabel lectureLabel25;
-    private javax.swing.JLabel lectureLabel26;
-    private javax.swing.JLabel lectureLabel27;
-    private javax.swing.JLabel lectureLabel28;
-    private javax.swing.JLabel lectureLabel29;
-    private javax.swing.JLabel lectureLabel3;
-    private javax.swing.JLabel lectureLabel30;
-    private javax.swing.JLabel lectureLabel31;
-    private javax.swing.JLabel lectureLabel32;
-    private javax.swing.JLabel lectureLabel33;
-    private javax.swing.JLabel lectureLabel34;
-    private javax.swing.JLabel lectureLabel35;
-    private javax.swing.JLabel lectureLabel36;
-    private javax.swing.JLabel lectureLabel37;
-    private javax.swing.JLabel lectureLabel38;
-    private javax.swing.JLabel lectureLabel39;
-    private javax.swing.JLabel lectureLabel4;
-    private javax.swing.JLabel lectureLabel40;
-    private javax.swing.JLabel lectureLabel41;
-    private javax.swing.JLabel lectureLabel42;
-    private javax.swing.JLabel lectureLabel43;
-    private javax.swing.JLabel lectureLabel44;
-    private javax.swing.JLabel lectureLabel45;
-    private javax.swing.JLabel lectureLabel5;
-    private javax.swing.JLabel lectureLabel6;
-    private javax.swing.JLabel lectureLabel7;
-    private javax.swing.JLabel lectureLabel8;
-    private javax.swing.JLabel lectureLabel9;
     private javax.swing.JLabel logoLabel;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JScrollPane scrollPane;
@@ -179,119 +134,74 @@ public class RegisterEnrollmentView extends javax.swing.JFrame {
         semesterPanel1 = new javax.swing.JPanel();
         semesterLabel1 = new javax.swing.JLabel();
         lectureBox1 = new javax.swing.JCheckBox();
-        lectureLabel1 = new javax.swing.JLabel();
         lectureBox2 = new javax.swing.JCheckBox();
-        lectureLabel2 = new javax.swing.JLabel();
         lectureBox3 = new javax.swing.JCheckBox();
-        lectureLabel3 = new javax.swing.JLabel();
         lectureBox4 = new javax.swing.JCheckBox();
-        lectureLabel4 = new javax.swing.JLabel();
         lectureBox5 = new javax.swing.JCheckBox();
-        lectureLabel5 = new javax.swing.JLabel();
         seperator1 = new javax.swing.JSeparator();
         semesterPanel2 = new javax.swing.JPanel();
         semesterLabel2 = new javax.swing.JLabel();
         lectureBox6 = new javax.swing.JCheckBox();
-        lectureLabel6 = new javax.swing.JLabel();
         lectureBox7 = new javax.swing.JCheckBox();
-        lectureLabel7 = new javax.swing.JLabel();
         lectureBox8 = new javax.swing.JCheckBox();
-        lectureLabel8 = new javax.swing.JLabel();
         lectureBox9 = new javax.swing.JCheckBox();
-        lectureLabel9 = new javax.swing.JLabel();
         lectureBox10 = new javax.swing.JCheckBox();
-        lectureLabel10 = new javax.swing.JLabel();
         seperator2 = new javax.swing.JSeparator();
         semesterPanel3 = new javax.swing.JPanel();
         semesterLabel3 = new javax.swing.JLabel();
         lectureBox11 = new javax.swing.JCheckBox();
-        lectureLabel11 = new javax.swing.JLabel();
         lectureBox12 = new javax.swing.JCheckBox();
-        lectureLabel12 = new javax.swing.JLabel();
         lectureBox13 = new javax.swing.JCheckBox();
-        lectureLabel13 = new javax.swing.JLabel();
         lectureBox14 = new javax.swing.JCheckBox();
-        lectureLabel14 = new javax.swing.JLabel();
         lectureBox15 = new javax.swing.JCheckBox();
-        lectureLabel15 = new javax.swing.JLabel();
         seperator3 = new javax.swing.JSeparator();
         semesterPanel4 = new javax.swing.JPanel();
         semesterLabel4 = new javax.swing.JLabel();
         lectureBox16 = new javax.swing.JCheckBox();
-        lectureLabel16 = new javax.swing.JLabel();
         lectureBox17 = new javax.swing.JCheckBox();
-        lectureLabel17 = new javax.swing.JLabel();
         lectureBox18 = new javax.swing.JCheckBox();
-        lectureLabel18 = new javax.swing.JLabel();
         lectureBox19 = new javax.swing.JCheckBox();
-        lectureLabel19 = new javax.swing.JLabel();
         lectureBox20 = new javax.swing.JCheckBox();
-        lectureLabel20 = new javax.swing.JLabel();
         seperator4 = new javax.swing.JSeparator();
         semesterPanel5 = new javax.swing.JPanel();
         semesterLabel5 = new javax.swing.JLabel();
         lectureBox21 = new javax.swing.JCheckBox();
-        lectureLabel21 = new javax.swing.JLabel();
         lectureBox22 = new javax.swing.JCheckBox();
-        lectureLabel22 = new javax.swing.JLabel();
         lectureBox23 = new javax.swing.JCheckBox();
-        lectureLabel23 = new javax.swing.JLabel();
         lectureBox24 = new javax.swing.JCheckBox();
-        lectureLabel24 = new javax.swing.JLabel();
         lectureBox25 = new javax.swing.JCheckBox();
-        lectureLabel25 = new javax.swing.JLabel();
         seperator5 = new javax.swing.JSeparator();
         semesterPanel6 = new javax.swing.JPanel();
         semesterLabel6 = new javax.swing.JLabel();
         lectureBox26 = new javax.swing.JCheckBox();
-        lectureLabel26 = new javax.swing.JLabel();
         lectureBox27 = new javax.swing.JCheckBox();
-        lectureLabel27 = new javax.swing.JLabel();
         lectureBox28 = new javax.swing.JCheckBox();
-        lectureLabel28 = new javax.swing.JLabel();
         lectureBox29 = new javax.swing.JCheckBox();
-        lectureLabel29 = new javax.swing.JLabel();
         lectureBox30 = new javax.swing.JCheckBox();
-        lectureLabel30 = new javax.swing.JLabel();
         seperator6 = new javax.swing.JSeparator();
         semesterPanel7 = new javax.swing.JPanel();
         semesterLabel7 = new javax.swing.JLabel();
         lectureBox31 = new javax.swing.JCheckBox();
-        lectureLabel31 = new javax.swing.JLabel();
         lectureBox32 = new javax.swing.JCheckBox();
-        lectureLabel32 = new javax.swing.JLabel();
         lectureBox33 = new javax.swing.JCheckBox();
-        lectureLabel33 = new javax.swing.JLabel();
         lectureBox34 = new javax.swing.JCheckBox();
-        lectureLabel34 = new javax.swing.JLabel();
         lectureBox35 = new javax.swing.JCheckBox();
-        lectureLabel35 = new javax.swing.JLabel();
         seperator7 = new javax.swing.JSeparator();
         semesterPanel8 = new javax.swing.JPanel();
         semesterLabel8 = new javax.swing.JLabel();
         lectureBox36 = new javax.swing.JCheckBox();
-        lectureLabel36 = new javax.swing.JLabel();
         lectureBox37 = new javax.swing.JCheckBox();
-        lectureLabel37 = new javax.swing.JLabel();
         lectureBox38 = new javax.swing.JCheckBox();
-        lectureLabel38 = new javax.swing.JLabel();
         lectureBox39 = new javax.swing.JCheckBox();
-        lectureLabel39 = new javax.swing.JLabel();
         lectureBox40 = new javax.swing.JCheckBox();
-        lectureLabel40 = new javax.swing.JLabel();
         seperator8 = new javax.swing.JSeparator();
         semesterPanel9 = new javax.swing.JPanel();
         semesterLabel9 = new javax.swing.JLabel();
         lectureBox41 = new javax.swing.JCheckBox();
-        lectureLabel41 = new javax.swing.JLabel();
         lectureBox42 = new javax.swing.JCheckBox();
-        lectureLabel42 = new javax.swing.JLabel();
         lectureBox43 = new javax.swing.JCheckBox();
-        lectureLabel43 = new javax.swing.JLabel();
         lectureBox44 = new javax.swing.JCheckBox();
-        lectureLabel44 = new javax.swing.JLabel();
         lectureBox45 = new javax.swing.JCheckBox();
-        lectureLabel45 = new javax.swing.JLabel();
         seperator9 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
         studentData1 = new javax.swing.JLabel();
@@ -321,48 +231,23 @@ public class RegisterEnrollmentView extends javax.swing.JFrame {
         semesterLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         semesterLabel1.setText("Semester 1");
 
-        lectureLabel1.setText("lecture 1");
-
-        lectureLabel2.setText("lecture 2");
-
-        lectureLabel3.setText("lecture 3");
-
-        lectureLabel4.setText("lecture 4");
-
-        lectureLabel5.setText("lecture 5");
-
         javax.swing.GroupLayout semesterPanel1Layout = new javax.swing.GroupLayout(semesterPanel1);
         semesterPanel1.setLayout(semesterPanel1Layout);
         semesterPanel1Layout.setHorizontalGroup(
             semesterPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 333, Short.MAX_VALUE)
+            .addGap(0, 375, Short.MAX_VALUE)
             .addGroup(semesterPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(semesterPanel1Layout.createSequentialGroup()
                     .addContainerGap()
                     .addGroup(semesterPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(semesterPanel1Layout.createSequentialGroup()
                             .addGroup(semesterPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(semesterPanel1Layout.createSequentialGroup()
-                                    .addComponent(lectureBox1)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE))
-                                .addGroup(semesterPanel1Layout.createSequentialGroup()
-                                    .addComponent(lectureBox5)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(semesterPanel1Layout.createSequentialGroup()
-                                    .addComponent(lectureBox2)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(semesterPanel1Layout.createSequentialGroup()
-                                    .addComponent(lectureBox3)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(semesterPanel1Layout.createSequentialGroup()
-                                    .addComponent(lectureBox4)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGap(12, 12, 12))
+                                .addComponent(lectureBox5)
+                                .addComponent(lectureBox4)
+                                .addComponent(lectureBox3)
+                                .addComponent(lectureBox1)
+                                .addComponent(lectureBox2))
+                            .addGap(12, 339, Short.MAX_VALUE))
                         .addComponent(seperator1, javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(semesterLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addContainerGap()))
@@ -375,25 +260,15 @@ public class RegisterEnrollmentView extends javax.swing.JFrame {
                     .addContainerGap()
                     .addComponent(semesterLabel1)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lectureBox1)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox2)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox3)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox4)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox5)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(seperator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -402,48 +277,23 @@ public class RegisterEnrollmentView extends javax.swing.JFrame {
         semesterLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         semesterLabel2.setText("Semester 2");
 
-        lectureLabel6.setText("lecture 1");
-
-        lectureLabel7.setText("lecture 2");
-
-        lectureLabel8.setText("lecture 3");
-
-        lectureLabel9.setText("lecture 4");
-
-        lectureLabel10.setText("lecture 5");
-
         javax.swing.GroupLayout semesterPanel2Layout = new javax.swing.GroupLayout(semesterPanel2);
         semesterPanel2.setLayout(semesterPanel2Layout);
         semesterPanel2Layout.setHorizontalGroup(
             semesterPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 333, Short.MAX_VALUE)
+            .addGap(0, 375, Short.MAX_VALUE)
             .addGroup(semesterPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(semesterPanel2Layout.createSequentialGroup()
                     .addContainerGap()
                     .addGroup(semesterPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(semesterPanel2Layout.createSequentialGroup()
                             .addGroup(semesterPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(semesterPanel2Layout.createSequentialGroup()
-                                    .addComponent(lectureBox6)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE))
-                                .addGroup(semesterPanel2Layout.createSequentialGroup()
-                                    .addComponent(lectureBox10)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(semesterPanel2Layout.createSequentialGroup()
-                                    .addComponent(lectureBox7)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(semesterPanel2Layout.createSequentialGroup()
-                                    .addComponent(lectureBox8)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(semesterPanel2Layout.createSequentialGroup()
-                                    .addComponent(lectureBox9)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGap(12, 12, 12))
+                                .addComponent(lectureBox10)
+                                .addComponent(lectureBox9)
+                                .addComponent(lectureBox8)
+                                .addComponent(lectureBox6)
+                                .addComponent(lectureBox7))
+                            .addGap(12, 339, Short.MAX_VALUE))
                         .addComponent(seperator2, javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(semesterLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addContainerGap()))
@@ -456,25 +306,15 @@ public class RegisterEnrollmentView extends javax.swing.JFrame {
                     .addContainerGap()
                     .addComponent(semesterLabel2)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lectureBox6)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox7)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox8)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox9)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox10)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(seperator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -483,48 +323,23 @@ public class RegisterEnrollmentView extends javax.swing.JFrame {
         semesterLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         semesterLabel3.setText("Semester 3");
 
-        lectureLabel11.setText("lecture 1");
-
-        lectureLabel12.setText("lecture 2");
-
-        lectureLabel13.setText("lecture 3");
-
-        lectureLabel14.setText("lecture 4");
-
-        lectureLabel15.setText("lecture 5");
-
         javax.swing.GroupLayout semesterPanel3Layout = new javax.swing.GroupLayout(semesterPanel3);
         semesterPanel3.setLayout(semesterPanel3Layout);
         semesterPanel3Layout.setHorizontalGroup(
             semesterPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 333, Short.MAX_VALUE)
+            .addGap(0, 375, Short.MAX_VALUE)
             .addGroup(semesterPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(semesterPanel3Layout.createSequentialGroup()
                     .addContainerGap()
                     .addGroup(semesterPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(semesterPanel3Layout.createSequentialGroup()
                             .addGroup(semesterPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(semesterPanel3Layout.createSequentialGroup()
-                                    .addComponent(lectureBox11)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE))
-                                .addGroup(semesterPanel3Layout.createSequentialGroup()
-                                    .addComponent(lectureBox15)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(semesterPanel3Layout.createSequentialGroup()
-                                    .addComponent(lectureBox12)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(semesterPanel3Layout.createSequentialGroup()
-                                    .addComponent(lectureBox13)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(semesterPanel3Layout.createSequentialGroup()
-                                    .addComponent(lectureBox14)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGap(12, 12, 12))
+                                .addComponent(lectureBox15)
+                                .addComponent(lectureBox14)
+                                .addComponent(lectureBox13)
+                                .addComponent(lectureBox11)
+                                .addComponent(lectureBox12))
+                            .addGap(12, 339, Short.MAX_VALUE))
                         .addComponent(seperator3, javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(semesterLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addContainerGap()))
@@ -537,25 +352,15 @@ public class RegisterEnrollmentView extends javax.swing.JFrame {
                     .addContainerGap()
                     .addComponent(semesterLabel3)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lectureBox11)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox12)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox13)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox14)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox15)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(seperator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -564,48 +369,23 @@ public class RegisterEnrollmentView extends javax.swing.JFrame {
         semesterLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         semesterLabel4.setText("Semester 4");
 
-        lectureLabel16.setText("lecture 1");
-
-        lectureLabel17.setText("lecture 2");
-
-        lectureLabel18.setText("lecture 3");
-
-        lectureLabel19.setText("lecture 4");
-
-        lectureLabel20.setText("lecture 5");
-
         javax.swing.GroupLayout semesterPanel4Layout = new javax.swing.GroupLayout(semesterPanel4);
         semesterPanel4.setLayout(semesterPanel4Layout);
         semesterPanel4Layout.setHorizontalGroup(
             semesterPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 333, Short.MAX_VALUE)
+            .addGap(0, 375, Short.MAX_VALUE)
             .addGroup(semesterPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(semesterPanel4Layout.createSequentialGroup()
                     .addContainerGap()
                     .addGroup(semesterPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(semesterPanel4Layout.createSequentialGroup()
                             .addGroup(semesterPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(semesterPanel4Layout.createSequentialGroup()
-                                    .addComponent(lectureBox16)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE))
-                                .addGroup(semesterPanel4Layout.createSequentialGroup()
-                                    .addComponent(lectureBox20)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(semesterPanel4Layout.createSequentialGroup()
-                                    .addComponent(lectureBox17)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(semesterPanel4Layout.createSequentialGroup()
-                                    .addComponent(lectureBox18)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(semesterPanel4Layout.createSequentialGroup()
-                                    .addComponent(lectureBox19)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGap(12, 12, 12))
+                                .addComponent(lectureBox20)
+                                .addComponent(lectureBox19)
+                                .addComponent(lectureBox18)
+                                .addComponent(lectureBox16)
+                                .addComponent(lectureBox17))
+                            .addGap(12, 339, Short.MAX_VALUE))
                         .addComponent(seperator4, javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(semesterLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addContainerGap()))
@@ -618,25 +398,15 @@ public class RegisterEnrollmentView extends javax.swing.JFrame {
                     .addContainerGap()
                     .addComponent(semesterLabel4)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lectureBox16)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox17)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox18)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox19)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox20)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(seperator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -645,48 +415,23 @@ public class RegisterEnrollmentView extends javax.swing.JFrame {
         semesterLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         semesterLabel5.setText("Semester 5");
 
-        lectureLabel21.setText("lecture 1");
-
-        lectureLabel22.setText("lecture 2");
-
-        lectureLabel23.setText("lecture 3");
-
-        lectureLabel24.setText("lecture 4");
-
-        lectureLabel25.setText("lecture 5");
-
         javax.swing.GroupLayout semesterPanel5Layout = new javax.swing.GroupLayout(semesterPanel5);
         semesterPanel5.setLayout(semesterPanel5Layout);
         semesterPanel5Layout.setHorizontalGroup(
             semesterPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 333, Short.MAX_VALUE)
+            .addGap(0, 375, Short.MAX_VALUE)
             .addGroup(semesterPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(semesterPanel5Layout.createSequentialGroup()
                     .addContainerGap()
                     .addGroup(semesterPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(semesterPanel5Layout.createSequentialGroup()
                             .addGroup(semesterPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(semesterPanel5Layout.createSequentialGroup()
-                                    .addComponent(lectureBox21)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE))
-                                .addGroup(semesterPanel5Layout.createSequentialGroup()
-                                    .addComponent(lectureBox25)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(semesterPanel5Layout.createSequentialGroup()
-                                    .addComponent(lectureBox22)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(semesterPanel5Layout.createSequentialGroup()
-                                    .addComponent(lectureBox23)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(semesterPanel5Layout.createSequentialGroup()
-                                    .addComponent(lectureBox24)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGap(12, 12, 12))
+                                .addComponent(lectureBox25)
+                                .addComponent(lectureBox24)
+                                .addComponent(lectureBox23)
+                                .addComponent(lectureBox21)
+                                .addComponent(lectureBox22))
+                            .addGap(12, 339, Short.MAX_VALUE))
                         .addComponent(seperator5, javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(semesterLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addContainerGap()))
@@ -699,25 +444,15 @@ public class RegisterEnrollmentView extends javax.swing.JFrame {
                     .addContainerGap()
                     .addComponent(semesterLabel5)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lectureBox21)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox22)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox23)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox24)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox25)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(seperator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -726,48 +461,23 @@ public class RegisterEnrollmentView extends javax.swing.JFrame {
         semesterLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         semesterLabel6.setText("Semester 6");
 
-        lectureLabel26.setText("lecture 1");
-
-        lectureLabel27.setText("lecture 2");
-
-        lectureLabel28.setText("lecture 3");
-
-        lectureLabel29.setText("lecture 4");
-
-        lectureLabel30.setText("lecture 5");
-
         javax.swing.GroupLayout semesterPanel6Layout = new javax.swing.GroupLayout(semesterPanel6);
         semesterPanel6.setLayout(semesterPanel6Layout);
         semesterPanel6Layout.setHorizontalGroup(
             semesterPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 333, Short.MAX_VALUE)
+            .addGap(0, 375, Short.MAX_VALUE)
             .addGroup(semesterPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(semesterPanel6Layout.createSequentialGroup()
                     .addContainerGap()
                     .addGroup(semesterPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(semesterPanel6Layout.createSequentialGroup()
                             .addGroup(semesterPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(semesterPanel6Layout.createSequentialGroup()
-                                    .addComponent(lectureBox26)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE))
-                                .addGroup(semesterPanel6Layout.createSequentialGroup()
-                                    .addComponent(lectureBox30)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(semesterPanel6Layout.createSequentialGroup()
-                                    .addComponent(lectureBox27)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(semesterPanel6Layout.createSequentialGroup()
-                                    .addComponent(lectureBox28)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(semesterPanel6Layout.createSequentialGroup()
-                                    .addComponent(lectureBox29)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGap(12, 12, 12))
+                                .addComponent(lectureBox30)
+                                .addComponent(lectureBox29)
+                                .addComponent(lectureBox28)
+                                .addComponent(lectureBox26)
+                                .addComponent(lectureBox27))
+                            .addGap(12, 339, Short.MAX_VALUE))
                         .addComponent(seperator6, javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(semesterLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addContainerGap()))
@@ -780,25 +490,15 @@ public class RegisterEnrollmentView extends javax.swing.JFrame {
                     .addContainerGap()
                     .addComponent(semesterLabel6)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lectureBox26)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox27)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox28)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox29)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox30)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(seperator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -807,48 +507,23 @@ public class RegisterEnrollmentView extends javax.swing.JFrame {
         semesterLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         semesterLabel7.setText("Semester 7");
 
-        lectureLabel31.setText("lecture 1");
-
-        lectureLabel32.setText("lecture 2");
-
-        lectureLabel33.setText("lecture 3");
-
-        lectureLabel34.setText("lecture 4");
-
-        lectureLabel35.setText("lecture 5");
-
         javax.swing.GroupLayout semesterPanel7Layout = new javax.swing.GroupLayout(semesterPanel7);
         semesterPanel7.setLayout(semesterPanel7Layout);
         semesterPanel7Layout.setHorizontalGroup(
             semesterPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 333, Short.MAX_VALUE)
+            .addGap(0, 375, Short.MAX_VALUE)
             .addGroup(semesterPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(semesterPanel7Layout.createSequentialGroup()
                     .addContainerGap()
                     .addGroup(semesterPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(semesterPanel7Layout.createSequentialGroup()
                             .addGroup(semesterPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(semesterPanel7Layout.createSequentialGroup()
-                                    .addComponent(lectureBox31)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel31, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE))
-                                .addGroup(semesterPanel7Layout.createSequentialGroup()
-                                    .addComponent(lectureBox35)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(semesterPanel7Layout.createSequentialGroup()
-                                    .addComponent(lectureBox32)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(semesterPanel7Layout.createSequentialGroup()
-                                    .addComponent(lectureBox33)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(semesterPanel7Layout.createSequentialGroup()
-                                    .addComponent(lectureBox34)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGap(12, 12, 12))
+                                .addComponent(lectureBox35)
+                                .addComponent(lectureBox34)
+                                .addComponent(lectureBox33)
+                                .addComponent(lectureBox31)
+                                .addComponent(lectureBox32))
+                            .addGap(12, 339, Short.MAX_VALUE))
                         .addComponent(seperator7, javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(semesterLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addContainerGap()))
@@ -861,25 +536,15 @@ public class RegisterEnrollmentView extends javax.swing.JFrame {
                     .addContainerGap()
                     .addComponent(semesterLabel7)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lectureBox31)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox32)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox33)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox34)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox35)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(seperator7, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -888,48 +553,23 @@ public class RegisterEnrollmentView extends javax.swing.JFrame {
         semesterLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         semesterLabel8.setText("Semester 8");
 
-        lectureLabel36.setText("lecture 1");
-
-        lectureLabel37.setText("lecture 2");
-
-        lectureLabel38.setText("lecture 3");
-
-        lectureLabel39.setText("lecture 4");
-
-        lectureLabel40.setText("lecture 5");
-
         javax.swing.GroupLayout semesterPanel8Layout = new javax.swing.GroupLayout(semesterPanel8);
         semesterPanel8.setLayout(semesterPanel8Layout);
         semesterPanel8Layout.setHorizontalGroup(
             semesterPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 333, Short.MAX_VALUE)
+            .addGap(0, 375, Short.MAX_VALUE)
             .addGroup(semesterPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(semesterPanel8Layout.createSequentialGroup()
                     .addContainerGap()
                     .addGroup(semesterPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(semesterPanel8Layout.createSequentialGroup()
                             .addGroup(semesterPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(semesterPanel8Layout.createSequentialGroup()
-                                    .addComponent(lectureBox36)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel36, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE))
-                                .addGroup(semesterPanel8Layout.createSequentialGroup()
-                                    .addComponent(lectureBox40)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel40, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(semesterPanel8Layout.createSequentialGroup()
-                                    .addComponent(lectureBox37)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(semesterPanel8Layout.createSequentialGroup()
-                                    .addComponent(lectureBox38)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel38, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(semesterPanel8Layout.createSequentialGroup()
-                                    .addComponent(lectureBox39)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGap(12, 12, 12))
+                                .addComponent(lectureBox40)
+                                .addComponent(lectureBox39)
+                                .addComponent(lectureBox38)
+                                .addComponent(lectureBox36)
+                                .addComponent(lectureBox37))
+                            .addGap(12, 339, Short.MAX_VALUE))
                         .addComponent(seperator8, javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(semesterLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addContainerGap()))
@@ -942,25 +582,15 @@ public class RegisterEnrollmentView extends javax.swing.JFrame {
                     .addContainerGap()
                     .addComponent(semesterLabel8)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox36, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel36, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lectureBox36)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox37)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox38, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox38)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox39)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox40, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox40)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(seperator8, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -969,48 +599,23 @@ public class RegisterEnrollmentView extends javax.swing.JFrame {
         semesterLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         semesterLabel9.setText("Semester 9");
 
-        lectureLabel41.setText("lecture 1");
-
-        lectureLabel42.setText("lecture 2");
-
-        lectureLabel43.setText("lecture 3");
-
-        lectureLabel44.setText("lecture 4");
-
-        lectureLabel45.setText("lecture 5");
-
         javax.swing.GroupLayout semesterPanel9Layout = new javax.swing.GroupLayout(semesterPanel9);
         semesterPanel9.setLayout(semesterPanel9Layout);
         semesterPanel9Layout.setHorizontalGroup(
             semesterPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 375, Short.MAX_VALUE)
             .addGroup(semesterPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(semesterPanel9Layout.createSequentialGroup()
                     .addContainerGap()
                     .addGroup(semesterPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(semesterPanel9Layout.createSequentialGroup()
                             .addGroup(semesterPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(semesterPanel9Layout.createSequentialGroup()
-                                    .addComponent(lectureBox41)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel41, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE))
-                                .addGroup(semesterPanel9Layout.createSequentialGroup()
-                                    .addComponent(lectureBox45)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel45, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(semesterPanel9Layout.createSequentialGroup()
-                                    .addComponent(lectureBox42)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel42, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(semesterPanel9Layout.createSequentialGroup()
-                                    .addComponent(lectureBox43)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel43, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(semesterPanel9Layout.createSequentialGroup()
-                                    .addComponent(lectureBox44)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lectureLabel44, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGap(12, 12, 12))
+                                .addComponent(lectureBox45)
+                                .addComponent(lectureBox44)
+                                .addComponent(lectureBox43)
+                                .addComponent(lectureBox41)
+                                .addComponent(lectureBox42))
+                            .addGap(12, 339, Short.MAX_VALUE))
                         .addComponent(seperator9, javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(semesterLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addContainerGap()))
@@ -1023,25 +628,15 @@ public class RegisterEnrollmentView extends javax.swing.JFrame {
                     .addContainerGap()
                     .addComponent(semesterLabel9)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox41, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel41, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lectureBox41)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox42, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox42)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox43, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox43)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox44, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox44)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(semesterPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lectureBox45, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lectureLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lectureBox45)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(seperator9, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
