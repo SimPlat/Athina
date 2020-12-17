@@ -10,7 +10,7 @@ public class LoginController {
 	private boolean connected = false;
 	private Connection connection = null;
 	final private String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-	final private String db_url = "jdbc:mysql://0.tcp.ngrok.io:11635/Athina_db?"; // + "useInformationSchema=true";
+	final private String db_url = "jdbc:mysql://2.tcp.ngrok.io:14982/Athina_db?"; // + "useInformationSchema=true";
 	
 	public LoginController(){
 	}
