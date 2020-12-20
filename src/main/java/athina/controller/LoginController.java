@@ -6,7 +6,7 @@ import java.sql.*;
 public class LoginController {
 	private String username;
 	private String password;
-	private String userType = "";
+	private String userType = null;
 	private boolean connected = false;
 	private Connection connection = null;
 	final private String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
@@ -37,7 +37,7 @@ public class LoginController {
 
 	public void checkUsernameType(){
 		// Check if given username has the correct format "xx#####"
-		if (Pattern.matches("^[a-z]{2}[0-9]{5}$",username)){
+		if (Pattern.matches("^st[0-9]{5}$|^se[0-9]{5}$|^pr[0-9]{5}$|^ad[0-9]{5}$",username)){
 			switch(username.substring(0,2)){
 				case "st":   
 					this.userType="student";
