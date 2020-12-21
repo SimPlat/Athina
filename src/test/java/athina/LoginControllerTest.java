@@ -9,9 +9,9 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 
 class LoginControllerTest{
-   LoginController loginController = new LoginController();
+   private LoginController loginController = new LoginController();
 
-   @ParameterizedTest(name = "Testing validity of {arguments}.")
+   @ParameterizedTest(name = "Testing validity of {arguments}")
    @ValueSource(strings = {"st1234","st1235","st12356", 
                            "se1234","se1235","se12356", 
                            "pr1234","pr1235","pr12356", 

@@ -19,6 +19,8 @@ public class StudentController implements UserController{
 	private List<Lecture> lectureList;
 	private List<JCheckBox> checkboxList;
 
+	public StudentController(){};
+
 	public StudentController(Student student,List<Lecture> lectureList,List<JCheckBox> checkboxList,
 									List<JFrame> frameList,Connection connection){
 		this.student = student;
@@ -29,6 +31,26 @@ public class StudentController implements UserController{
 		((EnrollmentManagementView) frameList.get(1)).setController(this);
 		((RegisterEnrollmentView) frameList.get(2)).setController(this);
 		getAllCheckboxes(frameList.get(2));
+	}
+
+	public void setStudent(Student student) {
+		this.student = student;
+	}
+
+	public void setConnection(Connection connection) {
+		this.connection = connection;
+	}
+
+	public void setFrameList(List<JFrame> frameList) {
+		this.frameList = frameList;
+	}
+
+	public void setLectureList(List<Lecture> lectureList) {
+		this.lectureList = lectureList;
+	}
+
+	public void setCheckboxList(List<JCheckBox> checkboxList) {
+		this.checkboxList = checkboxList;
 	}
 
 	// Updates user info frame
